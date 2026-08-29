@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>حجز موعد - لاندينج بيدج حمامة</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            /* الألوان الأساسية: بنفسجي غامق، أخضر، رمادي، وأبيض */
+            --purple-deep: #2A0845;
+            --purple-primary: #4A126F;
+            --green-solid: #00875A;
+            --green-hover: #006644;
+            --gray-tone: #4A5568;
+            --white: #ffffff;
+            --gray-light: #f8f9fa;
+            --gray-muted: #6c757d;
+            --dark-color: #212529;
+            
+            --bg-card: #ffffff;
+            --card-shadow: 0 15px 35px rgba(42, 8, 69, 0.25);
+            --border-radius: 20px;
+            --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Cairo', sans-serif;
+            /* خلفية تدريجية دقيقة ومتداخلة تجمع البنفسجي، الأخضر، والرمادي لتشبه تدرجات ألوان جناح الحمامة */
+            background:
+                radial-gradient(circle at 15% 20%, rgba(0, 135, 90, 0.35) 0%, transparent 45%),
+                radial-gradient(circle at 85% 80%, rgba(74, 85, 104, 0.4) 0%, transparent 50%),
+                linear-gradient(135deg, var(--purple-deep) 0%, var(--purple-primary) 40%, var(--gray-tone) 100%);
+            color: var(--white);
+            min-height: 100vh;
+            background-attachment: fixed;
+            overflow-y: scroll;
+            overflow-x: hidden;
+            line-height: 1.8;
+            position: relative;
+        }
+
+        /* حاوية تأثير الحمام والريش المكثف في الخلفية */
+        .hamama-effects-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        /* تنسيق الحمام المتطاير */
+        .dove {
+            position: absolute;
+            width: 45px;
+            height: 45px;
+            opacity: 0.15;
+            animation: flyDove linear infinite;
+            fill: var(--white);
+        }
+
+        .dove:nth-child(1) { top: 10%; left: -10%; animation-duration: 22s; animation-delay: 0s; transform: scale(0.8); }
+        .dove:nth-child(2) { top: 40%; left: -10%; animation-duration: 18s; animation-delay: 3s; transform: scale(1.1); }
+        .dove:nth-child(3) { top: 70%; left: -10%; animation-duration: 25s; animation-delay: 6s; transform: scale(0.9); }
+        .dove:nth-child(4) { top: 25%; left: -10%; animation-duration: 20s; animation-delay: 9s; transform: scale(1); }
+
+        @keyframes flyDove {
+            0% {
+                transform: translateX(-50px) translateY(0) rotate(0deg);
+                opacity: 0;
+            }
+            20% { opacity: 0.2; }
+            80% { opacity: 0.2; }
+            100% {
+                transform: translateX(105vw) translateY(-120px) rotate(-15deg);
+                opacity: 0;
+            }
+        }
+
+        /* تنسيق الريش المتطاير بغزارة في الخلفية (باللون الأبيض والأخضر الثابت) */
+        .feather {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            opacity: 0;
+            animation: fallFeather linear infinite;
+            fill: var(--white);
+        }
+
+        .feather:nth-child(5)  { top: -10%; left: 5%;  animation-duration: 9s;  animation-delay: 0s;   transform: scale(0.7); }
+        .feather:nth-child(6)  { top: -10%; left: 15%; animation-duration: 12s; animation-delay: 2s;   transform: scale(1.2); fill: var(--green-solid); }
+        .feather:nth-child(7)  { top: -10%; left: 25%; animation-duration: 10s; animation-delay: 4s;   transform: scale(0.9); }
+        .feather:nth-child(8)  { top: -10%; left: 35%; animation-duration: 14s; animation-delay: 1s;   transform: scale(1.1); }
+        .feather:nth-child(9)  { top: -10%; left: 45%; animation-duration: 11s; animation-delay: 3s;   transform: scale(0.8); fill: var(--green-solid); }
+        .feather:nth-child(10) { top: -10%; left: 55%; animation-duration: 13s; animation-delay: 5s;   transform: scale(1); }
+        .feather:nth-child(11) { top: -10%; left: 65%; animation-duration: 9s;  animation-delay: 2.5s; transform: scale(0.6); fill: var(--green-solid); }
+        .feather:nth-child(12) { top: -10%; left: 75%; animation-duration: 15s; animation-delay: 0.5s; transform: scale(1.3); }
+        .feather:nth-child(13) { top: -10%; left: 85%; animation-duration: 10.5s;animation-delay: 3.5s; transform: scale(0.9); fill: var(--green-solid); }
+        .feather:nth-child(14) { top: -10%; left: 95%; animation-duration: 12s; animation-delay: 1.5s; transform: scale(1.1); }
+
+        @keyframes fallFeather {
+            0% {
+                transform: translateY(-20px) rotate(0deg) translateX(0);
+                opacity: 0;
+            }
+            20% { opacity: 0.3; }
+            80% { opacity: 0.3; }
+            100% {
+                transform: translateY(105vh) rotate(360deg) translateX(80px);
+                opacity: 0;
+            }
+        }
+
+        /* تنسيق قسم الحجز (الكارد) مع ضبط مرن للموبايل */
+        .booking-container {
+            max-width: 600px;
+            width: 92%;
+            margin: 40px auto;
+            padding: 35px 25px;
+            background-color: var(--bg-card);
+            border-radius: var(--border-radius);
+            box-shadow: var(--card-shadow);
+            font-family: 'Cairo', sans-serif;
+            direction: rtl; 
+            border-top: 6px solid var(--green-solid); 
+            transition: var(--transition-smooth);
+            position: relative;
+            z-index: 2;
+        }
+
+        .booking-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .booking-header h2 {
+            color: var(--purple-deep);
+            font-weight: 700;
+            font-size: 22px;
+            margin-bottom: 8px;
+        }
+
+        .booking-header p {
+            color: var(--gray-muted);
+            font-size: 13px;
+            font-weight: 400;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-row {
+            display: flex;
+            gap: 15px;
+        }
+
+        .form-row .form-group {
+            flex: 1;
+        }
+
+        label {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--purple-deep);
+            margin-bottom: 6px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        input[type="date"],
+        input[type="time"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 12px 14px;
+            border: 2px solid #e9ecef; 
+            border-radius: 10px;
+            font-size: 15px;
+            font-family: 'Cairo', sans-serif;
+            color: var(--dark-color);
+            background-color: var(--gray-light);
+            box-sizing: border-box;
+            transition: var(--transition-smooth);
+            -webkit-appearance: none;
+        }
+
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            border-color: var(--green-solid);
+            background-color: var(--white);
+            box-shadow: 0 0 0 4px rgba(0, 135, 90, 0.15);
+        }
+
+        ::placeholder {
+            color: #adb5bd;
+            font-size: 13px;
+        }
+        
+        .submit-btn {
+            width: 100%;
+            padding: 15px;
+            background-color: var(--green-solid); 
+            color: var(--white);
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;   
+            font-family: 'Cairo', sans-serif;
+            font-weight: 700;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(0, 135, 90, 0.3);
+            transition: var(--transition-smooth);
+        }
+
+        .submit-btn:hover {
+            background-color: var(--green-hover); 
+            box-shadow: 0 6px 20px rgba(0, 102, 68, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .submit-btn:disabled {
+            background-color: var(--gray-muted);
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+
+        .success-message {
+            display: none; 
+            text-align: center;
+            padding: 30px 15px;
+            animation: fadeIn 0.5s ease forwards;
+        }
+
+        .success-icon {
+            width: 70px;
+            height: 70px;
+            background-color: rgba(0, 135, 90, 0.1);
+            color: var(--green-solid);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+        }
+
+        .success-message h3 {
+            color: var(--purple-deep);
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .success-message p {
+            color: var(--gray-muted);
+            font-size: 15px;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.95); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        /* تحسينات الموبايل والشاشات الصغيرة */
+        @media (max-width: 480px) {
+            body {
+                padding: 10px;
+            }
+            .form-row {
+                flex-direction: column;
+                gap: 0;
+            }
+            .booking-container {
+                margin: 20px auto;
+                padding: 20px 15px;
+                border-radius: 16px;
+                width: 96%;
+            }
+            .booking-header h2 {
+                font-size: 20px;
+            }
+            input[type="text"],
+            input[type="email"],
+            input[type="tel"],
+            input[type="date"],
+            input[type="time"],
+            select,
+            textarea {
+                padding: 11px;
+                font-size: 14px;
+            }
+            .submit-btn {
+                padding: 14px;
+                font-size: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- تأثيرات الخلفية المتدرجة وريش وحمام "حمامة" -->
+    <div class="hamama-effects-background">
+        <!-- أشكال الحمام المتحرك -->
+        <svg class="dove" viewBox="0 0 24 24"><path d="M21,11C21,16.5 16.5,21 11,21C8.3,21 5.9,20 4.1,18.3L5.5,16.9C6.9,18.2 8.8,19 11,19C15.4,19 19,15.4 19,11C19,8.8 18.2,6.9 16.9,5.5L18.3,4.1C20,5.9 21,8.3 21,11M12,5A6,6 0 0,0 6,11H4A8,8 0 0,1 12,3V5M8,11A4,4 0 0,1 12,7V5A6,6 0 0,0 6,11H8Z"/></svg>
+        <svg class="dove" viewBox="0 0 24 24"><path d="M21,11C21,16.5 16.5,21 11,21C8.3,21 5.9,20 4.1,18.3L5.5,16.9C6.9,18.2 8.8,19 11,19C15.4,19 19,15.4 19,11C19,8.8 18.2,6.9 16.9,5.5L18.3,4.1C20,5.9 21,8.3 21,11M12,5A6,6 0 0,0 6,11H4A8,8 0 0,1 12,3V5M8,11A4,4 0 0,1 12,7V5A6,6 0 0,0 6,11H8Z"/></svg>
+        <svg class="dove" viewBox="0 0 24 24"><path d="M21,11C21,16.5 16.5,21 11,21C8.3,21 5.9,20 4.1,18.3L5.5,16.9C6.9,18.2 8.8,19 11,19C15.4,19 19,15.4 19,11C19,8.8 18.2,6.9 16.9,5.5L18.3,4.1C20,5.9 21,8.3 21,11M12,5A6,6 0 0,0 6,11H4A8,8 0 0,1 12,3V5M8,11A4,4 0 0,1 12,7V5A6,6 0 0,0 6,11H8Z"/></svg>
+        <svg class="dove" viewBox="0 0 24 24"><path d="M21,11C21,16.5 16.5,21 11,21C8.3,21 5.9,20 4.1,18.3L5.5,16.9C6.9,18.2 8.8,19 11,19C15.4,19 19,15.4 19,11C19,8.8 18.2,6.9 16.9,5.5L18.3,4.1C20,5.9 21,8.3 21,11M12,5A6,6 0 0,0 6,11H4A8,8 0 0,1 12,3V5M8,11A4,4 0 0,1 12,7V5A6,6 0 0,0 6,11H8Z"/></svg>
+        
+        <!-- أشكال الريش المتساقط بغزارة -->
+        <svg class="feather" viewBox="0 0 24 24"><path d="M20.5 3C20.5 3 15 4 10 9C5 14 3 20.5 3 20.5C3 20.5 9.5 18.5 14.5 13.5C19.5 8.5 20.5 3 20.5 3Z"/></svg>
+        <svg class="feather" viewBox="0 0 24 24"><path d="M20.5 3C20.5 3 15 4 10 9C5 14 3 20.5 3 20.5C3 20.5 9.5 18.5 14.5 13.5C19.5 8.5 20.5 3 20.5 3Z"/></svg>
+        <svg class="feather" viewBox="0 0 24 24"><path d="M20.5 3C20.5 3 15 4 10 9C5 14 3 20.5 3 20.5C3 20.5 9.5 18.5 14.5 13.5C19.5 8.5 20.5 3 20.5 3Z"/></svg>
+        <svg class="feather" viewBox="0 0 24 24"><path d="M20.5 3C20.5 3 15 4 10 9C5 14 3 20.5 3 20.5C3 20.5 9.5 18.5 14.5 13.5C19.5 8.5 20.5 3 20.5 3Z"/></svg>
+        <svg class="feather" viewBox="0 0 24 24"><path d="M20.5 3C20.5 3 15 4 10 9C5 14 3 20.5 3 20.5C3 20.5 9.5 18.5 14.5 13.5C19.5 8.5 20.5 3 20.5 3Z"/></svg>
+        <svg class="feather" viewBox="0 0 24 24"><path d="M20.5 3C20.5 3 15 4 10 9C5 14 3 20.5 3 20.5C3 20.5 9.5 18.5 14.5 13.5C19.5 8.5 20.5 3 20.5 3Z"/></svg>
+        <svg class="feather" viewBox="0 0 24 24"><path d="M20.5 3C20.5 3 15 4 10 9C5 14 3 20.5 3 20.5C3 20.5 9.5 18.5 14.5 13.5C19.5 8.5 20.5 3 20.5 3Z"/></svg>
+        <svg class="feather" viewBox="0 0 24 24"><path d="M20.5 3C20.5 3 15 4 10 9C5 14 3 20.5 3 20.5C3 20.5 9.5 18.5 14.5 13.5C19.5 8.5 20.5 3 20.5 3Z"/></svg>
+        <svg class="feather" viewBox="0 0 24 24"><path d="M20.5 3C20.5 3 15 4 10 9C5 14 3 20.5 3 20.5C3 20.5 9.5 18.5 14.5 13.5C19.5 8.5 20.5 3 20.5 3Z"/></svg>
+        <svg class="feather" viewBox="0 0 24 24"><path d="M20.5 3C20.5 3 15 4 10 9C5 14 3 20.5 3 20.5C3 20.5 9.5 18.5 14.5 13.5C19.5 8.5 20.5 3 20.5 3Z"/></svg>
+    </div>
+
+<section id="booking-section" class="booking-container">
+    
+    <div id="form-content">
+        <div class="booking-header">
+            <h2>انضم الآن إلى عالم "حمامة"</h2>
+            <p>املأ البيانات التالية لتأكيد حجزك ومشاركتنا التجربة</p>
+        </div>
+
+        <form id="booking-form" action="https://formsubmit.co/habobsayed53@gmail.com" method="POST" class="booking-form">
+            <input type="hidden" name="_next" value="">
+            <input type="hidden" name="_captcha" value="false">
+
+            <div class="form-group">
+                <label for="name">الاسم بالكامل</label>
+                <input type="text" name="الاسم" id="name" required placeholder="أدخل اسمك الثلاثي">
+            </div>
+
+            <div class="form-group">
+                <label for="email">البريد الإلكتروني</label>
+                <input type="email" name="الإيميل" id="email" required placeholder="example@mail.com">
+            </div>
+
+            <div class="form-group">
+                <label for="phone">رقم الهاتف (واتساب)</label>
+                <input type="tel" name="رقم الهاتف" id="phone" required placeholder="01xxxxxxxxx">
+            </div>
+
+            <div class="form-group">
+                <label for="session-type">اختر الباقة أو الخدمة</label>
+                <select name="نوع الخدمة" id="session-type" required>
+                    <option value="" disabled selected>اختر الباقة المناسبة</option>
+                    <option value="باقة حمامة الأساسية">باقة حمامة الأساسية</option>
+                    <option value="باقة حمامة المميزة">باقة حمامة المميزة</option>
+                    <option value="الباقة الشاملة">الباقة الشاملة</option>
+                </select>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="date">التاريخ المفضل</label>
+                    <input type="date" name="التاريخ" id="date" required>
+                </div>
+                <div class="form-group">
+                    <label for="time">الوقت المفضل</label>
+                    <input type="time" name="الوقت" id="time" required>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="notes">ملاحظات أو تفاصيل إضافية (اختياري)</label>
+                <textarea name="ملاحظات إضافية" id="notes" rows="4" placeholder="اكتب هنا أي تفاصيل تود إطلاعنا عليها..."></textarea>
+            </div>
+
+            <button type="submit" id="submit-btn" class="submit-btn">تأكيد طلب الحجز</button>
+        </form>
+    </div>
+
+    <div id="success-box" class="success-message">
+        <div class="success-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+        </div>
+        <h3>تم التسجيل بنجاح!</h3>
+        <p>شكراً لانضمامك إلينا في عالم حمامة، سنتواصل معك قريباً جداً.</p>
+    </div>
+
+</section>
+
+<script>
+    document.getElementById('booking-form').addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const form = this;
+        const submitBtn = document.getElementById('submit-btn');
+        const formContent = document.getElementById('form-content');
+        const successBox = document.getElementById('success-box');
+        
+        submitBtn.textContent = 'جاري إرسال طلبك...';
+        submitBtn.disabled = true;
+        
+        fetch(form.action, {
+            method: 'POST',
+            body: new FormData(form),
+            headers: {
+                'Accept': 'application/json'
+            }
+        })
+        .then(response => {
+            if (response.ok) {
+                formContent.style.display = 'none';
+                successBox.style.display = 'block';
+            } else {
+                alert('عذراً، حدث خطأ ما. يرجى المحاولة مرة أخرى.');
+                submitBtn.textContent = 'تأكيد طلب الحجز';
+                submitBtn.disabled = false;
+            }
+        })
+        .catch(error => {
+            alert('عذراً، يرجى التحقق من اتصالك بالإنترنت.');
+            submitBtn.textContent = 'تأكيد طلب الحجز';
+            submitBtn.disabled = false;
+        });
+    });
+</script>
+    
+</body>
+</html>

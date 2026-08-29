@@ -1,0 +1,2230 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>عهود | خبيرة التسويق بالمحتوى</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <!-- مكتبة الأيقونات الفخمة والاحترافية -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="shortcut icon" href="imgs/a.png" type="image/x-icon">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <meta name="description"
+        content="كوتش كونتنت ماركتنج لمساعدتك في بناء حضور رقمي قوي. خدماتنا تشمل: خطط محتوى شهرية، سكريبتات ريلز، كتابة محتوى بيعي وإعلاني، وزيادة الـ Organic Reach. احجز سيشنك الآن.">
+    <meta name="keywords"
+        content="كوتش محتوى، كونتنت ماركتنج، كتابة محتوى، سكريبتات ريلز، خطة محتوى، زيادة الأورجانيك ريتش، محتوى بيعي، إعلانات تسويقية، صناعة محتوى إبداعي، كورس كتابة محتوى، استشارات تسويقية، تحليل الجمهور، Content Marketing، Copywriting، Organic Reach.">
+    <meta name="author" content="ُEng: Radwa Mohamed">
+
+    <style>
+        :root {
+    --bg-creamy: #fbf9f6;
+    --pigeon-purple-light: #f3e5f5;
+    --pigeon-purple: #9c27b0;
+    --pigeon-purple-dark: #3b0975;
+    --gold-accent: #c53acc;
+    --text-dark: #120626;
+    --text-muted: #534963;
+    --banner-bg: #f5ebff;
+    --badge-bg: #eddfff;
+    --card-shadow: 0 12px 30px rgba(59, 9, 117, 0.07);
+    --card-hover-shadow: 0 18px 40px rgba(156, 39, 176, 0.2);
+
+    /* تدريجات ألوان ريش حمامة الحرم الاحترافية */
+    --feather-grad-1: linear-gradient(135deg, #f7f5fa 0%, #ece6f4 50%, #e2f0e4 100%);
+    --feather-grad-2: linear-gradient(135deg, #f0e6f6 0%, #d8b4e2 50%, #c8e6c9 100%);
+    --feather-grad-3: linear-gradient(135deg, #e4cfea 0%, #ba68c8 50%, #a5d6a7 100%);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Tajawal', sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #fcf8f5;
+    color: var(--text-dark);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding-top: 140px;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* خلفية الريش لتبان أوضح وبألوانها مع تقليل العازل الوردي */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    /* 🌟 زوّدنا الظهور واستخدمنا الفلتر ده عشان يظهر تفاصيل ألوان الريش الأصلية بوضوح */
+    filter: saturate(1.1) contrast(1.05) brightness(0.98);
+    opacity: 0.45;
+    /* رفعنا الشفافية عشان الريش يبان قوي وميختفيش تحت الوردي */
+
+    z-index: -1;
+    pointer-events: none;
+}
+
+        /* ==========================================
+   🧭 1. تنسيقات النافبار (Navbar Styling)
+   ========================================== */
+.nav-container {
+    position: fixed;
+    top: 20px;
+    left: 0;
+    left: 0;
+    width: 100%;
+    padding: 0 1.5rem;
+    z-index: 10000;
+    direction: rtl;
+}
+
+.dove-navbar {
+    max-width: 1400px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.7rem 2rem;
+    box-shadow: 0 12px 40px rgba(59, 9, 117, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+.nav-logo {
+    font-size: 1.4rem;
+    font-weight: 900;
+    color: var(--pigeon-purple-dark, #3b0975);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 0.4rem 1.2rem;
+    background: linear-gradient(135deg, #ffffff, var(--pigeon-purple-light, #f3e5f5));
+    border-radius: 30px;
+    border: 1px solid rgba(156, 39, 176, 0.2);
+    animation: glowPulse 3s infinite;
+}
+
+.nav-logo span {
+    background: linear-gradient(45deg, var(--pigeon-purple-dark, #3b0975), var(--pigeon-purple, #9c27b0));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.nav-links {
+    display: flex;
+    gap: 1.2rem;
+    list-style: none;
+    align-items: center;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-dark, #120626);
+    font-weight: 700;
+    font-size: 0.88rem;
+    transition: all 0.3s ease;
+    position: relative;
+    padding: 0.5rem 0;
+    white-space: nowrap;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background-color: var(--pigeon-purple, #9c27b0);
+    transition: width 0.3s ease;
+    border-radius: 2px;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+.nav-links a:hover {
+    color: var(--pigeon-purple, #9c27b0);
+}
+
+.nav-cta-btn {
+    background: linear-gradient(135deg, var(--pigeon-purple-dark, #3b0975), var(--pigeon-purple, #9c27b0));
+    color: white !important;
+padding: 0.6rem 1.4rem; /* ضبط حجم الزرار */
+
+border-radius: 30px;
+    font-weight: 700;
+    box-shadow: 0 5px 20px rgba(59, 9, 117, 0.3);
+    transition: all 0.3s ease;
+    white-space: nowrap; /* منع انكسار نص الزرار */
+}
+
+.nav-cta-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(59, 9, 117, 0.4);
+}
+
+/* زر التوجيه لشاشات الموبايل */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 5px;
+    z-index: 10001;
+}
+
+.menu-toggle span {
+    width: 25px;
+    height: 3px;
+    background-color: var(--text-dark, #120626);
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+/* حركة التبديل (الرمز ✕) عند فتح المنيو */
+.menu-toggle.active span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+.menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+.menu-toggle.active span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+/* 📱 Responsive Navbar (الموبايل واللابتوب الصغير < 992px) */
+@media (max-width: 1100px) {
+    .nav-container {
+        padding: 0 1rem;
+        top: 10px;
+    }
+
+    .dove-navbar {
+padding: 1.1rem 1.6rem;   
+ }
+
+    .menu-toggle {
+        display: flex;
+        gap: 6px;
+    }
+
+    .nav-logo {
+        padding: 0.6rem 1.2rem; /* زيادة الـ Padding الرأسي */
+       
+    }
+
+    .nav-links {
+        position: absolute;
+        top: 85px;
+        right: 0;
+        left: 0;
+        width: 100%;
+        background: rgba(255, 255, 255, 0.98);
+        backdrop-filter: blur(25px);
+        -webkit-backdrop-filter: blur(25px);
+        flex-direction: column;
+        padding: 2rem 1.5rem;
+        border-radius: 30px;
+        box-shadow: 0 20px 40px rgba(59, 9, 117, 0.15);
+        border: 1px solid rgba(255, 255, 255, 0.8);
+        gap: 1.2rem;
+        
+        /* إخفاء افتراضي مع أنيميشن ناعم */
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-20px);
+        transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .nav-links.active {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+
+    .nav-links li {
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-links a {
+        display: inline-block;
+        font-size: 1.05rem;
+    }
+
+    .nav-cta-btn {
+        display: block;
+        width: 80%;
+        margin: 0.5rem auto 0 auto;
+        text-align: center;
+    }
+}
+
+
+/* ==========================================
+   🏛️ 2. تنسيقات الفوتر (Footer Styling)
+   ========================================== */
+.master-footer {
+    position: relative;
+    background: linear-gradient(135deg, #210444 0%, #3b0975 60%, #170230 100%);
+    color: #ffffff;
+    padding: 4.5rem 1.5rem 1.5rem 1.5rem;
+    margin-top: 5rem;
+    border-radius: 40px 40px 0 0;
+    overflow: hidden;
+    direction: rtl;
+    box-shadow: 0 -15px 40px rgba(33, 4, 68, 0.25);
+}
+
+.footer-pigeon-bg {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: radial-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+    background-size: 28px 28px;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.footer-top-container {
+    max-width: 1150px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1.8fr;
+    gap: 2.5rem;
+    position: relative;
+    z-index: 2;
+}
+
+.footer-brand-header {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    margin-bottom: 1rem;
+}
+
+.brand-pigeon-icon {
+    width: 42px;
+    height: 42px;
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #f3e5f5;
+    font-size: 1.1rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.footer-brand-header h3 {
+    font-size: 1.6rem;
+    font-weight: 900;
+    color: #fff;
+    margin: 0;
+}
+
+.brand-description {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.95rem;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+}
+
+/* السوشيال ميديا في الفوتر لتجنب التضارب */
+.footer-social-links {
+    display: flex;
+    gap: 0.8rem;
+}
+
+.footer-social-btn {
+    width: 42px;
+    height: 42px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: #ffffff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: all 0.35s ease;
+}
+
+.footer-social-btn:hover {
+    background: #8e24aa;
+    border-color: #e1bee7;
+    transform: translateY(-4px) scale(1.08);
+    box-shadow: 0 8px 20px rgba(142, 36, 170, 0.4);
+}
+
+.footer-title {
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: #ffffff;
+    margin-bottom: 1.2rem;
+    position: relative;
+    padding-bottom: 0.5rem;
+}
+
+.footer-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 35px;
+    height: 3px;
+    background: #8e24aa;
+    border-radius: 2px;
+}
+
+.footer-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-menu li {
+    margin-bottom: 0.8rem;
+}
+
+.footer-menu a {
+    color: rgba(255, 255, 255, 0.75);
+    text-decoration: none;
+    font-size: 0.95rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.footer-menu a i {
+    font-size: 0.7rem;
+    color: #8e24aa;
+}
+
+.footer-menu a:hover {
+    color: #ffffff;
+    transform: translateX(-6px);
+}
+
+.footer-principles-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.footer-principles-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.8rem;
+}
+
+.footer-principles-list i {
+    color: #e1bee7;
+    background: rgba(142, 36, 170, 0.25);
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.footer-principles-list strong {
+    display: block;
+    color: #ffffff;
+    font-size: 0.92rem;
+    margin-bottom: 0.1rem;
+}
+
+.footer-principles-list span {
+    display: block;
+    color: rgba(255, 255, 255, 0.65);
+    font-size: 0.82rem;
+    line-height: 1.4;
+}
+
+.footer-divider {
+    max-width: 1150px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.15), transparent);
+    margin: 3rem auto 1.5rem auto;
+    position: relative;
+    z-index: 2;
+}
+
+.footer-bottom-container {
+    max-width: 1150px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    z-index: 2;
+}
+
+.copyright-text p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.65);
+}
+
+.copyright-text strong {
+    color: #ffffff;
+}
+
+.developer-credit {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-size: 0.88rem;
+    color: rgba(255, 255, 255, 0.75);
+}
+
+.dev-whatsapp-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(37, 211, 102, 0.15);
+    color: #25d366;
+    border: 1px solid rgba(37, 211, 102, 0.35);
+    padding: 0.4rem 1rem;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.9rem;
+    transition: all 0.35s ease;
+}
+
+.dev-whatsapp-btn:hover {
+    background: #25d366;
+    color: #ffffff;
+    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+    transform: translateY(-2px);
+}
+
+/* 📱 Responsive Footer (الشاشات الصغيرة والمتوسطة) */
+@media (max-width: 992px) {
+    .footer-top-container {
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+    }
+    
+    .brand-col {
+        grid-column: span 2;
+    }
+}
+
+@media (max-width: 650px) {
+    .master-footer {
+        padding-top: 3.5rem;
+        border-radius: 30px 30px 0 0;
+    }
+
+    .footer-top-container {
+        grid-template-columns: 1fr;
+        gap: 2.2rem;
+    }
+
+    .brand-col {
+        grid-column: span 1;
+    }
+
+    .footer-bottom-container {
+        flex-direction: column;
+        gap: 1.2rem;
+        text-align: center;
+    }
+}
+
+/* ==========================================
+   ✨ قسم الهيرو الاحترافي (Hero Section)
+   ========================================== */
+.hero-section {
+    width: 100%;
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 1.5rem 1rem 3rem 1rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    direction: rtl;
+}
+
+.hero-name {
+    font-size: clamp(2.2rem, 6vw, 4.2rem); /* خط متجاوب ذكي يحمي الشاشات الصغيرة */
+    font-weight: 900;
+    letter-spacing: 1px;
+    margin-bottom: 0.6rem;
+    background: linear-gradient(45deg, var(--text-dark, #120626), var(--pigeon-purple-dark, #3b0975), var(--pigeon-purple, #9c27b0));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    line-height: 1.1;
+}
+
+.hero-title-badge {
+    background: linear-gradient(135deg, var(--pigeon-purple-dark, #3b0975), #120626);
+    color: #ffffff;
+    font-size: clamp(0.85rem, 2vw, 1.05rem);
+    font-weight: 700;
+    padding: 0.5rem 1.8rem;
+    display: inline-block;
+    margin-bottom: 1.2rem;
+    border-radius: 50px;
+    border: 2px solid var(--gold-accent, #c53acc);
+    box-shadow: 0 6px 20px rgba(59, 9, 117, 0.15);
+}
+
+.hero-tagline {
+    font-size: clamp(1.1rem, 3vw, 1.4rem);
+    color: var(--pigeon-purple, #9c27b0);
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+}
+
+/* 🎨 كارت الميديا (الفيديو والرسالة والشريط) */
+.hero-media-card {
+    position: relative;
+    max-width: 780px;
+    width: 100%;
+    margin: 1.5rem auto 3.5rem auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    z-index: 5;
+}
+
+.ambient-glow {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    height: 80%;
+    background: radial-gradient(circle, rgba(156, 39, 176, 0.25) 0%, rgba(59, 9, 117, 0.05) 70%);
+    filter: blur(50px);
+    z-index: 0;
+    pointer-events: none;
+}
+
+.hero-video-wrapper {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    aspect-ratio: 16 / 9; /* أبعاد فيديو قياسية ومريحة للشاشات */
+    border-radius: 24px;
+    overflow: hidden;
+    background: #000;
+    border: 1.5px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 0 15px 35px rgba(59, 9, 117, 0.15);
+}
+
+.hero-video-wrapper video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    outline: none;
+}
+
+.hero-video-wrapper video::-webkit-media-controls-panel {
+    background-image: linear-gradient(transparent, rgba(18, 6, 38, 0.85));
+}
+
+.speech-bubble-under-video {
+    position: relative;
+    z-index: 2;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(156, 39, 176, 0.2);
+    border-radius: 20px;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    box-shadow: 0 8px 25px rgba(59, 9, 117, 0.08);
+    max-width: 90%;
+    text-align: center;
+}
+
+.speech-bubble-under-video::before {
+    content: '';
+    position: absolute;
+    top: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 0 8px 8px 8px;
+    border-style: solid;
+    border-color: transparent transparent rgba(255, 255, 255, 0.95) transparent;
+}
+
+.speech-bubble-under-video .pigeon-icon {
+    font-size: 1.2rem;
+}
+
+.speech-bubble-under-video p {
+    margin: 0;
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--text-dark, #120626);
+    line-height: 1.4;
+}
+
+/* شريط السوشيال ميديا في الهيرو */
+.hero-social-bar {
+    position: relative;
+    z-index: 2;
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    padding: 8px 22px;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    border: 1px solid rgba(156, 39, 176, 0.2);
+    box-shadow: 0 8px 20px rgba(59, 9, 117, 0.08);
+}
+
+.social-label {
+    font-size: 0.88rem;
+    font-weight: 700;
+    color: var(--text-dark, #120626);
+}
+
+.social-icons {
+    display: flex;
+    gap: 10px;
+}
+
+.hero-social-btn {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: var(--pigeon-purple-light, #f3e5f5);
+    color: var(--pigeon-purple-dark, #3b0975);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.hero-social-btn:hover {
+    transform: translateY(-3px) scale(1.1);
+    color: #fff;
+}
+
+.hero-social-btn.fb:hover { background: #1877f2; }
+.hero-social-btn.ig:hover { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); }
+.hero-social-btn.li:hover { background: #0a66c2; }
+
+
+/* 💳 بطاقة القصة "حكايتي مع عهود" */
+.about-card {
+    margin-top: 2rem;
+    background: #ffffff;
+    border-radius: 35px;
+    width: 100%;
+    padding: 3.5rem 2.5rem 2.5rem 2.5rem;
+    box-shadow: var(--card-shadow, 0 12px 30px rgba(59, 9, 117, 0.07));
+    position: relative;
+    z-index: 10;
+    border-top: 10px solid var(--pigeon-purple-dark, #3b0975);
+    border-left: 1px solid rgba(156, 39, 176, 0.15);
+    border-right: 1px solid rgba(156, 39, 176, 0.15);
+    border-bottom: 1px solid rgba(156, 39, 176, 0.15);
+will-change: transform, box-shadow;
+     transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275), 
+                box-shadow 0.5s ease, 
+                border-color 0.5s ease;
+    will-change: transform, box-shadow;
+}
+
+.about-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 45px rgba(59, 9, 117, 0.15);
+    border-top-color: var(--pigeon-purple, #9c27b0);
+}
+
+
+.about-card-title {
+    background: linear-gradient(135deg, var(--pigeon-purple-dark, #3b0975), var(--pigeon-purple, #9c27b0));
+    color: #ffffff;
+    font-size: 1.2rem;
+    font-weight: 900;
+    padding: 0.6rem 2.2rem;
+    border-radius: 50px;
+    display: inline-block;
+    position: absolute;
+    top: -24px;
+    right: 40px;
+    z-index: 25;
+    box-shadow: 0 8px 20px rgba(156, 39, 176, 0.25);
+    
+    align-items: center;
+    gap: 10px;
+    overflow: hidden;
+    cursor: pointer;
+
+    /* 🎬 حركة الدخول الانسيابية من الجانب الأيمن */
+    animation: slideInFromRight 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    transition: all 0.4s ease;
+}
+
+
+/* ✨ تأثير اللمعة الضوئية العابرة */
+.about-card-title::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: -100%;
+    width: 60%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.4),
+        transparent
+    );
+    transform: skewX(-25deg);
+    animation: shineGlow 3.5s infinite 1s;
+}
+
+/* 🖱️ التفاعل عند تمرير الماوس */
+.about-card-title:hover {
+    transform: translateY(-4px) scale(1.04);
+    box-shadow: 0 12px 28px rgba(156, 39, 176, 0.4);
+}
+
+.about-card-title:hover .title-custom-icon {
+    transform: rotate(-20deg) scale(1.25); /* إمالة الأيقونة عند الهوفر */
+    color: #ffffff;
+}
+
+.about-card-body {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    text-align: right;
+}
+
+.about-image-wrapper {
+    width: 220px;
+    height: 270px;
+    background-color: var(--pigeon-purple-light, #f3e5f5);
+    border-radius: 24px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 12px 25px rgba(59, 9, 117, 0.08);
+    border: 2px solid rgba(156, 39, 176, 0.3);
+    flex-shrink: 0;
+
+     position: relative;
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.about-image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    
+}
+
+
+.about-text-content {
+    flex: 1;
+}
+
+.about-text-content h3 {
+    font-size: 1.6rem;
+    font-weight: 900;
+    margin-bottom: 0.8rem;
+    color: var(--text-dark, #120626);
+}
+
+.about-text-content p {
+    font-size: 1.05rem;
+    color: var(--text-muted, #534963);
+    line-height: 1.85;
+    margin-bottom: 0.8rem;
+}
+
+.about-quote {
+    font-weight: 700;
+    color: var(--pigeon-purple-dark, #3b0975);
+    margin: 1.2rem 0;
+    font-size: 1.15rem;
+    border-right: 5px solid var(--pigeon-purple, #9c27b0);
+    padding: 0.5rem 15px 0.5rem 0;
+    background: linear-gradient(270deg, rgba(243, 229, 245, 0.5), transparent);
+    border-radius: 0 8px 8px 0;
+     position: relative;
+    overflow: hidden;
+    transition: all 0.4s ease;
+}
+
+
+/* 📱 تجاوب الهيرو مع التابلت والموبايل */
+@media (max-width: 992px) {
+    .about-card {
+        padding: 3.5rem 1.8rem 2rem 1.8rem;
+    }
+
+    .about-card-title {
+       right: 50% !important;
+        transform: translateX(50%) !important;
+        animation: slideInFromTopMobile 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    
+        white-space: nowrap;
+    }
+
+    .about-card-body {
+        flex-direction: column;
+        text-align: center;
+        gap: 1.8rem;
+    }
+
+    .about-image-wrapper {
+        width: 180px;
+        height: 220px;
+    }
+
+    .about-quote {
+        border-right: none;
+        padding: 0.8rem 1rem;
+        background: var(--pigeon-purple-light, #f3e5f5);
+        border-radius: 12px;
+        text-align: center;
+    }
+
+    /* الحفاظ على التوسيط عند التفاعل في الموبايل */
+    .about-card-title:hover {
+        transform: translateX(50%) translateY(-4px) scale(1.04) !important;
+    }
+
+    @keyframes slideInFromTopMobile {
+        0% {
+            opacity: 0;
+            transform: translateX(50%) translateY(-30px);
+        }
+        100% {
+            opacity: 1;
+            transform: translateX(50%) translateY(0);
+        }
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-section {
+        padding-top: 0.5rem;
+    }
+    
+    .hero-video-wrapper {
+        border-radius: 16px;
+    }
+
+    .about-card {
+        border-radius: 24px;
+        padding: 3.2rem 1.2rem 1.5rem 1.2rem;
+    }
+}
+
+/* حركة الطفو الناعمة للرسالة الترحيبية */
+.speech-bubble-under-video {
+    animation: floatMessage 3.5s ease-in-out infinite alternate;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.speech-bubble-under-video:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 12px 30px rgba(156, 39, 176, 0.2);
+}
+
+@keyframes floatMessage {
+    0% {
+        transform: translateY(0px);
+    }
+    100% {
+        transform: translateY(-8px);
+    }
+}
+
+/* حركة تفاعلية لأيقونات السوشيال */
+.hero-social-btn {
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.hero-social-btn:hover {
+    transform: translateY(-5px) rotate(8deg) scale(1.15);
+}
+
+.hero-social-btn i {
+    transition: transform 0.3s ease;
+}
+
+.hero-social-btn:hover i {
+    transform: scale(1.1);
+}
+
+
+.about-card:hover .about-image-wrapper {
+    transform: scale(1.03) rotate(-1deg);
+    box-shadow: 0 18px 35px rgba(59, 9, 117, 0.15);
+}
+
+.about-image-wrapper img {
+    transition: transform 0.6s ease;
+}
+
+.about-card:hover .about-image-wrapper img {
+    transform: scale(1.08);
+}
+
+/* حركة عنوان حكايتي مع عهود */
+.about-card-title {
+    animation: badgePulse 4s ease-in-out infinite;
+}
+
+@keyframes badgePulse {
+    0%, 100% {
+        box-shadow: 0 8px 20px rgba(156, 39, 176, 0.25);
+    }
+    50% {
+        box-shadow: 0 12px 28px rgba(156, 39, 176, 0.45);
+    }
+}
+
+
+.about-quote:hover {
+    padding-right: 22px;
+    background: linear-gradient(270deg, rgba(243, 229, 245, 0.8), transparent);
+}
+
+/* ==========================================
+   ✨ أنيميشن وتفاعل بطاقة "حكايتي مع عهود"
+   ========================================== */
+
+
+
+
+/* تأثير لمعة ضوئية خاطفة فوق الصورة عند الوقوف عليها */
+.about-image-wrapper::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: -100%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.4),
+        transparent
+    );
+    transform: skewX(-25deg);
+    z-index: 2;
+    transition: right 0.75s ease;
+}
+
+.about-card:hover .about-image-wrapper::before {
+    right: 200%;
+}
+
+.about-card:hover .about-image-wrapper {
+    transform: scale(1.03) rotate(-1deg);
+    box-shadow: 0 15px 30px rgba(156, 39, 176, 0.2);
+}
+
+.about-image-wrapper img {
+    transition: transform 0.6s ease;
+}
+
+.about-card:hover .about-image-wrapper img {
+    transform: scale(1.08);
+}
+
+/* 3. العنوان الجانبي "كيف التقينا؟" */
+.about-text-content h3 {
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.about-card:hover .about-text-content h3 {
+    color: var(--pigeon-purple-dark, #3b0975);
+    transform: translateX(-4px);
+}
+
+
+
+.about-card:hover .about-quote {
+    border-right-width: 8px;
+    padding-right: 20px;
+    background: linear-gradient(270deg, rgba(243, 229, 245, 0.8), transparent);
+    color: var(--pigeon-purple, #9c27b0);
+}
+
+
+
+/* 🕊️ تنسيق وحركة الأيقونة داخل العنوان */
+.title-custom-icon {
+    font-size: 1.15rem;
+    color: #f3e5f5;
+    transition: transform 0.4s ease, color 0.3s ease;
+}
+
+
+/* ==========================================
+   🏆 قسم Collaborations (الشركات والتعاونات)
+   ========================================== */
+.trusted-companies-section {
+    position: relative;
+    width: 100%;
+    max-width: 1100px;
+    margin: 4rem auto;
+    padding: 2rem 1rem;
+    direction: rtl;
+    text-align: center;
+}
+
+.trusted-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.2rem;
+}
+
+/* 🎨 الأيقونة العلوية */
+.collaborations-top-icon {
+    position: relative;
+    background: radial-gradient(circle, var(--pigeon-purple-light, #f3e5f5) 0%, rgba(156, 39, 176, 0.15) 70%, transparent 100%);
+    width: 110px;
+    height: 90px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: -5px;
+    animation: gentlePulse 3s ease-in-out infinite alternate;
+}
+
+.collab-icon-img {
+    width: 60px;
+    height: auto;
+    object-fit: contain;
+}
+
+/* ✏️ العنوان */
+.trusted-header {
+    text-align: center;
+}
+
+.trusted-main-title {
+    font-size: clamp(2rem, 4vw, 2.8rem);
+    font-weight: 900;
+    color: var(--text-dark, #120626);
+    margin-bottom: 0.3rem;
+    letter-spacing: -0.5px;
+}
+
+.trusted-subtitle {
+    font-size: 1rem;
+    color: var(--text-muted, #534963);
+    font-weight: 600;
+    margin-bottom: 0.8rem;
+}
+
+.trusted-divider {
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--pigeon-purple, #9c27b0), transparent);
+    margin: 0 auto;
+    border-radius: 3px;
+}
+
+/* 📊 شبكة اللوجوهات المتجاوبة */
+.trusted-grid-layout {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 1.5rem;
+    width: 100%;
+    justify-items: center;
+    align-items: center;
+    margin-top: 1.5rem;
+}
+
+.trusted-badge-item {
+    width: 130px;
+    height: 130px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* 🏆 حاوية اللوجو الدائرية التي تملأ الصورة بالكامل */
+.company-logo-box {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    overflow: hidden; /* يقطع أطراف الصورة لتصبح دائرة كاملة */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    box-shadow: 0 8px 20px rgba(59, 9, 117, 0.08);
+    transition: box-shadow 0.4s ease;
+}
+
+.company-logo-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* 🔥 تملأ الدائرة بالكامل بدون حواف أو فراغات */
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+/* 🖱️ أنيميشن التفاعل عند الوقوف بالماوس */
+.trusted-badge-item:hover {
+    transform: translateY(-6px);
+}
+
+.trusted-badge-item:hover .company-logo-box {
+    box-shadow: 0 14px 30px rgba(156, 39, 176, 0.3);
+}
+
+.trusted-badge-item:hover .company-logo-box img {
+    transform: scale(1.08); /* تكبير ناعم للوجو داخل الدائرة */
+}
+
+@keyframes gentlePulse {
+    0% { transform: scale(1); }
+    100% { transform: scale(1.06); }
+}
+
+/* 📱 التجاوب مع مختلف الأجهزة */
+@media (max-width: 1100px) {
+    .trusted-grid-layout {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .trusted-grid-layout {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.2rem;
+    }
+    
+    .trusted-badge-item {
+        width: 105px;
+        height: 105px;
+    }
+}
+
+@media (max-width: 480px) {
+    .trusted-grid-layout {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+
+    .trusted-badge-item {
+        width: 100px;
+        height: 100px;
+    }
+}
+
+/* 🏆 حاوية كل لوجو مع تفعيل الأنيميشن للموبايل واللابتوب */
+.trusted-badge-item {
+    width: 130px;
+    height: 130px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* تفعيل سلاسة الحركة للشاشات والموبايل */
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    -webkit-tap-highlight-color: transparent; /* لمنع ظهور المربع الأزرق عند لمس اللوجو في الموبايل */
+}
+
+/* 🏆 حاوية اللوجو الدائرية */
+.company-logo-box {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    box-shadow: 0 8px 20px rgba(59, 9, 117, 0.08);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.company-logo-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+/* 🖱️ 📱 أنيميشن التفاعل (Hover & Touch Active) بيشتغل في اللاب والموبايل عند اللمس */
+.trusted-badge-item:hover,
+.trusted-badge-item:active {
+    transform: translateY(-6px) scale(1.05);
+}
+
+.trusted-badge-item:hover .company-logo-box,
+.trusted-badge-item:active .company-logo-box {
+    box-shadow: 0 14px 30px rgba(156, 39, 176, 0.35);
+}
+
+.trusted-badge-item:hover .company-logo-box img,
+.trusted-badge-item:active .company-logo-box img {
+    transform: scale(1.08);
+}
+
+/* 📱 التجاوب مع الحفاظ على الأنيميشن واضح في الموبايل */
+@media (max-width: 1100px) {
+    .trusted-grid-layout {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .trusted-grid-layout {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.2rem;
+    }
+    
+    .trusted-badge-item {
+        width: 110px;
+        height: 110px;
+    }
+}
+
+@media (max-width: 480px) {
+    .trusted-grid-layout {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.2rem;
+    }
+
+    /* تكبير بسيط لحجم الدائرة في الموبايل لتكون الحركة واضحة جداً للعين */
+    .trusted-badge-item {
+        width: 115px;
+        height: 115px;
+    }
+}
+
+/* ==========================================
+   🕊️ بانر الحمامة الزاجلة (Why Pigeon Banner)
+   ========================================== */
+.pigeon-banner-wrapper {
+    width: 100%;
+    background: linear-gradient(135deg, #f3e5f5 0%, #e1bee7 100%);
+    margin: 4rem 0;
+    padding: 1.5rem 1.5rem;
+    position: relative;
+    direction: rtl;
+    overflow: visible;
+}
+
+/* 💻 وضع اللابتوب (Desktop): الحمامة جنب الكلام بحجم كبير */
+.pigeon-banner-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row; /* تجاور أفقي في اللابتوب */
+    align-items: center;
+    justify-content: space-between;
+    gap: 3rem;
+    position: relative;
+}
+
+/* 🕊️ الحمامة الكبيرة */
+.pigeon-visual-group {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.pigeon-left-visual {
+    width: 560px; /* حجم كبير جداً وواضح للحمامة على اللابتوب */
+    height: auto;
+    object-fit: contain;
+    display: block;
+    position: relative;
+    z-index: 2;
+    filter: drop-shadow(0 15px 30px rgba(59, 9, 117, 0.16));
+    transition: transform 0.4s ease;
+}
+
+.pigeon-visual-group:hover .pigeon-left-visual {
+    transform: translateY(-6px) scale(1.02);
+}
+
+/* --- فقاعة الترحيب عند منقار الحمامة --- */
+.pigeon-pigeon-talk {
+    position: absolute;
+    top: 15px;
+    left: 20px;
+    background: #ffffff;
+    color: #3b0975;
+    padding: 0.65rem 1.5rem;
+    border-radius: 30px;
+    font-size: 1.15rem;
+    font-weight: 900;
+    box-shadow: 0 8px 25px rgba(59, 9, 117, 0.18);
+    z-index: 4;
+    white-space: nowrap;
+    animation: popAndFloat 3.2s ease-in-out infinite;
+}
+
+.pigeon-pigeon-talk::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    right: 25px;
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-top: 9px solid #ffffff;
+}
+
+/* 📝 مجموعة الكلام الجانبية (بجوار الحمامة) */
+.pigeon-text-group {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* تبدأ محاذاتها من أقصى اليمين في اللابتوب */
+    text-align: right;
+}
+
+/* فقاعة السؤال في أول سطر المحتوى */
+.pigeon-speech-bubble {
+    background: #ffffff;
+    color: #3b0975;
+    font-size: 1.25rem;
+    font-weight: 900;
+    padding: 0.75rem 2rem;
+    border-radius: 30px;
+    box-shadow: 0 6px 20px rgba(59, 9, 117, 0.12);
+    margin-bottom: 1.2rem;
+    display: inline-block;
+    border: 1.5px solid rgba(156, 39, 176, 0.25);
+}
+
+/* تسميك الخط ليكون متخين وقوي */
+.pigeon-text p {
+    font-size: clamp(1.1rem, 2vw, 1.3rem);
+    font-weight: 800; /* خط سميك وواضح */
+    color: #120626;
+    line-height: 1.85;
+    margin: 0;
+    max-width: 650px;
+}
+
+/* 🎥 حركة طفو الفقاعة */
+@keyframes popAndFloat {
+    0%, 100% { transform: translateY(0) scale(1); }
+    50% { transform: translateY(-7px) scale(1.04); }
+}
+
+/* ==========================================
+   📱📱 وضع الموبايل والتابلت (ترتيب رأسي متناسق)
+   ========================================== */
+
+@media (max-width: 1024px) {
+    .pigeon-left-visual {
+        width: 460px;
+    }
+}
+
+@media (max-width: 768px) {
+    .pigeon-banner-container {
+        flex-direction: column; /* تحويل الترتيب إلى رأسي: الحمامة فوق والمحتوى تحتها مباشرة */
+        align-items: center;
+        text-align: center;
+        gap: 1.5rem;
+    }
+
+    .pigeon-left-visual {
+        width: 350px;
+    }
+
+    .pigeon-pigeon-talk {
+        top: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+        animation: popAndFloatMobile 3.2s ease-in-out infinite;
+    }
+
+    .pigeon-text-group {
+        align-items: center; /* توسيط المحتوى تحت الحمامة في الموبايل */
+        text-align: center;
+    }
+
+    .pigeon-speech-bubble {
+        margin-bottom: 1rem;
+    }
+
+    @keyframes popAndFloatMobile {
+        0%, 100% { transform: translateX(-50%) translateY(0); }
+        50% { transform: translateX(-50%) translateY(-6px); }
+    }
+}
+
+/* ==========================================
+   🕊️ قسم خريطة التواصل مع خلفية نمط الحمامة
+   ========================================== */
+
+/* 1️⃣ إجبار جميع عناصر قسم التواصل على احتساب المسافات بشكل صحيح */
+.pigeon-contact-map-section,
+.pigeon-contact-map-section * {
+    box-sizing: border-box;
+}
+
+.pigeon-contact-map-section {
+    position: relative;
+    max-width: 1200px;
+    margin-inline: clamp(12px, 3vw, 32px);
+    width: calc(100% - (clamp(12px, 3vw, 32px) * 2));
+    margin: 4rem auto 2rem auto;
+    padding: 4rem 1.5rem;
+    background-color: #fdfbf7;
+    /* نمط خلفية هادئ متكرر بنقش أجنحة الحمامة */
+    background-image: radial-gradient(var(--pigeon-purple-light, #f3e5f5) 1.5px, transparent 1.5px);
+    background-size: 24px 24px;
+    border-radius: 35px;
+    border: 3px solid rgba(156, 39, 176, 0.15);
+    box-shadow: 0 15px 35px rgba(59, 9, 117, 0.04);
+    direction: rtl;
+}
+
+.contact-map-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
+
+/* الهيدر والعنوان */
+.contact-map-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.dove-badge-icon {
+    width: 45px;
+    height: 45px;
+    background: var(--pigeon-purple-dark, #3b0975);
+    color: #fff;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    box-shadow: 0 6px 15px rgba(59, 9, 117, 0.2);
+}
+
+.contact-map-header h2 {
+    font-size: clamp(1.8rem, 4vw, 2.3rem);
+    font-weight: 900;
+    color: var(--pigeon-purple-dark, #3b0975);
+    margin-bottom: 0.5rem;
+}
+
+.contact-map-header p {
+    font-size: 1rem;
+    color: #666;
+    font-weight: 600;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* شبكة البطاقات */
+.contact-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.2rem;
+    width: 100%;
+}
+
+/* تصميم البطاقة الواحدة */
+.contact-card {
+    background: #ffffff;
+    min-width: 0; /* منع خروج النصوص الطويلة عن حدود الكارت */
+    padding: 1.8rem 1rem;
+    border-radius: 50px;
+    border: 2px solid rgba(156, 39, 176, 0.15);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.35s ease;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.03);
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* علامة الحمامة المائية الخلفية للبطاقة (Watermark Motif) */
+.card-pigeon-watermark {
+    position: absolute;
+    left: -15px;
+    bottom: -20px;
+    font-size: 6rem;
+    color: rgba(156, 39, 176, 0.04);
+    transform: rotate(-20deg);
+    pointer-events: none;
+    transition: all 0.35s ease;
+}
+
+/* التفاعل عند تحريك الماوس واللمس على الهواتف */
+.contact-card:hover,
+.contact-card:active {
+    transform: translateY(-6px);
+    border-color: var(--pigeon-purple, #9c27b0);
+    box-shadow: 0 15px 30px rgba(156, 39, 176, 0.12);
+}
+
+.contact-card:hover .card-pigeon-watermark,
+.contact-card:active .card-pigeon-watermark {
+    color: rgba(156, 39, 176, 0.08);
+    transform: rotate(0deg) scale(1.1);
+}
+
+/* الأيقونة والتفاصيل */
+.contact-icon {
+    width: 55px;
+    height: 55px;
+    background: var(--pigeon-purple-light, #f3e5f5);
+    color: var(--pigeon-purple-dark, #3b0975);
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    flex-shrink: 0;
+    margin-left: 1.2rem;
+    transition: all 0.3s ease;
+}
+
+.contact-card:hover .contact-icon,
+.contact-card:active .contact-icon {
+    background: var(--pigeon-purple-dark, #3b0975);
+    color: #fff;
+}
+
+.contact-details {
+    flex-grow: 1;
+    min-width: 0; /* مهم جداً لمنع كسر التصميم في الموبايل */
+    overflow: hidden;
+}
+
+.contact-details span {
+    font-size: 0.8rem;
+    color: #888;
+    font-weight: 600;
+    display: block;
+    margin-bottom: 0.2rem;
+}
+
+.contact-details h3 {
+    font-size: 1.15rem;
+    font-weight: 800;
+    color: #222;
+    margin: 0 0 0.2rem 0;
+}
+
+.contact-details p {
+    font-size: 0.95rem;
+    color: var(--pigeon-purple, #9c27b0);
+    font-weight: 700;
+    margin: 0;
+    word-break: break-word; /* قطع الإيميل أو الرقم تلقائياً إذا كان طويلاً */
+    white-space: normal;
+}
+
+.contact-action-arrow {
+    color: var(--pigeon-purple, #9c27b0);
+    font-size: 1.1rem;
+    transition: transform 0.3s ease;
+    flex-shrink: 0;
+}
+
+.contact-card:hover .contact-action-arrow,
+.contact-card:active .contact-action-arrow {
+    transform: translateX(-5px);
+}
+
+/* بطاقة وسائل التواصل الاجتماعية */
+.socials-card {
+    grid-column: span 1;
+}
+
+.social-pigeon-links {
+    display: flex;
+    gap: 0.8rem;
+    margin-top: 0.6rem;
+    flex-wrap: wrap;
+}
+
+.social-pigeon-links a {
+    width: 40px;
+    height: 40px;
+    background: #f8f0fc;
+    color: var(--pigeon-purple-dark, #3b0975);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(156, 39, 176, 0.2);
+}
+
+.social-pigeon-links a:hover,
+.social-pigeon-links a:active {
+    background: var(--pigeon-purple-dark, #3b0975);
+    color: #fff;
+    transform: translateY(-3px);
+}
+
+/* الحمامة المزخرفة أسفل الخريطة */
+.contact-footer-pigeon {
+    text-align: center;
+    margin-top: 2.5rem;
+}
+
+.contact-footer-pigeon img {
+    width: 45px;
+    height: auto;
+    opacity: 0.85;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
+}
+
+/* 📱 6️⃣ ضبط التجاوب التام للشاشات الصغيرة والموبايل (Responsive Breakpoints) */
+@media (max-width: 768px) {
+    .pigeon-contact-map-section {
+        /* ترك مسافة 24px من كل جانب (إجمالي 48px من عرض الشاشة) */
+        width: calc(100% - 48px) !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        margin-top: 2.5rem !important;
+        margin-bottom: 2rem !important;
+        
+        /* تقليل الحشوة الداخلية للحاوية لتوفير مساحة متناسقة للكروت من الداخل */
+        padding: 2rem 0.8rem !important; 
+    }
+    .contact-cards-grid {
+        grid-template-columns: 1fr; /* جعل الكروت كرت واحد في الصف للموبايل */
+        gap: 1rem;
+    }
+
+    .contact-card {
+        padding: 0.85rem 0.9rem;
+    }
+
+    .contact-icon {
+        width: 42px;
+        height: 42px;
+        font-size: 1.15rem;
+        margin-left: 0.7rem;
+    }
+
+    .social-pigeon-links a {
+        width: 34px;
+        height: 34px;
+        font-size: 0.88rem;
+    }
+}
+
+@media (max-width: 400px) {
+    /* للشاشات الصغيرة جداً */
+    .contact-card {
+        padding: 0.75rem 0.7rem;
+    }
+
+    .contact-details h3 {
+        font-size: 0.95rem;
+    }
+
+    .contact-details p {
+        font-size: 0.8rem;
+    }
+}
+
+
+
+
+   
+   </style>
+</head>
+<body>
+    
+
+    <!-- 🧭 هيدر الصفحة والنافبار -->
+<header class="nav-container">
+    <nav class="dove-navbar" aria-label="التنقل الرئيسي">
+        
+        <!-- اللوجو -->
+        <a href="/" class="nav-logo" title="الرئيسية - عهود خالد">
+            <span>عهود خالد</span>
+        </a>
+
+        <!-- زر القائمة للهواتف والتابلت -->
+        <button class="menu-toggle" id="mobileBtn" aria-label="فتح قائمة التنقل" aria-expanded="false" aria-controls="navMenu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <!-- قائمة الروابط -->
+        <ul class="nav-links" id="navMenu">
+            <li><a href="#" aria-current="page">الرئيسية</a></li>
+            <li><a href="#about">حكايتي مع عهود</a></li>
+            <li><a href="#new-services">خدماتي الحالية</a></li>
+            <li><a href="#services">خريطة الطيران</a></li>
+            <li><a href="#contact-map">محطة الهبوط</a></li>
+            <li><a href="dataform.html" class="nav-cta-btn"> احجز الاستشارة الان</a></li>
+        </ul>
+
+    </nav>
+</header>
+
+<!-- ✨ قسم الهيرو المطور -->
+<section class="hero-section" id="hero">
+    <h1 class="hero-name animate-right">OHOUD AHMED</h1>
+    <div class="hero-title-badge animate-left">CONTENT MARKETING INSTRUCTOR</div>
+    <p class="hero-tagline animate-up">From Wings, To Lasting Wins</p>
+
+    <!-- 🎬 كارت الميديا المتكامل (فيديو + رسالة ترحيب + سوشيال) -->
+    <div class="hero-media-card animate-up">
+        <!-- هالة ضوئية خلفية -->
+        <div class="ambient-glow" aria-hidden="true"></div>
+
+        <!-- 1️⃣ الفيديو (مع إضافة muted ليعمل التكتم والتشغيل التلقائي) -->
+        <div class="hero-video-wrapper">
+            <video id="heroVideo" autoplay loop controls  playsinline poster="imgs/hero-video-thumb.jpg">
+                <source src="video/video 1.mp4" type="video/mp4">
+                متصفحك لا يدعم تشغيل الفيديو.
+            </video>
+        </div>
+
+        <!-- 2️⃣ الرسالة الترحيبية أسفل الفيديو -->
+        <div class="speech-bubble-under-video">
+            <span class="pigeon-icon" aria-hidden="true">🕊️</span>
+            <p>"مرحباً! أنا الحمامة الزاجلة هنا.. هبطتُ لأقودكم إلى عهود!" 👋</p>
+        </div>
+
+        <!-- 3️⃣ شريط تواصل معي (تم تعديل الكلاس لمنع تضارب الفوتر) -->
+        <div class="hero-social-bar">
+            <span class="social-label">تواصل معي</span>
+            <div class="social-icons">
+                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="فيسبوك" class="hero-social-btn fb">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="https://wa.me/201044892086" target="_blank" rel="noopener noreferrer" aria-label="واتساب" class="hero-social-btn wa">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="لينكد إن" class="hero-social-btn li">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- 💳 بطاقة القصة -->
+    <article class="about-card animate-up" id="about">
+<div class="about-card-title">
+    حكايتي مع عهود 
+    <i class="fa-solid fa-feather-pointed title-custom-icon"></i>
+</div>
+        <div class="about-card-body">
+            <div class="about-image-wrapper">
+                <img src="imgs/838cdbed-9c6c-465d-891d-f16bf4e576a9.jpeg" alt="عهود جمعة - خبيرة التسويق بالمحتوى" loading="lazy">
+            </div>
+            <div class="about-text-content">
+                <h3>كيف التقينا؟</h3>
+                <p>في رحلاتي الطويلة بين استراتيجيات التسويق، كنت أبحث دائماً عن شخص يفهم لغة الرسائل الرصينة والهدوء المستدام. هناك في الأفق، وجدت <strong>عهود خالد</strong>.</p>
+                <blockquote class="about-quote">"رأيتها تصنع محتوى لا يموت، محتوى يحلق كأجنحتي تماماً."</blockquote>
+                <p>منذ أكثر من 10 سنوات وهي تبني جسوراً من الكلمات القوية للشركات والبراندات في السوق الخليجي. أنا أمنحها الرؤية العلوية الواسعة، وهي تصيغها بذكاء وشياكة مطلقة.</p>
+            </div>
+        </div>
+    </article>
+</section>
+
+<!-- 🕊️ بانر السبب: "ليه اخترت الحمامة الزاجلة؟" -->
+<section class="pigeon-banner-wrapper" id="why-pigeon">
+    <div class="pigeon-banner-container">
+
+        <!-- 1️⃣ الحمامة العريضة والفقاعة المتصلة بها -->
+        <div class="pigeon-visual-group">
+            <div class="pigeon-pigeon-talk">
+                أهلاً بك 👋
+            </div>
+            <img src="imgs/Sticker-2.png" alt="الحمامة الزاجلة" class="pigeon-left-visual">
+        </div>
+
+        <!-- 2️⃣ محتوى الكلام والمفهوم (بجوار الحمامة في اللابتوب، وتحتها في الموبايل) -->
+        <div class="pigeon-text-group">
+            <!-- فقاعة السؤال -->
+            <div class="pigeon-speech-bubble">
+                ليه إخترت الحمامة الزاجلة؟
+            </div>
+
+            <!-- النص الأساسي بخط سميك وواضح -->
+            <div class="pigeon-text">
+                <p>لأنها بتعرف توصل صوتها ورسالتها من غير ما تتكلف، وصوتها مميز حتى لو بسيط. زي المحتوى الصح.. مش محتاج يصرخ عشان الناس تسمعه وتثق فيه.</p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- 🏆 قسم الشركات والتعاونات (Collaborations) -->
+<section class="trusted-companies-section" id="collaborations">
+    <div class="trusted-container">
+
+        <!-- 1️⃣ الأيقونة العلوية والعنوان -->
+        <div class="collaborations-top-icon">
+            <img src="imgs/e1.png" alt="Collaborations Icon" class="collab-icon-img" onerror="this.src='https://cdn-icons-png.flaticon.com/512/3069/3069172.png'">
+        </div>
+
+        <div class="trusted-header">
+            <h2 class="trusted-main-title">Collaborations</h2>
+            <p class="trusted-subtitle">شركات وعلامات تجارية حلّقت معها رسائلنا</p>
+            <div class="trusted-divider"></div>
+        </div>
+
+        <!-- 2️⃣ شبكة اللوجوهات المتجاوبة -->
+        <div class="trusted-grid-layout">
+            
+            <div class="trusted-badge-item">
+                <div class="company-logo-box">
+                    <img src="imgs/loges/1.png" alt="Knoz Academy" loading="lazy">
+                </div>
+            </div>
+
+            <div class="trusted-badge-item">
+                <div class="company-logo-box">
+                    <img src="imgs/loges/2.png" alt="شريك 2" loading="lazy" onerror="this.src='https://api.dicebear.com/8.x/identicon/svg?seed=2'">
+                </div>
+            </div>
+
+            <div class="trusted-badge-item">
+                <div class="company-logo-box">
+                    <img src="imgs/loges/3.png" alt="شريك 3" loading="lazy" onerror="this.src='https://api.dicebear.com/8.x/identicon/svg?seed=3'">
+                </div>
+            </div>
+
+            <div class="trusted-badge-item">
+                <div class="company-logo-box">
+                    <img src="imgs/loges/4.png" alt="شريك 4" loading="lazy" onerror="this.src='https://api.dicebear.com/8.x/identicon/svg?seed=4'">
+                </div>
+            </div>
+
+            <div class="trusted-badge-item">
+                <div class="company-logo-box">
+                    <img src="imgs/loges/5.png" alt="شريك 5" loading="lazy" onerror="this.src='https://api.dicebear.com/8.x/identicon/svg?seed=5'">
+                </div>
+            </div>
+
+            <div class="trusted-badge-item">
+                <div class="company-logo-box">
+                    <img src="imgs/loges/6.png" alt="شريك 6" loading="lazy" onerror="this.src='https://api.dicebear.com/8.x/identicon/svg?seed=6'">
+                </div>
+            </div>
+            <div class="trusted-badge-item">
+                <div class="company-logo-box">
+                    <img src="imgs/loges/7.png" alt="Knoz Academy" loading="lazy">
+                </div>
+            </div>
+
+            <div class="trusted-badge-item">
+                <div class="company-logo-box">
+                    <img src="imgs/loges/8.png" alt="شريك 2" loading="lazy" onerror="this.src='https://api.dicebear.com/8.x/identicon/svg?seed=2'">
+                </div>
+            </div>
+
+            <div class="trusted-badge-item">
+                <div class="company-logo-box">
+                    <img src="imgs/loges/9.png" alt="شريك 3" loading="lazy" onerror="this.src='https://api.dicebear.com/8.x/identicon/svg?seed=3'">
+                </div>
+            </div>
+
+            <div class="trusted-badge-item">
+                <div class="company-logo-box">
+                    <img src="imgs/loges/10.png" alt="شريك 4" loading="lazy" onerror="this.src='https://api.dicebear.com/8.x/identicon/svg?seed=4'">
+                </div>
+            </div>
+
+            <div class="trusted-badge-item">
+                <div class="company-logo-box">
+                    <img src="imgs/loges/11.png" alt="شريك 5" loading="lazy" onerror="this.src='https://api.dicebear.com/8.x/identicon/svg?seed=5'">
+                </div>
+            </div>
+
+            <div class="trusted-badge-item">
+                <div class="company-logo-box">
+                    <img src="imgs/loges/12.png" alt="شريك 6" loading="lazy" onerror="this.src='https://api.dicebear.com/8.x/identicon/svg?seed=6'">
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+   
+    
+    
+    <!-- 🕊️ قسم خريطة التواصل بنمط الحمامة -->
+<section class="pigeon-contact-map-section" id="contact-map">
+    <div class="contact-map-container">
+
+        <!-- عنوان القسم -->
+        <div class="contact-map-header animate-up">
+            <div class="dove-badge-icon">
+                <i class="fa-solid fa-feather-pointed"></i>
+            </div>
+            <h2>خريطة التواصل</h2>
+            <p>تواصل معنا عبر أزقة الساحة، وحمام الرسائل جاهز لتلقي استفساراتك دائماً</p>
+        </div>
+
+        <!-- شبكة وسائل التواصل (الخريطة) -->
+        <div class="contact-cards-grid">
+
+            <!-- بطاقة الواتساب -->
+            <a href="https://wa.me/201044892086" target="_blank" rel="noopener noreferrer" class="contact-card whatsapp-card">
+                <div class="card-pigeon-watermark"><i class="fa-solid fa-dove"></i></div>
+                <div class="contact-icon"><i class="fa-brands fa-whatsapp"></i></div>
+                <div class="contact-details">
+                    <span>مراسلة سريعة</span>
+                    <h3>واتساب (WhatsApp)</h3>
+                    <p dir="ltr">+20 1044892086</p>
+                </div>
+                <div class="contact-action-arrow"><i class="fa-solid fa-arrow-left"></i></div>
+            </a>
+
+            <!-- بطاقة الهاتف -->
+            <a href="tel:+201044892086" class="contact-card phone-card">
+                <div class="card-pigeon-watermark"><i class="fa-solid fa-dove"></i></div>
+                <div class="contact-icon"><i class="fa-solid fa-phone"></i></div>
+                <div class="contact-details">
+                    <span>اتصال مباشر</span>
+                    <h3>رقم الهاتف</h3>
+                    <p dir="ltr">+20 1044892086</p>
+                </div>
+                <div class="contact-action-arrow"><i class="fa-solid fa-arrow-left"></i></div>
+            </a>
+
+            <!-- بطاقة البريد الإلكتروني -->
+            <a href="mailto:ahoodelbondk@gmail.com" class="contact-card email-card">
+                <div class="card-pigeon-watermark"><i class="fa-solid fa-dove"></i></div>
+                <div class="contact-icon"><i class="fa-regular fa-envelope"></i></div>
+                <div class="contact-details">
+                    <span>البريد الإلكتروني</span>
+                    <h3>إرسال رسالة</h3>
+                    <p>ahoodelbondk@gmail.com</p>
+                </div>
+                <div class="contact-action-arrow"><i class="fa-solid fa-arrow-left"></i></div>
+            </a>
+
+            <!-- بطاقة شبكات التواصل الاجتماعي -->
+            <div class="contact-card socials-card">
+                <div class="card-pigeon-watermark"><i class="fa-solid fa-dove"></i></div>
+                <div class="contact-details w-100">
+                    <span>محطات التواصل</span>
+                    <h3>وسائل التواصل الاجتماعي</h3>
+                   <div class="social-pigeon-links">
+    <a href="https://wa.me/201044892086" target="_blank" title="واتساب"><i class="fa-brands fa-whatsapp"></i></a>
+    <a href="#" title="انستجرام"><i class="fa-brands fa-instagram"></i></a>
+    <a href="#" title="لينكد إن"><i class="fa-brands fa-linkedin-in"></i></a>
+    <a href="#" title="فيسبوك"><i class="fa-brands fa-facebook-f"></i></a>
+</div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- حمامة الزينة السفلية المرافقة للمسار -->
+        <div class="contact-footer-pigeon">
+            <img src="imgs/Sticker-6.png" alt="حمامة التواصل"
+                onerror="this.src='https://images.unsplash.com/photo-1598880940371-c756e0154fb8?w=100&auto=format&fit=crop&q=80'">
+        </div>
+
+    </div>
+</section>
+
+
+<!-- 🏛️ الفوتر الفاخر -->
+<footer class="master-footer" id="main-footer">
+    <div class="footer-pigeon-bg"></div>
+
+    <div class="footer-top-container">
+
+        <!-- العمود الأول: التعريف والبراند -->
+        <div class="footer-col brand-col">
+            <div class="footer-brand-header">
+                <div class="brand-pigeon-icon">
+                    <i class="fa-solid fa-dove"></i>
+                </div>
+                <h3>ساحة الحرم التسويقي</h3>
+            </div>
+            <p class="brand-description">
+                أهلاً بك في ساحتي التسويقية! أنا صانعة محتوى ومستشارة تسويقية أؤمن بأن كل علامة تجارية لها رحلتها
+                الخاصة. هنا نحول أفكارك إلى استراتيجيات متكاملة ومحتوى مؤثر يترك أثراً حقيقياً، لتتفرع خدماتك
+                كالدروب والحارات نحو نجاح براندك وتصدره في السوق.
+            </p>
+            <div class="footer-social-links">
+                <a href="#" class="footer-social-btn" title="فيسبوك"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#" class="footer-social-btn" title="انستجرام"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#" class="footer-social-btn" title="لينكد إن"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="#" class="footer-social-btn" title="منصة X"><i class="fa-brands fa-x-twitter"></i></a>
+            </div>
+        </div>
+
+        <!-- العمود الثاني: روابط سريعة -->
+        <div class="footer-col links-col">
+            <h4 class="footer-title">روابط الساحة</h4>
+            <ul class="footer-menu">
+                <li><a href="#about"><i class="fa-solid fa-chevron-left"></i> عن الساحة</a></li>
+                <li><a href="#haram-services"><i class="fa-solid fa-chevron-left"></i> حارات الخدمات</a></li>
+                <li><a href="#contact-map"><i class="fa-solid fa-chevron-left"></i> خريطة التواصل</a></li>
+                <li><a href="#portfolio"><i class="fa-solid fa-chevron-left"></i> معرض الأعمال</a></li>
+            </ul>
+        </div>
+
+        <!-- العمود الثالث: مبادئ الساحة -->
+        <div class="footer-col vision-col">
+            <h4 class="footer-title">مبادئ الساحة</h4>
+            <ul class="footer-principles-list">
+                <li>
+                    <i class="fa-solid fa-bullseye"></i>
+                    <div>
+                        <strong>استراتيجيات مبنية على بيانات</strong>
+                        <span>لا نعتمد على العشوائية، بل نخلق خططاً مدروسة.</span>
+                    </div>
+                </li>
+                <li>
+                    <i class="fa-solid fa-gem"></i>
+                    <div>
+                        <strong>جودة وتفرد المحتوى</strong>
+                        <span>صياغة رسائل تشبه براندك وتصل لقلب جمهورك.</span>
+                    </div>
+                </li>
+                <li>
+                    <i class="fa-solid fa-chart-line"></i>
+                    <div>
+                        <strong>أثر مستدام ونمو حقيقي</strong>
+                        <span>نتائج تضمن استمرارية نجاحك وتوسعك.</span>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+
+    <!-- خط فاصل -->
+    <div class="footer-divider"></div>
+
+    <!-- الجزء السفلي: الحقوق والتطوير -->
+    <div class="footer-bottom-container">
+        <div class="copyright-text">
+            <p>© 2026 جميع الحقوق محفوظة لـ <strong>ساحة الحرم التسويقي</strong></p>
+        </div>
+
+        <div class="developer-credit">
+            <span>تم التطوير بكل شغف بواسطة:</span>
+            <a href="https://wa.me/201000000000?text=مرحباً%20رضوى،%20شاهدت%20تصميم%20موقع%20ساحة%20الحرم%20التسويقي%20وأود%20التواصل%20معك"
+                target="_blank" class="dev-whatsapp-btn" rel="noopener noreferrer">
+                <span class="dev-name">رضوى محمد</span>
+                <i class="fa-brands fa-whatsapp"></i>
+            </a>
+        </div>
+    </div>
+</footer>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+    const mobileBtn = document.getElementById('mobileBtn');
+    const navMenu = document.getElementById('navMenu');
+
+    if (mobileBtn && navMenu) {
+        // 1. التبديل عند فتح / غلق النافبار
+        mobileBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const isActive = navMenu.classList.toggle('active');
+            mobileBtn.classList.toggle('active', isActive);
+            mobileBtn.setAttribute('aria-expanded', isActive);
+        });
+
+        // 2. إغلاق النافبار تلقائياً عند الضغط على أي رابط
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                mobileBtn.classList.remove('active');
+                mobileBtn.setAttribute('aria-expanded', 'false');
+            });
+        });
+
+        // 3. إغلاق النافبار إذا تم الضغط في أي مكان خارجي
+        document.addEventListener('click', (e) => {
+            if (!navMenu.contains(e.target) && !mobileBtn.contains(e.target)) {
+                navMenu.classList.remove('active');
+                mobileBtn.classList.remove('active');
+                mobileBtn.setAttribute('aria-expanded', 'false');
+            }
+        });
+    }
+});
+
+
+</script>
+
+</body>
+</html>

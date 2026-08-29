@@ -1,0 +1,2957 @@
+:root {
+    --bg-creamy: #fbf9f6;
+    --pigeon-purple-light: #f3e5f5;
+    --pigeon-purple: #9c27b0;
+    --pigeon-purple-dark: #3b0975;
+    --gold-accent: #c53acc;
+    --text-dark: #120626;
+    --text-muted: #534963;
+    --banner-bg: #f5ebff;
+    --badge-bg: #eddfff;
+    --card-shadow: 0 12px 30px rgba(59, 9, 117, 0.07);
+    --card-hover-shadow: 0 18px 40px rgba(156, 39, 176, 0.2);
+
+    /* تدريجات ألوان ريش حمامة الحرم الاحترافية */
+    --feather-grad-1: linear-gradient(135deg, #f7f5fa 0%, #ece6f4 50%, #e2f0e4 100%);
+    --feather-grad-2: linear-gradient(135deg, #f0e6f6 0%, #d8b4e2 50%, #c8e6c9 100%);
+    --feather-grad-3: linear-gradient(135deg, #e4cfea 0%, #ba68c8 50%, #a5d6a7 100%);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Tajawal', sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #fcf8f5;
+    color: var(--text-dark);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding-top: 140px;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* خلفية الريش لتبان أوضح وبألوانها مع تقليل العازل الوردي */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    /* 🌟 زوّدنا الظهور واستخدمنا الفلتر ده عشان يظهر تفاصيل ألوان الريش الأصلية بوضوح */
+    filter: saturate(1.1) contrast(1.05) brightness(0.98);
+    opacity: 0.45;
+    /* رفعنا الشفافية عشان الريش يبان قوي وميختفيش تحت الوردي */
+
+    z-index: -1;
+    pointer-events: none;
+}
+
+
+/* ==========================================
+   🎬 تأثيرات الحركة والأنيميشن المتقدمة
+   ========================================== */
+/* @keyframes slideFromRight {
+    0% {
+        opacity: 0;
+        transform: translateX(80px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideFromLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-80px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(60px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes glowPulse {
+    0% {
+        box-shadow: 0 0 5px rgba(156, 39, 176, 0.2);
+    }
+
+    50% {
+        box-shadow: 0 0 25px rgba(156, 39, 176, 0.5);
+    }
+
+    100% {
+        box-shadow: 0 0 5px rgba(156, 39, 176, 0.2);
+    }
+}
+
+.animate-right {
+    animation: slideFromRight 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-left {
+    animation: slideFromLeft 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-up {
+    animation: fadeInUp 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.card-delay-1 {
+    animation: fadeInUp 1s cubic-bezier(0.16, 1, 0.3, 1) 0.2s both;
+}
+
+.card-delay-2 {
+    animation: fadeInUp 1s cubic-bezier(0.16, 1, 0.3, 1) 0.3s both;
+}
+
+.card-delay-3 {
+    animation: fadeInUp 1s cubic-bezier(0.16, 1, 0.3, 1) 0.4s both;
+}
+
+.card-delay-4 {
+    animation: fadeInUp 1s cubic-bezier(0.16, 1, 0.3, 1) 0.5s both;
+}
+
+.card-delay-5 {
+    animation: fadeInUp 1s cubic-bezier(0.16, 1, 0.3, 1) 0.6s both;
+}
+
+.card-delay-6 {
+    animation: fadeInUp 1s cubic-bezier(0.16, 1, 0.3, 1) 0.7s both;
+} */
+
+/* --- 🧭 النافبار الاحترافي --- */
+.nav-container {
+    position: fixed;
+    top: 20px;
+    left: 0;
+    width: 100%;
+    padding: 0 1.5rem;
+    z-index: 10000;
+}
+
+.dove-navbar {
+    max-width: 1400px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.7rem 2rem;
+    box-shadow: 0 12px 40px rgba(59, 9, 117, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+.nav-logo {
+    font-size: 1.4rem;
+    font-weight: 900;
+    color: var(--pigeon-purple-dark);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 0.4rem 1.2rem;
+    background: linear-gradient(135deg, #ffffff, var(--pigeon-purple-light));
+    border-radius: 30px;
+    border: 1px solid rgba(156, 39, 176, 0.2);
+    animation: glowPulse 3s infinite;
+}
+
+.nav-logo span {
+    background: linear-gradient(45deg, var(--pigeon-purple-dark), var(--pigeon-purple));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2.2rem;
+    list-style: none;
+    align-items: center;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-dark);
+    font-weight: 700;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    position: relative;
+    padding: 0.5rem 0;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background-color: var(--pigeon-purple);
+    transition: width 0.3s ease;
+    border-radius: 2px;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+.nav-links a:hover {
+    color: var(--pigeon-purple);
+}
+
+.nav-cta-btn {
+    background: linear-gradient(135deg, var(--pigeon-purple-dark), var(--pigeon-purple));
+    color: white !important;
+    padding: 0.75rem 2rem;
+    border-radius: 30px;
+    font-weight: 700;
+    box-shadow: 0 5px 20px rgba(59, 9, 117, 0.3);
+    transition: all 0.3s ease;
+}
+
+.nav-cta-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(59, 9, 117, 0.4);
+}
+
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.menu-toggle span {
+    width: 25px;
+    height: 3px;
+    background-color: var(--text-dark);
+    border-radius: 2px;
+}
+
+/* --- ✨ قسم الهيرو وبطاقة التعريف --- */
+.hero-section {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 2rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.hero-name {
+    font-size: 4.5rem;
+    font-weight: 900;
+    letter-spacing: 1px;
+    margin-bottom: 0.8rem;
+    background: linear-gradient(45deg, var(--text-dark), var(--pigeon-purple-dark), var(--pigeon-purple));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero-title-badge {
+    background: linear-gradient(135deg, var(--pigeon-purple-dark), #120626);
+    color: #ffffff;
+    font-size: 1.1rem;
+    font-weight: 700;
+    padding: 0.6rem 2.2rem;
+    display: inline-block;
+    margin-bottom: 1.5rem;
+    border-radius: 50px;
+    border: 2px solid var(--gold-accent);
+    box-shadow: 0 6px 20px rgba(59, 9, 117, 0.15);
+}
+
+.hero-tagline {
+    font-size: 1.5rem;
+    color: var(--pigeon-purple);
+    font-weight: 700;
+    margin-bottom: 2rem;
+}
+
+.hero-social-links {
+    display: flex;
+    gap: 1.8rem;
+    margin-bottom: 2.5rem;
+}
+
+.hero-social-links a {
+    color: var(--pigeon-purple-dark);
+    font-size: 1.8rem;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    text-decoration: none;
+}
+
+.hero-social-links a:hover {
+    color: var(--pigeon-purple);
+    transform: scale(1.25);
+}
+
+/* 📦 الحاوية التفاعلية */
+.hero-interactive-container {
+    position: relative;
+    width: 100%;
+    margin-top: 20px;
+    padding-bottom: 2rem;
+}
+
+/* 🕊️ الحمامة */
+.Izwocg {
+    position: absolute;
+    top: 150px;
+    right: -20px;
+    z-index: 100;
+    width: 380px;
+    height: auto;
+    pointer-events: none;
+
+    /* 🌟 يجعل الخلفية البيضاء شفافة تماماً وتنزل فوق خلفية الريش بشكل دمج طبيعي */
+    mix-blend-mode: multiply;
+    filter: contrast(110%) brightness(102%);
+
+    opacity: 1;
+    transform-origin: bottom left;
+    animation: flyIn 1.4s cubic-bezier(0.25, 1, 0.5, 1) forwards,
+        pigeonLive 4s ease-in-out infinite 1.4s;
+}
+
+.Izwocg img._7_i_XA,
+._7_i_XA {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+    mix-blend-mode: multiply;
+    /* للتأكيد على إزالة الأبيض من الصورة نفسها */
+}
+
+/* 💬 ضبط انحناءة الفقاعة وتجهيزها للذيل المشدود */
+.speech-bubble {
+    background-color: #0b021a;
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 25px;
+    /* انحناء متناسق للفقاعة */
+    border-top-right-radius: 4px;
+    /* تنعيم الزاوية المواجهة للحمامة لتلتحم مع السهم المشدود */
+    font-size: 1.15rem;
+    font-weight: 700;
+    box-shadow: 0 15px 35px rgba(11, 2, 26, 0.25);
+    position: absolute;
+
+    /* موقع الفقاعة أمام وجه الحمامة */
+    top: 10px;
+    right: 300px;
+
+    z-index: 99;
+    white-space: nowrap;
+
+    /* 🌟 التعديل هنا: تبدأ مختفية وتستغرق 0.5 ثانية للظهور */
+    opacity: 0;
+    transform: scale(0.7) translateY(10px);
+
+    /* ⏱️ وقت التأخير: 1.5s (تنتظر 1.5 ثانية كاملة حتى تستقر الحمامة ثم تظهر الفقاعة) */
+    animation: bubblePop 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) forwards 1.3s;
+}
+
+/* 🗯️ ذيل مسج الواتساب المشدود في وش الحمامة تماماً */
+.speech-bubble::after {
+    content: '';
+    position: absolute;
+
+    /* تثبيته في الأعلى على اليمين في وش الحمامة بالظبط */
+    top: 0;
+    right: -12px;
+
+    width: 20px;
+    height: 20px;
+    background-color: #0b021a;
+
+    /* 🌟 رسم السحبة المقعرة (WhatsApp Tail) باستخدام Clip-Path */
+    clip-path: polygon(0 0, 100% 0, 0 100%);
+    border-top-right-radius: 8px;
+    /* انحناءة بسيطة لرأس السهم المشدود */
+}
+
+/* Keyframes */
+@keyframes flyIn {
+    0% {
+        transform: translate(300px, -80px) rotate(8deg) scale(0.9);
+        opacity: 0;
+    }
+
+    70% {
+        transform: translate(-15px, 10px) rotate(-2deg);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translate(0, 0) rotate(0deg) scale(1);
+        opacity: 0.95;
+    }
+}
+
+@keyframes pigeonLive {
+
+    0%,
+    100% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    25% {
+        transform: translateY(-6px) rotate(0.8deg);
+    }
+
+    35% {
+        transform: translateY(-4px) rotate(-0.5deg);
+    }
+
+    40% {
+        transform: translateY(-6px) rotate(0.8deg);
+    }
+
+    70% {
+        transform: translateY(4px) rotate(-0.6deg);
+    }
+}
+
+@keyframes bubblePop {
+    100% {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+/* 💳 الكارد التعريفي */
+.about-card {
+    margin-top: 160px;
+    background: #ffffff;
+    border-radius: 40px;
+    width: 100%;
+    padding: 5rem 4rem 4rem 4rem;
+    box-shadow: var(--card-shadow);
+    position: relative;
+    z-index: 10;
+    border-top: 12px solid var(--pigeon-purple-dark);
+}
+
+.about-card-title {
+    background: linear-gradient(135deg, var(--pigeon-purple-dark), var(--pigeon-purple));
+    color: #ffffff;
+    font-size: 1.3rem;
+    font-weight: 900;
+    padding: 0.7rem 3rem;
+    border-radius: 50px;
+    display: inline-block;
+    position: absolute;
+    top: -28px;
+    right: 40px;
+    z-index: 25;
+    box-shadow: 0 8px 25px rgba(156, 39, 176, 0.25);
+}
+
+.about-card-body {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+    text-align: right;
+}
+
+.about-image-wrapper {
+    width: 220px;
+    height: 270px;
+    background-color: var(--pigeon-purple-light);
+    border-radius: 30px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    box-shadow: 0 15px 35px rgba(59, 9, 117, 0.06);
+    border: 2px solid rgba(156, 39, 176, 0.3);
+    flex-shrink: 0;
+}
+
+.about-image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.about-text-content h4 {
+    font-size: 1.8rem;
+    font-weight: 900;
+    margin-bottom: 1rem;
+    color: var(--text-dark);
+}
+
+.about-text-content p {
+    font-size: 1.15rem;
+    color: var(--text-muted);
+    line-height: 1.9;
+    margin-bottom: 1rem;
+}
+
+.about-quote {
+    font-weight: 700;
+    color: var(--pigeon-purple-dark);
+    margin: 1.5rem 0;
+    font-size: 1.25rem;
+    border-right: 6px solid var(--pigeon-purple);
+    padding-right: 20px;
+    background: linear-gradient(90deg, rgba(243, 229, 245, 0.4), transparent);
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    border-radius: 0 8px 8px 0;
+}
+
+/* 🟨 البنر المائل والتفاعلي */
+.pigeon-banner-wrapper {
+    position: relative;
+    background: linear-gradient(135deg, #f5ebff 0%, #ecd6ff 50%, #e2c2ff 100%);
+    padding: 4rem 2rem;
+    margin-top: 9rem;
+    min-height: 250px;
+}
+
+.pigeon-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.pigeon-visual {
+    position: absolute;
+    left: 20px;
+    bottom: -20px;
+    width: 280px;
+    z-index: 2;
+    filter: drop-shadow(0px 10px 10px rgba(0, 0, 0, 0.05));
+}
+
+.pigeon-left-visual {
+    position: absolute;
+    right: 20px;
+    top: -150px;
+    width: 700px;
+    height: auto;
+    z-index: 2;
+    display: block;
+    object-fit: contain;
+
+
+}
+
+
+.pigeon-left-visual img {
+    width: 100%;
+    height: auto;
+    display: block;
+
+    /* 1. إزالة الخلفية المربعة باستخدام وضع الدمج "Multiply" */
+    mix-blend-mode: multiply;
+
+    /* 2. تحسين معالجة حواف الصورة وجعلها تتناسب تماماً */
+    object-fit: contain;
+
+    /* 3. حركة الطفو الخاصة بك */
+    animation: float 3s ease-in-out infinite;
+}
+
+.pigeon-speech-bubble {
+    position: absolute;
+    left: 220px;
+    top: -20px;
+    background: white;
+    padding: 0.8rem 1.5rem;
+    border-radius: 50px;
+    font-weight: 900;
+    color: #3b0975;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.pigeon-text {
+    width: 60%;
+    text-align: right;
+}
+
+.pigeon-text p {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #120626;
+    line-height: 1.8;
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* --- فقاعة الترحيب عند منقار الحمامة --- */
+.pigeon-pigeon-talk {
+    position: absolute;
+    right: 170px;
+    /* ضبط المسافة لتكون قريبة جداً تحت المنقار */
+    top: -40px;
+    /* مكانها عند رأس/منقار الحمامة */
+    background: #ffffff;
+    color: #3b0975;
+    padding: 0.5rem 1.2rem;
+    border-radius: 20px;
+    font-size: 1.05rem;
+    font-weight: 800;
+    box-shadow: 0 6px 18px rgba(59, 9, 117, 0.18);
+    z-index: 4;
+    white-space: nowrap;
+
+    /* تفعيل حركة الظهور والطفو الخفيف */
+    animation: popAndFloat 3s ease-in-out infinite;
+}
+
+.pigeon-pigeon-talk::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: -8px;
+    /* السهم يتجه ناحية اليمين باتجاه المنقار */
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-top: 6px solid transparent;
+    border-bottom: 6px solid transparent;
+    border-left: 8px solid #ffffff;
+}
+
+/* --- انيميشن الحركة الناعمة --- */
+@keyframes popAndFloat {
+
+    0%,
+    100% {
+        transform: translateY(0) scale(1);
+    }
+
+    50% {
+        transform: translateY(-8px) scale(1.03);
+        /* حركة صعود وهبوط ناعمة جداً */
+    }
+}
+
+/* --- ضبط الفقاعة للموبايل --- */
+@media (max-width: 768px) {
+    .pigeon-pigeon-talk {
+        right: 50%;
+        transform: translateX(50%);
+        top: -20px;
+    }
+}
+
+/* ==========================================
+   📱📱 الاستجابة للشاشات (Media Queries)
+   ========================================== */
+
+/* الشاشات اللوحية والمحمول الكبير (أقل من 1200px) */
+@media (max-width: 1200px) {
+    .Izwocg {
+        width: 350px;
+        top: -40px;
+        right: 0px;
+    }
+
+    .speech-bubble {
+        right: 180px;
+        top: 20px;
+    }
+}
+
+/* الشاشات المتوسطة (أقل من 992px) */
+@media (max-width: 992px) {
+    body {
+        padding-top: 110px;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    .nav-links {
+        display: none;
+        /* تفعل بالـ JS عند ضغط المنيو */
+        position: absolute;
+        top: 80px;
+        right: 2rem;
+        left: 2rem;
+        background: rgba(255, 255, 255, 0.98);
+        backdrop-filter: blur(15px);
+        flex-direction: column;
+        padding: 2rem;
+        border-radius: 30px;
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+        gap: 1.5rem;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .hero-name {
+        font-size: 3.2rem;
+    }
+
+    .hero-interactive-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 2rem;
+    }
+
+    .speech-bubble {
+        position: relative;
+        top: 0;
+        right: 0 !important;
+        margin: 0 auto 1.5rem auto;
+        white-space: normal;
+        display: inline-block;
+        opacity: 1;
+        transform: scale(1);
+        animation: none;
+        text-align: center;
+    }
+
+    .speech-bubble::after {
+        display: none;
+    }
+
+    .Izwocg {
+        position: relative;
+        top: 0;
+        right: 0 !important;
+        margin: 0 auto;
+        width: 290px;
+        animation: pigeonLive 4s ease-in-out infinite;
+    }
+
+    .about-card {
+        padding: 4rem 2rem 2rem 2rem;
+    }
+
+    .about-card-title {
+        right: 50% !important;
+        transform: translateX(50%);
+        white-space: nowrap;
+    }
+
+    .about-card-body {
+        flex-direction: column;
+        text-align: center;
+        gap: 2rem;
+    }
+
+    .about-quote {
+        border-right: 0;
+        padding-right: 0;
+        text-align: center;
+        background: var(--pigeon-purple-light);
+        border-radius: 12px;
+        padding: 1rem;
+    }
+
+    /* البنر السفلي responsive */
+    .pigeon-banner-wrapper {
+        padding: 3rem 1.5rem;
+    }
+
+    .pigeon-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 2rem;
+    }
+
+    .pigeon-text {
+        width: 100%;
+        text-align: center;
+    }
+
+    .pigeon-visual,
+    .pigeon-left-visual {
+        position: relative;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: 0 auto;
+        width: 220px;
+    }
+
+    .pigeon-speech-bubble {
+        position: relative;
+        left: 0;
+        top: 0;
+        margin: 0 auto 1rem auto;
+        display: inline-block;
+    }
+}
+
+/* الهواتف المحمولة الصغيرة (أقل من 576px) */
+@media (max-width: 576px) {
+    .nav-container {
+        padding: 0 0.8rem;
+        top: 10px;
+    }
+
+    .dove-navbar {
+        padding: 0.5rem 1.2rem;
+    }
+
+    .hero-name {
+        font-size: 2.3rem;
+    }
+
+    .hero-title-badge {
+        font-size: 0.95rem;
+        padding: 0.5rem 1.5rem;
+    }
+
+    .hero-tagline {
+        font-size: 1.15rem;
+    }
+
+    .about-card {
+        border-radius: 25px;
+        padding: 3.5rem 1.2rem 1.8rem 1.2rem;
+    }
+
+    .about-card-title {
+        font-size: 1.05rem;
+        padding: 0.5rem 1.8rem;
+    }
+
+    .about-image-wrapper {
+        width: 100%;
+        max-width: 200px;
+        height: 230px;
+    }
+
+    .about-text-content h4 {
+        font-size: 1.4rem;
+    }
+
+    .about-text-content p {
+        font-size: 1rem;
+    }
+
+    .pigeon-text p {
+        font-size: 1.05rem;
+    }
+}
+
+/*  */
+
+/* ====================================================================
+            🕊️ تصميم ساحة الحرم الخارجية وحواري الخدمات الإبداعية
+            ==================================================================== */
+.haram-square-services {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    margin: 25px auto;
+    padding: 4rem 1rem 6rem 1rem;
+    /* خلفية تعطي طابع البلاط/الرخام للساحة */
+
+    background-image:
+        linear-gradient(rgba(156, 39, 176, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(156, 39, 176, 0.05) 1px, transparent 1px);
+    background-size: 40px 40px;
+    text-align: center;
+    border-radius: 40px;
+    box-shadow: 0 20px 50px rgba(59, 9, 117, 0.04);
+    animation: containerZoomIn 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* تصميم القبة العلوية */
+.square-dome-container {
+    max-width: 900px;
+    margin: 0 auto 3.5rem auto;
+    position: relative;
+    background: #fff;
+    border-radius: 450px 450px 0 0;
+    padding: 4rem 2rem 2.5rem 2rem;
+    box-shadow: 0 -15px 45px rgba(59, 9, 117, 0.08);
+    border: 3px solid rgba(156, 39, 176, 0.2);
+    border-bottom: none;
+}
+
+/* المنارة العلوية الصغيره فوق قمة القوس */
+.top-minaret-icon {
+    position: absolute;
+    top: -28px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--pigeon-purple-dark, #3b0975);
+    color: #fff;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    border: 3px solid #fff;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    z-index: 10;
+}
+
+.square-dome-title {
+    font-size: 2.8rem;
+    font-weight: 900;
+    color: var(--pigeon-purple-dark);
+    margin-bottom: 0.8rem;
+    letter-spacing: -0.5px;
+}
+
+.square-dome-subtitle {
+    font-size: 1.2rem;
+    color: var(--text-muted);
+    font-weight: 600;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+}
+
+/* إطار الحمامة المتحركة بالأعلى */
+.giant-flying-dove {
+    width: 150px;
+    height: 150px;
+    margin: 0 auto 1.5rem auto;
+    background: linear-gradient(135deg, #fefefe, #f3e5f5);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    border: 2px solid rgba(156, 39, 176, 0.2);
+    box-shadow: 0 10px 25px rgba(59, 9, 117, 0.12);
+    animation: floatDove 
+    3.5s ease-in-out infinite;
+}
+
+.giant-flying-dove img {
+    width: 85%;
+    height: auto;
+    display: block;
+    mix-blend-mode: multiply;
+}
+
+/* زر خدماتي البارز بشعاع الدائرة السفلية */
+.services-bottom-half-circle {
+    background: linear-gradient(135deg, var(--pigeon-purple-dark), var(--pigeon-purple));
+    color: #fff;
+    font-size: 1.8rem;
+    font-weight: 900;
+    padding: 1rem 4rem;
+    border-radius: 0 0 250px 250px;
+    display: inline-block;
+    box-shadow: 0 10px 25px rgba(156, 39, 176, 0.35);
+    border: 2px solid #fff;
+    border-top: none;
+    letter-spacing: 1.5px;
+    animation: pulseGlow 3s infinite;
+}
+
+/* خريطة الشوارع والحواري المتفرعة */
+.alleys-grid-container {
+    max-width: 1100px;
+    margin: 3rem auto 0 auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.2rem;
+    position: relative;
+    z-index: 5;
+}
+
+/* شريط الشارع المزدوج الواصل بين الحواري */
+.alleys-grid-container::before {
+    content: '';
+    position: absolute;
+    top: -20px;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 12px;
+    background: repeating-linear-gradient(180deg,
+            var(--pigeon-purple),
+            var(--pigeon-purple) 12px,
+            transparent 12px,
+            transparent 24px);
+    z-index: 1;
+    border-radius: 6px;
+}
+
+/* 🕊️ الحمامة المتجولة الذاتية */
+.traveling-route-dove {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 50px;
+    background: #fff;
+    border: 2px solid var(--pigeon-purple);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 5px 15px rgba(156, 39, 176, 0.3);
+    z-index: 10;
+    top: 0px;
+    animation: autoTravelDove 8s ease-in-out infinite;
+}
+
+.traveling-route-dove img {
+    width: 35px;
+    height: auto;
+    mix-blend-mode: multiply;
+}
+
+/* بطاقات الحواري إطار رصيف الشارع */
+.alley-card {
+    background: #ffffff;
+    padding: 1.6rem 2rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(59, 9, 117, 0.08);
+    /* تصميم حافة الرصيف مزدوجة الألوان */
+    border: 6px solid #d1c4e9;
+    outline: 2px dashed var(--pigeon-purple);
+    outline-offset: -4px;
+
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    z-index: 2;
+
+    opacity: 0;
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* دبوس الحارة المزدوج في زاوية كل مربع */
+.alley-pin {
+    position: absolute;
+    top: -12px;
+    right: 15px;
+    background: var(--pigeon-purple-dark, #3b0975);
+    color: #fff;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.85rem;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+    border: 2px solid #fff;
+}
+
+.alley-card:nth-child(odd) {
+    transform: translateX(100px) scale(0.96);
+}
+
+.alley-card:nth-child(even) {
+    transform: translateX(-100px) scale(0.96);
+}
+
+.alley-card.aos-animate {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+}
+
+.alley-card:hover {
+    transform: translateY(-8px) scale(1.02) !important;
+    border-color: var(--pigeon-purple);
+    box-shadow: 0 18px 40px rgba(156, 39, 176, 0.25);
+    background: linear-gradient(135deg, #ffffff, #f3e5f5);
+}
+
+.alley-content {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    text-align: right;
+}
+
+.alley-icon {
+    width: 60px;
+    height: 60px;
+    background: var(--pigeon-purple-light);
+    color: var(--pigeon-purple-dark);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    flex-shrink: 0;
+    transition: all 0.4s ease;
+}
+
+.alley-card:hover .alley-icon {
+    background: linear-gradient(135deg, var(--pigeon-purple-dark), var(--pigeon-purple));
+    color: #fff;
+    transform: rotate(-15deg) scale(1.1);
+}
+
+.alley-info h3 {
+    font-size: 1.25rem;
+    font-weight: 900;
+    color: var(--text-dark);
+    margin-bottom: 0.3rem;
+    transition: color 0.3s ease;
+}
+
+.alley-card:hover .alley-info h3 {
+    color: var(--pigeon-purple-dark);
+}
+
+.alley-info p {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+.alley-arrow {
+    color: var(--pigeon-purple);
+    font-size: 1.2rem;
+    transition: transform 0.3s ease;
+}
+
+.alley-card:hover .alley-arrow {
+    transform: translateX(-6px) scale(1.2);
+    color: var(--pigeon-purple-dark);
+}
+
+/* التجاوب مع الهواتف الذكية */
+@media (max-width: 768px) {
+    body {
+        padding: 2rem 0.5rem;
+    }
+
+    .haram-square-services {
+        padding: 2rem 0.5rem 4rem 0.5rem;
+        border-radius: 25px;
+        background-size: 25px 25px;
+    }
+
+    .alleys-grid-container {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .alleys-grid-container::before {
+        left: 22px;
+        transform: none;
+    }
+
+    .traveling-route-dove {
+        left: 22px;
+        transform: translateX(-50%);
+        width: 40px;
+        height: 40px;
+    }
+
+    .traveling-route-dove img {
+        width: 26px;
+    }
+
+    .square-dome-container {
+        border-radius: 200px 200px 0 0;
+        padding: 2.5rem 1rem;
+    }
+
+    .square-dome-title {
+        font-size: 2.1rem;
+    }
+
+    .alley-card:nth-child(odd),
+    .alley-card:nth-child(even) {
+        transform: translateY(40px) scale(0.96);
+    }
+
+    .alley-card.aos-animate {
+        transform: translateY(0) scale(1);
+    }
+
+    .alley-card {
+        padding: 1.2rem 1.2rem 1.2rem 1.5rem;
+    }
+}
+
+/* 🕊️ قسم خريطة التواصل مع خلفية نمط الحمامة */
+.pigeon-contact-map-section {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    margin-inline: 16px;
+    width: calc(100% - 32px);
+    margin: 4rem auto 2rem auto;
+    padding: 4rem 1.5rem;
+    background-color: #fdfbf7;
+    /* نمط خلفية هادئ متكرر بنقش أجنحة الحمامة */
+    background-image: radial-gradient(var(--pigeon-purple-light, #f3e5f5) 1.5px, transparent 1.5px);
+    background-size: 24px 24px;
+    border-radius: 35px;
+    border: 3px solid rgba(156, 39, 176, 0.15);
+    box-shadow: 0 15px 35px rgba(59, 9, 117, 0.04);
+    direction: rtl;
+}
+
+.contact-map-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
+
+/* الهيدر */
+.contact-map-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.dove-badge-icon {
+    width: 45px;
+    height: 45px;
+    background: var(--pigeon-purple-dark, #3b0975);
+    color: #fff;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    box-shadow: 0 6px 15px rgba(59, 9, 117, 0.2);
+}
+
+.contact-map-header h2 {
+    font-size: 2.2rem;
+    font-weight: 900;
+    color: var(--pigeon-purple-dark, #3b0975);
+    margin-bottom: 0.5rem;
+}
+
+.contact-map-header p {
+    font-size: 1rem;
+    color: #666;
+    font-weight: 600;
+}
+
+/* شبكة البطاقات */
+.contact-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.8rem;
+}
+
+/* تصميم البطاقة الواحدة */
+.contact-card {
+    background: #ffffff;
+    padding: 1rem 1.2rem;
+    border-radius: 20px;
+    border: 2px solid rgba(156, 39, 176, 0.15);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.35s ease;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.03);
+}
+
+/* علامة الحمامة المائية الخلفية للبطاقة (Watermark Motif) */
+.card-pigeon-watermark {
+    position: absolute;
+    left: -15px;
+    bottom: -20px;
+    font-size: 6rem;
+    color: rgba(156, 39, 176, 0.04);
+    transform: rotate(-20deg);
+    pointer-events: none;
+    transition: all 0.35s ease;
+}
+
+.contact-card:hover {
+    transform: translateY(-6px);
+    border-color: var(--pigeon-purple, #9c27b0);
+    box-shadow: 0 15px 30px rgba(156, 39, 176, 0.12);
+}
+
+.contact-card:hover .card-pigeon-watermark {
+    color: rgba(156, 39, 176, 0.08);
+    transform: rotate(0deg) scale(1.1);
+}
+
+/* الأيقونة والتفاصيل */
+.contact-icon {
+    width: 55px;
+    height: 55px;
+    background: var(--pigeon-purple-light, #f3e5f5);
+    color: var(--pigeon-purple-dark, #3b0975);
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    flex-shrink: 0;
+    margin-left: 1.2rem;
+    transition: all 0.3s ease;
+}
+
+.contact-card:hover .contact-icon {
+    background: var(--pigeon-purple-dark, #3b0975);
+    color: #fff;
+}
+
+.contact-details span {
+    font-size: 0.8rem;
+    color: #888;
+    font-weight: 600;
+    display: block;
+    margin-bottom: 0.2rem;
+}
+
+.contact-details h3 {
+    font-size: 1.15rem;
+    font-weight: 800;
+    color: #222;
+    margin: 0 0 0.2rem 0;
+}
+
+.contact-details p {
+    font-size: 0.95rem;
+    color: var(--pigeon-purple, #9c27b0);
+    font-weight: 700;
+    margin: 0;
+}
+
+.contact-action-arrow {
+    color: var(--pigeon-purple, #9c27b0);
+    font-size: 1.1rem;
+    transition: transform 0.3s ease;
+}
+
+.contact-card:hover .contact-action-arrow {
+    transform: translateX(-5px);
+}
+
+/* بطاقة وسائل التواصل الاجتماعية */
+.socials-card {
+    grid-column: span 1;
+}
+
+.social-pigeon-links {
+    display: flex;
+    gap: 0.8rem;
+    margin-top: 0.6rem;
+}
+
+.social-pigeon-links a {
+    width: 40px;
+    height: 40px;
+    background: #f8f0fc;
+    color: var(--pigeon-purple-dark, #3b0975);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(156, 39, 176, 0.2);
+}
+
+.social-pigeon-links a:hover {
+    background: var(--pigeon-purple-dark, #3b0975);
+    color: #fff;
+    transform: translateY(-3px);
+}
+
+/* الحمامة المزخرفة أسفل الخريطة */
+.contact-footer-pigeon {
+    text-align: center;
+    margin-top: 2.5rem;
+}
+
+.contact-footer-pigeon img {
+    width: 45px;
+    height: auto;
+    opacity: 0.85;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
+}
+
+/* للتجاوب مع الجوالات */
+@media (max-width: 768px) {
+
+    /* 🕊️ قسم خريطة التواصل مع خلفية نمط الحمامة */
+    .pigeon-contact-map-section {
+        position: relative;
+        max-width: 1200px;
+        margin: 4rem auto 2rem auto;
+
+        /* مسافات خارجية متجاوبة لجميع الأجهزة (أقل مسافة 12px للموبايل، وتزيد تدريجياً لتصل إلى 32px للشاشات الكبيرة) */
+        margin-inline: clamp(12px, 3vw, 32px);
+        width: calc(100% - (clamp(12px, 3vw, 32px) * 2));
+
+        padding: 4rem 1.5rem;
+        background-color: #fdfbf7;
+        /* نمط خلفية هادئ متكرر بنقش أجنحة الحمامة */
+        background-image: radial-gradient(var(--pigeon-purple-light, #f3e5f5) 1.5px, transparent 1.5px);
+        background-size: 24px 24px;
+        border-radius: 35px;
+        border: 3px solid rgba(156, 39, 176, 0.15);
+        box-shadow: 0 15px 35px rgba(59, 9, 117, 0.04);
+        direction: rtl;
+    }
+
+    .contact-cards-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* 🏛️ الفوتر الفاخر والشديد الاحترافية */
+.master-footer {
+    position: relative;
+    background: linear-gradient(135deg, #210444 0%, #3b0975 60%, #170230 100%);
+    color: #ffffff;
+    padding: 4.5rem 1.5rem 1.5rem 1.5rem;
+    margin-top: 5rem;
+    border-radius: 40px 40px 0 0;
+    overflow: hidden;
+    direction: rtl;
+    box-shadow: 0 -15px 40px rgba(33, 4, 68, 0.25);
+}
+
+/* خلفية نمط الحمامة الرقيقة */
+.footer-pigeon-bg {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: radial-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+    background-size: 28px 28px;
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* توزيع الأعمدة */
+.footer-top-container {
+    max-width: 1150px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1.8fr;
+    /* اعطينا مساحة أكبر للتعريف ومبادئ العمل */
+    gap: 2.5rem;
+    position: relative;
+    z-index: 2;
+}
+
+/* الهيدر والوصف التعريفي */
+.footer-brand-header {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    margin-bottom: 1rem;
+}
+
+.brand-pigeon-icon {
+    width: 42px;
+    height: 42px;
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #f3e5f5;
+    font-size: 1.1rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.footer-brand-header h3 {
+    font-size: 1.6rem;
+    font-weight: 900;
+    color: #fff;
+    margin: 0;
+}
+
+.brand-description {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.95rem;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+}
+
+/* أيقونات التواصل الاجتماعي */
+.footer-social-links {
+    display: flex;
+    gap: 0.8rem;
+}
+
+.social-btn {
+    width: 42px;
+    height: 42px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: #ffffff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: all 0.35s ease;
+}
+
+.social-btn:hover {
+    background: #8e24aa;
+    border-color: #e1bee7;
+    transform: translateY(-4px) scale(1.08);
+    box-shadow: 0 8px 20px rgba(142, 36, 170, 0.4);
+}
+
+/* العناوين والروابط */
+.footer-title {
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: #ffffff;
+    margin-bottom: 1.2rem;
+    position: relative;
+    padding-bottom: 0.5rem;
+}
+
+.footer-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 35px;
+    height: 3px;
+    background: #8e24aa;
+    border-radius: 2px;
+}
+
+.footer-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-menu li {
+    margin-bottom: 0.8rem;
+}
+
+.footer-menu a {
+    color: rgba(255, 255, 255, 0.75);
+    text-decoration: none;
+    font-size: 0.95rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.footer-menu a i {
+    font-size: 0.7rem;
+    color: #8e24aa;
+}
+
+.footer-menu a:hover {
+    color: #ffffff;
+    transform: translateX(-6px);
+}
+
+/* قائمة مبادئ الساحة (البديل الاحترافي) */
+.footer-principles-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.footer-principles-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.8rem;
+}
+
+.footer-principles-list i {
+    color: #e1bee7;
+    background: rgba(142, 36, 170, 0.25);
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.footer-principles-list strong {
+    display: block;
+    color: #ffffff;
+    font-size: 0.92rem;
+    margin-bottom: 0.1rem;
+}
+
+.footer-principles-list span {
+    display: block;
+    color: rgba(255, 255, 255, 0.65);
+    font-size: 0.82rem;
+    line-height: 1.4;
+}
+
+/* فاصل أنيق */
+.footer-divider {
+    max-width: 1150px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.15), transparent);
+    margin: 3rem auto 1.5rem auto;
+    position: relative;
+    z-index: 2;
+}
+
+/* الجزء السفلي: الحقوق وتوقيع رضوى محمد */
+.footer-bottom-container {
+    max-width: 1150px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    z-index: 2;
+}
+
+.copyright-text p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.65);
+}
+
+.copyright-text strong {
+    color: #ffffff;
+}
+
+/* زر رضوى محمد على الواتساب */
+.developer-credit {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-size: 0.88rem;
+    color: rgba(255, 255, 255, 0.75);
+}
+
+.dev-whatsapp-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(37, 211, 102, 0.15);
+    color: #25d366;
+    border: 1px solid rgba(37, 211, 102, 0.35);
+    padding: 0.4rem 1rem;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.9rem;
+    transition: all 0.35s ease;
+}
+
+.dev-whatsapp-btn i {
+    font-size: 1.1rem;
+}
+
+.dev-whatsapp-btn:hover {
+    background: #25d366;
+    color: #ffffff;
+    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+    transform: translateY(-2px);
+}
+
+/* تجاوب الشاشات الصغير والجوال */
+@media (max-width: 992px) {
+    .footer-top-container {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 650px) {
+    .footer-top-container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .footer-bottom-container {
+        flex-direction: column;
+        gap: 1.2rem;
+        text-align: center;
+    }
+}
+
+/* 💌 تنسيق قسم آراء العملاء (شبكة المحادثات مع لمسات الحمامة) */
+.feedback-section {
+    position: relative;
+    width: 100%;
+    max-width: 1100px;
+    margin: 6rem auto 4rem auto;
+    padding: 0 1.5rem;
+    direction: rtl;
+    font-family: inherit;
+}
+
+.feedback-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+/* 🕊️ الحمامة الحاملة في الأعلى */
+/* 🕊️ الحمامة الحاملة في الأعلى (بحجم أكبر) */
+.carrying-pigeon-wrapper {
+    position: relative;
+    z-index: 10;
+    margin-bottom: -20px;
+    text-align: center;
+}
+
+.pigeon-holding-screen {
+    width: 240px;
+    /* تم تكبير عرض الحمامة لتكون واضحة وبارزة */
+    height: auto;
+    filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.15));
+    animation: gentleFly 3.5s ease-in-out infinite alternate;
+}
+
+@keyframes gentleFly {
+    0% {
+        transform: translateY(0px) rotate(-1deg);
+    }
+
+    100% {
+        transform: translateY(-8px) rotate(1deg);
+    }
+}
+
+.pigeon-holder-rope {
+    position: absolute;
+    bottom: 10px;
+    /* ربطها ببداية القاعدة التحتية للصورة */
+    width: 2px;
+    height: 55px;
+    background: repeating-linear-gradient(180deg, rgba(0, 0, 0, 0.15) 0px, rgba(0, 0, 0, 0.15) 4px, transparent 4px, transparent 8px);
+    z-index: 9;
+}
+
+.rope-left {
+    left: calc(50% - 32px);
+    transform: rotate(15deg);
+}
+
+.rope-right {
+    right: calc(50% - 32px);
+    transform: rotate(-15deg);
+}
+
+
+/* عنوان القسم مع الخلفية الصفراء الدائمة */
+.feedback-header {
+    text-align: center;
+}
+
+.feedback-main-title {
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: #222;
+    background: #ba68c8;
+    /* الخلفية الصفراء الدائمة */
+    display: inline-block;
+    padding: 0.3rem 1.8rem;
+    border-radius: 14px;
+    margin-bottom: 1rem;
+    box-shadow: 0 4px 10px rgba(255, 235, 179, 0.4);
+}
+
+.feedback-subtitle {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.6;
+}
+
+/* شبكة الأعمدة (Grid) */
+.feedback-grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    width: 100%;
+    margin-top: 1rem;
+}
+
+.feedback-column {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* تصميم فقاعة الشات */
+.chat-bubble {
+    background: #212b36;
+    color: #ffffff;
+    padding: 1.2rem;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease;
+}
+
+.chat-bubble:hover {
+    transform: translateY(-4px);
+}
+
+.chat-content-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.2rem;
+}
+
+.chat-name {
+    font-weight: 700;
+    font-size: 0.95rem;
+}
+
+.message-text {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    text-align: right;
+    word-break: break-word;
+}
+
+.message-meta {
+    font-size: 0.75rem;
+    color: #919eab;
+    text-align: right;
+    margin-top: 0.2rem;
+}
+
+/* ➕ تنسيق زر أضف توصية */
+.add-feedback-wrapper {
+    text-align: center;
+    margin-top: 1.5rem;
+}
+
+.add-feedback-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: #3b0975;
+    color: #ffffff;
+    padding: 0.8rem 2rem;
+    border-radius: 30px;
+    font-size: 1rem;
+    font-weight: 700;
+    text-decoration: none;
+    box-shadow: 0 4px 15px rgba(59, 9, 117, 0.3);
+    transition: all 0.3s ease;
+}
+
+.add-feedback-btn:hover {
+    background: #8e24aa;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(142, 36, 170, 0.4);
+    color: #ffffff;
+}
+
+/* 📱 التجاوب مع الموبايل والشاشات الصغيرة */
+@media (max-width: 768px) {
+    .feedback-grid-container {
+        grid-template-columns: 1fr;
+    }
+
+    .feedback-main-title {
+        font-size: 1.6rem;
+    }
+}
+
+
+
+/* 🌿🟣 السكشن الأساسي بألوان الرمادي الفاخر */
+.projects-section {
+    padding: 90px 40px;
+}
+
+.section-header {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 50px;
+}
+
+.section-header .sub-title {
+    color: #2f6b52;
+    font-weight: 700;
+    font-size: 1.05rem;
+    display: inline-block;
+    margin-bottom: 8px;
+}
+
+.section-header h2 {
+    color: #1b3028;
+    font-size: 2.2rem;
+    font-weight: 800;
+}
+
+/* 📐 شبكة الـ 3 في الصف */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+    max-width: 1250px;
+    margin: 0 auto;
+}
+
+/* 🕊️ الكارد الانسيابي بشكـل انحناءة الجناح والأنيميشن الحركي */
+.wing-card {
+    background: #ffffff;
+    /* 🌟 انحناءة جناح الحمامة الأساسية */
+    border-radius: 45px 12px 45px 12px;
+    border: 1px solid #d8e2dd;
+    box-shadow: 0 10px 25px rgba(27, 48, 40, 0.05);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+
+    /* 🪶 حركة التكيف والأنيميشن المرن عند الهوفر */
+    transition: all 0.45s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* 🌟 أنيميشن حركة ميل الجناح وانقلاب الحواف عند التمرير (Hover Motion) */
+.wing-card:hover {
+    /* يرتفع لفوق ويميل للجنب بدرجة خفيفة كأنه جناح بيرتفع في الهوا */
+    transform: translateY(-12px) rotate(-1.5deg);
+    box-shadow: 0 22px 45px rgba(47, 107, 82, 0.18);
+
+    /* انعكاس انحناءة الحواف لإعطاء إحساس بالانسيابية والحركة الفيلية للريشة */
+    border-radius: 12px 45px 12px 45px;
+}
+
+/* 🟢 Style الأخضر الزاجلي */
+.wing-card.pigeon-green-style {
+    border-top: 4px solid #2f6b52;
+    border-right: 3px solid #3d8b6a;
+}
+
+.green-badge {
+    background: #2f6b52;
+    color: #fff;
+}
+
+.green-btn {
+    background: linear-gradient(135deg, #2f6b52, #1b4d3e);
+    color: #fff;
+}
+
+.green-btn:hover {
+    background: linear-gradient(135deg, #3d8b6a, #2f6b52);
+}
+
+/* 🟣 Style البنفسجي الزاجلي */
+.wing-card.pigeon-violet-style {
+    border-top: 4px solid #7d4e8c;
+    border-right: 3px solid #9c5cb0;
+}
+
+.violet-badge {
+    background: #7d4e8c;
+    color: #fff;
+}
+
+.violet-btn {
+    background: linear-gradient(135deg, #7d4e8c, #5b2e6b);
+    color: #fff;
+}
+
+.violet-btn:hover {
+    background: linear-gradient(135deg, #9c5cb0, #7d4e8c);
+}
+
+/* 🕋 Style مكة الكعبة والذهبي */
+.wing-card.kaaba-style {
+    border-top: 4px solid #2f453c;
+    border-right: 3px solid #d4af37;
+}
+
+.gold-badge {
+    background: #2f453c;
+    color: #d4af37;
+    border: 1px solid #d4af37;
+}
+
+.gold-btn {
+    background: linear-gradient(135deg, #2f453c, #1b3028);
+    color: #d4af37;
+    border: 1px solid #d4af37;
+}
+
+.gold-btn:hover {
+    background: #1b3028;
+    color: #fff;
+}
+
+/* شارات المحطة */
+.project-badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    padding: 5px 14px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    z-index: 10;
+}
+
+/* Container الصورة والأنيميشن الخاص بها */
+.wing-image-container {
+    height: 185px;
+    overflow: hidden;
+    border-radius: 40px 12px 0 0;
+    transition: border-radius 0.45s ease;
+}
+
+.wing-card:hover .wing-image-container {
+    border-radius: 12px 40px 0 0;
+    /* تتغير انحناءة الصورة مع انحناءة الكارد */
+}
+
+.wing-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+/* التكبير الناعم للصورة عند الوقوف على الكارد */
+.wing-card:hover .wing-img {
+    transform: scale(1.09);
+}
+
+/* تفاصيل الكارد */
+.wing-card-body {
+    padding: 22px 20px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.wing-card-body .category {
+    font-size: 0.8rem;
+    color: #64756f;
+    font-weight: 700;
+    margin-bottom: 4px;
+}
+
+.wing-card-body h3 {
+    font-size: 1.25rem;
+    color: #1b3028;
+    margin-bottom: 8px;
+    font-weight: 800;
+}
+
+.wing-card-body p {
+    font-size: 0.9rem;
+    color: #52615b;
+    line-height: 1.5;
+    margin-bottom: 16px;
+}
+
+.mini-stats {
+    margin-top: auto;
+    display: flex;
+    justify-content: space-between;
+    background: #f4f7f6;
+    padding: 8px 14px;
+    border-radius: 12px;
+    font-size: 0.82rem;
+    margin-bottom: 16px;
+}
+
+.mini-stats strong {
+    color: #1b3028;
+    font-weight: 800;
+}
+
+/* 🔘 بوتون الدخول للمشروع التفاعلي مع أنيميشن السهم */
+.project-enter-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 12px 20px;
+    border-radius: 25px 8px 25px 8px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: bold;
+    transition: all 0.35s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.project-enter-btn .arrow-icon {
+    font-style: normal;
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+/* حركة السهم عند الوقوف على الزر */
+.project-enter-btn:hover .arrow-icon {
+    transform: translateX(-6px);
+}
+
+/* responsive للموبايل */
+@media (max-width: 992px) {
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+
+/* 🕋 سكشن رخام مكة الأبيض والناعم */
+.pigeon-feather-stats {
+    padding: 90px 30px;
+    position: relative;
+    overflow: hidden;
+}
+
+.stats-header-text {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.makkah-badge {
+    color: #2f6b52;
+    font-weight: 700;
+    font-size: 1rem;
+    background: rgba(47, 107, 82, 0.08);
+    padding: 6px 18px;
+    border-radius: 20px;
+    border: 1px solid rgba(47, 107, 82, 0.15);
+}
+
+.stats-header-text h2 {
+    color: #1b3028;
+    font-size: 2.2rem;
+    font-weight: 800;
+    margin-top: 12px;
+}
+
+/* 🪶 توزيع الريش بأسلوب انسيابي متعرج */
+.feathers-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* 🕊️ تصميم الريشة الانسيابية */
+.feather-card {
+    position: relative;
+    /* انحناءة ريشة الحمامة الحقيقية (مدببة من الجوانب) */
+    border-radius: 120px 15px 120px 15px;
+    padding: 35px 25px 25px;
+    box-shadow: 0 12px 30px rgba(47, 69, 60, 0.06);
+    border: 1px solid #e1e9e5;
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+/* حركة الطيران الخفيفة للريشة عند الوقوف عليها */
+.feather-card:hover {
+    transform: translateY(-12px) rotate(2deg);
+    /* الريشة بتميل للجنب كأن الهواء بيمشيها */
+    box-shadow: 0 20px 40px rgba(125, 78, 140, 0.12);
+    border-radius: 15px 120px 15px 120px;
+    /* تعكِس انحناءتها مرونة */
+}
+
+/* ساق الريشة الفضي المنتصف */
+.feather-stem {
+    position: absolute;
+    top: 15px;
+    bottom: 15px;
+    left: 50%;
+    width: 2px;
+    background: linear-gradient(180deg, transparent, rgba(47, 107, 82, 0.15), transparent);
+    pointer-events: none;
+}
+
+/* 🌿🟣 لمسات الألوان المأخوذة من رقبة الحمامة */
+
+/* 1. الأخضر الزمردي الزاجلي */
+.green-feather-theme {
+    border-top: 4px solid #2f6b52;
+}
+
+.green-feather-theme .number-wrap {
+    color: #2f6b52;
+}
+
+/* 2. البنفسجي القلمي الهديل */
+.violet-feather-theme {
+    border-top: 4px solid #7d4e8c;
+}
+
+.violet-feather-theme .number-wrap {
+    color: #7d4e8c;
+}
+
+/* 3. الذهبي المكي الكعبي */
+.kaaba-gold-theme {
+    border-top: 4px solid #d4af37;
+}
+
+.kaaba-gold-theme .number-wrap {
+    color: #2f453c;
+}
+
+/* 🔢 الأرقام داخل الريشة */
+.number-wrap {
+    font-size: 3rem;
+    font-weight: 900;
+    line-height: 1;
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    margin-bottom: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.number-wrap .plus {
+    font-size: 2rem;
+    margin-right: 2px;
+}
+
+.unit-text {
+    font-size: 1.05rem;
+    font-weight: 800;
+    color: #1b3028;
+    display: block;
+    margin-bottom: 4px;
+}
+
+.feather-desc {
+    font-size: 0.85rem;
+    color: #64756f;
+    margin: 0;
+    line-height: 1.3;
+}
+
+/* رمز مكة الهادئ في الأسفل */
+.makkah-symbol {
+    position: absolute;
+    bottom: -15px;
+    background: #ffffff;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    border: 1px solid #e1e9e5;
+    font-size: 0.85rem;
+}
+
+/* 📱 Responsive */
+@media (max-width: 992px) {
+    .feathers-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .feathers-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ==========================================
+   🕊️ تصميم الأجنحة البارزة والأرجل للبطاقات
+   ========================================== */
+
+.certificates-section {
+    width: 100%;
+    max-width: 1380px;
+    margin: 6rem auto 4rem auto;
+    padding: 0 1.5rem;
+}
+
+.section-title-wrapper {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.section-main-title {
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: var(--pigeon-purple-dark);
+}
+
+.section-subtitle {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    margin-top: 0.8rem;
+}
+
+/* 🔲 شبكة 3 كروت جنب بعض */
+.certificates-grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3.5rem;
+    /* مسافة كافية عشان الأجنحة البارزة تظهر براحة */
+    padding-top: 2rem;
+}
+
+/* 📦 حاوية البطاقات الحاضنة للأجنحة والأرجل */
+.pigeon-full-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+/* 🪶 1. تفاصيل الأجنحة البارزة من الجوانب */
+.graphic-wing {
+    position: absolute;
+    top: 15px;
+    width: 90px;
+    /* كبّري أو صغّري حجم الجناح حسب رغبتك */
+    height: auto;
+    z-index: 1;
+    /* خلف البطاقات الرئيسية */
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    pointer-events: none;
+}
+
+.graphic-wing img {
+    width: 100%;
+    height: auto;
+    display: block;
+    mix-blend-mode: multiply;
+    /* للتناغم مع خلفية الصفحة */
+}
+
+/* الجناح اليسار */
+.wing-left {
+    left: -45px;
+    transform: rotate(-15deg);
+}
+
+/* الجناح اليمين */
+.wing-right {
+    right: -45px;
+    transform: rotate(15deg) scaleX(-1);
+    /* عكس اتجاه الصورة لتكون جناح يمين */
+}
+
+/* 🎬 رفرفة الأجنحة عند الماوس (Hover Animation) */
+.pigeon-full-card:hover .wing-left {
+    left: -60px;
+    transform: rotate(-30deg) scale(1.1);
+}
+
+.pigeon-full-card:hover .wing-right {
+    right: -60px;
+    transform: rotate(30deg) scaleX(-1) scale(1.1);
+}
+
+/* 🐾 2. رجلين الحمامة البارزة من أسفل البطاقة */
+.pigeon-feet-wrapper {
+    position: absolute;
+    bottom: -22px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 30px;
+    z-index: 2;
+}
+
+.pigeon-foot {
+    font-size: 1.6rem;
+    color: var(--pigeon-purple-dark);
+    filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.15));
+    transition: transform 0.3s ease;
+}
+
+/* حركة طفيفة للرجول لما نقف بالماوس */
+.pigeon-full-card:hover .foot-left {
+    transform: translateY(3px) rotate(-10deg);
+}
+
+.pigeon-full-card:hover .foot-right {
+    transform: translateY(3px) rotate(10deg);
+}
+
+/* 📦 3. جسم الكارد الرئيسي */
+.cert-body-main {
+    background: #ffffff;
+    border-radius: 35px;
+    overflow: hidden;
+    box-shadow: 0 12px 35px rgba(59, 9, 117, 0.08);
+    border: 2px solid rgba(156, 39, 176, 0.15);
+    position: relative;
+    z-index: 10;
+    transition: all 0.4s ease;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.pigeon-full-card:hover .cert-body-main {
+    transform: translateY(-10px);
+    border-color: var(--pigeon-purple);
+    box-shadow: 0 22px 50px rgba(156, 39, 176, 0.2);
+}
+
+.cert-header-bg {
+    background: linear-gradient(135deg, var(--pigeon-purple-dark) 0%, #170430 100%);
+    padding: 1.2rem;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.city-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 0.4rem 1.1rem;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 800;
+}
+
+.makkah-badge {
+    background: rgba(197, 58, 204, 0.25);
+    color: #ffd700;
+    border: 1px solid rgba(255, 215, 0, 0.4);
+}
+
+.madinah-badge {
+    background: rgba(46, 125, 50, 0.3);
+    color: #a5d6a7;
+    border: 1px solid rgba(165, 214, 167, 0.4);
+}
+
+.cert-content-inner {
+    padding: 2rem 1.8rem 1.6rem 1.8rem;
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.cert-title {
+    font-size: 1.3rem;
+    font-weight: 800;
+    color: var(--text-dark);
+    margin-bottom: 0.4rem;
+}
+
+.cert-authority {
+    font-size: 0.9rem;
+    color: var(--pigeon-purple);
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.cert-desc {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    line-height: 1.65;
+    margin-bottom: 1.5rem;
+    flex: 1;
+}
+
+.cert-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 1rem;
+    border-top: 1px dashed rgba(156, 39, 176, 0.15);
+}
+
+.cert-year {
+    font-size: 0.88rem;
+    font-weight: 800;
+    color: #888;
+}
+
+.view-btn {
+    color: var(--pigeon-purple-dark);
+    font-weight: 800;
+    font-size: 0.9rem;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: all 0.3s ease;
+}
+
+.pigeon-full-card:hover .view-btn {
+    color: var(--pigeon-purple);
+    transform: translateX(-5px);
+}
+
+/* 📱 الموبايل للشاشات الصغيرة */
+@media (max-width: 1024px) {
+    .certificates-grid-3 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 650px) {
+    .certificates-grid-3 {
+        grid-template-columns: 1fr;
+    }
+
+    .graphic-wing {
+        display: none;
+    }
+
+    /* إخفاء الأجنحة البارزة على الهاتف لمنع الخروج عن الشاشة */
+}
+
+
+/* 🏆 تنسيق قسم Collaborations المرتب تحت بعضه */
+/* 🏆 تنسيق قسم Collaborations المرتب تحت بعضه */
+.trusted-companies-section {
+    position: relative;
+    width: 100%;
+    max-width: 900px;
+    margin: 4rem auto;
+    padding: 0 1rem;
+    direction: ltr; /* لضبط العنوان والاتجاه تماماً مثل الصورة */
+    font-family: inherit;
+    text-align: center;
+}
+
+.trusted-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+/* الأيقونة العلوية مع الخلفية */
+.collaborations-top-icon {
+    position: relative;
+    background: radial-gradient(circle, #e3b8e5 0%, #c53acc 70%, transparent 100%);
+    width: 130px;
+    height: 100px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: -10px;
+}
+
+.collab-icon-img {
+    width: 75px;
+    height: auto;
+}
+
+/* العنوان الرئيسي Collaborations */
+.trusted-header {
+    text-align: center;
+}
+
+.trusted-main-title {
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: #111;
+    margin-bottom: 0.2rem;
+    letter-spacing: -1px;
+}
+
+.trusted-divider {
+    width: 120px;
+    height: 2px;
+    background: #d3d2d2;
+    margin: 0 auto;
+}
+
+/* 📊 شبكة العرض (تم تقليل المسافات هنا) */
+.trusted-grid-layout {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 عناصر في كل صف */
+    gap: 12px; /* تم تقليل المسافة بين اللوجوهات للشاشات الكبيرة */
+    width: 100%;
+    justify-items: center;
+    margin-top: 1rem;
+}
+
+/* العنصر الأخير المنفرد (لو وجد في المنتصف) */
+.center-single-item {
+    grid-column: 2 / 3; /* يوضع في المنتصف تماماً في الصف الأخير */
+}
+
+/* تصميم دائرة اللوجو مع الإطار */
+.trusted-badge-item {
+    width: 160px;
+    height: 160px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
+}
+
+.trusted-badge-item:hover {
+    transform: scale(1.05);
+}
+
+.wreath-frame {
+    width: 100%;
+    height: 100%;
+    border: 3px solid #c53acc; /* الإطار الدائري */
+    border-radius: 50%;
+    background: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+/* صندوق اللوجو الداخلي */
+.company-logo-box {
+    width: 105px;
+    height: 105px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.company-logo-box img {
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: contain;
+}
+
+/* 📱 التجاوب مع الموبايل والشاشات الصغيرة */
+@media (max-width: 768px) {
+    .trusted-grid-layout {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 8px; /* تم تقليل المسافة أكثر لتناسب الموبايل والشاشات الصغيرة */
+    }
+    
+    .trusted-badge-item {
+        width: 110px;
+        height: 110px;
+    }
+    
+    .company-logo-box {
+
+/* تصميم زرار العودة للأعلى */
+.scroll-top {
+  position: fixed;
+  bottom: 30px;
+  /* المسافة من تحت */
+  right: 30px;
+  /* المسافة من اليمين */
+  width: 45px;
+  height: 45px;
+  background: #0F3345;
+  /* نفس لون براند حبيبة الداكن */
+  color: #62beac;
+  /* لون التيفاني اللي مستخدماه */
+  border: 2px solid #62beac;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  z-index: 9999;
+
+  /* حالة الإخفاء الافتراضية */
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+  transition: all 0.4s ease;
+}
+
+/* حالة الظهور لما نعمل سكرول */
+.scroll-top.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* تأثير عند تمرير الماوس */
+.scroll-top:hover {
+  background: #e056a0;
+  /* لون الـ Accent Pink بتاعك */
+  border-color: #e056a0;
+  color: white;
+  transform: scale(1.1);
+}
+
+.social-proof-container {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+
+  /* --- التعديلات المطلوبة للعرض --- */
+  width: 500px;
+  /* تحديد عرض ثابت وكبير للاب توب */
+  max-width: 90%;
+  /* عشان لو الشاشة أصغر من 600px ما يحصلش مشكلة */
+  padding: 30px 40px;
+  /* زيادة الـ padding العلوي والسفلي للفخامة */
+  /* ------------------------------ */
+
+  margin: 40px auto;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  border-radius: 60px;
+  /* الحواف الدائرية اللي بتفضليها */
+}
+
+        width: 75px;
+        height: 75px;
+    }
+    
+    .trusted-main-title {
+        font-size: 2rem;
+    }
+    
+    .center-single-item {
+        grid-column: 1 / -1; /* في الموبايل يأخذ السطر لوحده في المنتصف */
+        justify-self: center;
+    }
+}
+
+
+/* ==========================================
+   🎨 الحاوية الرئيسية لكارت الميديا
+   ========================================== */
+.hero-media-card {
+    position: relative;
+    max-width: 780px;
+    width: 92%;
+    margin: 32px auto 45px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px; /* مسافة متناسقة بين الفيديو، والرسالة، والسوشيال */
+}
+
+/* الهالة الضوئية خلف الكارت */
+.ambient-glow {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    height: 80%;
+    background: radial-gradient(circle, rgba(255, 105, 180, 0.25) 0%, rgba(10, 25, 47, 0.35) 70%);
+    filter: blur(60px);
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* حاوية الفيديو */
+.hero-video-wrapper {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    border-radius: 24px;
+    overflow: hidden;
+    background: #000;
+    border: 1.5px solid rgba(255, 255, 255, 0.25);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+.hero-video-wrapper video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* ==========================================
+   💬 الرسالة الترحيبية الاحترافية تحت الفيديو
+   ========================================== */
+.speech-bubble-under-video {
+    position: relative;
+    z-index: 2;
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    border-radius: 18px;
+    padding: 12px 24px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    max-width: 90%;
+    text-align: center;
+}
+
+/* سهم صغير يتجه لأعلى نحو الفيديو (Pointer) */
+.speech-bubble-under-video::before {
+    content: '';
+    position: absolute;
+    top: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 0 8px 8px 8px;
+    border-style: solid;
+    border-color: transparent transparent rgba(255, 255, 255, 0.92) transparent;
+}
+
+.speech-bubble-under-video .pigeon-icon {
+    font-size: 1.3rem;
+}
+
+.speech-bubble-under-video p {
+    margin: 0;
+    font-size: 0.98rem;
+    font-weight: 600;
+    color: #1e293b;
+    line-height: 1.4;
+}
+
+/* ==========================================
+   🔗 شريط تواصل معي السفلي (Glassmorphic)
+   ========================================== */
+.hero-social-bar {
+    position: relative;
+    z-index: 2;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    padding: 8px 20px;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.social-label {
+    font-size: 0.88rem;
+    font-weight: 700;
+    color: #334155;
+}
+
+.social-icons {
+    display: flex;
+    gap: 10px;
+}
+
+.social-btn {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: #f1f5f9;
+    color: #0f172a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.social-btn:hover {
+    transform: translateY(-3px) scale(1.1);
+    color: #fff;
+}
+
+.social-btn.fb:hover { background: #1877f2; box-shadow: 0 5px 12px rgba(24, 119, 242, 0.35); }
+.social-btn.ig:hover { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); box-shadow: 0 5px 12px rgba(220, 39, 67, 0.35); }
+.social-btn.li:hover { background: #0a66c2; box-shadow: 0 5px 12px rgba(10, 102, 194, 0.35); }
+
+/* ==========================================
+   📱 التجاوب مع الهواتف الذكية
+   ========================================== */
+@media screen and (max-width: 600px) {
+    .speech-bubble-under-video {
+        padding: 10px 16px;
+    }
+    .speech-bubble-under-video p {
+        font-size: 0.88rem;
+    }
+    .hero-social-bar {
+        padding: 6px 16px;
+    }
+    .social-label {
+        font-size: 0.8rem;
+    }
+    .social-btn {
+        width: 32px;
+        height: 32px;
+        font-size: 0.82rem;
+    }
+}
