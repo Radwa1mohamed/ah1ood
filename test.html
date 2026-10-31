@@ -1,0 +1,1215 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>عهود | خبيرة التسويق بالمحتوى - معرض الريلز التفاعلي</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Cairo Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        cairo: ['Cairo', 'sans-serif'],
+                    },
+                    colors: {
+                        creamy: '#fbf9f6',
+                        'pigeon-light': '#f3e5f5',
+                        'pigeon-purple': '#9c27b0',
+                        'pigeon-dark': '#3b0975',
+                        'gold-accent': '#c53acc',
+                        'text-dark': '#120626',
+                        'text-muted': '#534963',
+                        'emerald-sheen': '#00b894'
+                    },
+                    screens: {
+                        'xxs': '360px',
+                        'xs': '480px',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        :root {
+            --bg-creamy: #fbf9f6;
+            --pigeon-purple-light: #f3e5f5;
+            --pigeon-purple: #9c27b0;
+            --pigeon-purple-dark: #3b0975;
+            --gold-accent: #c53acc;
+            --text-dark: #120626;
+            --text-muted: #534963;
+            --feather-grad-1: linear-gradient(135deg, #3b0975 0%, #9c27b0 50%, #00b894 100%);
+            --feather-grad-2: linear-gradient(135deg, #f3e5f5 0%, #ffffff 100%);
+            --feather-grad-3: linear-gradient(135deg, #c53acc 0%, #9c27b0 100%);
+        }
+
+        * {
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            font-family: 'Cairo', sans-serif;
+            background-color: var(--bg-creamy);
+            color: var(--text-dark);
+            overflow-x: hidden;
+            min-height: 100vh;
+            min-height: 100dvh;
+        }
+
+        /* Feathers Floating Canvas Background */
+        #feathers-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        /* Dove Glassmorphism styling */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.75);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(156, 39, 176, 0.15);
+        }
+
+        .glass-pill {
+            background: rgba(59, 9, 117, 0.85);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            color: #ffffff;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        /* Custom horizontal scroll bar hiding */
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+        /* Compact Reel aspect ratio guard 9:16 */
+        .aspect-reel {
+            aspect-ratio: 9 / 16;
+        }
+
+        /* Animated Gradient Text */
+        .gradient-text {
+            background: var(--feather-grad-1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Dove Wings Header Shape */
+        .wings-header-bg {
+            background: linear-gradient(180deg, var(--pigeon-purple-light) 0%, rgba(251, 249, 246, 0) 100%);
+            clip-path: ellipse(120% 80% at 50% 15%);
+        }
+
+        /* Feather Curved Card Borders */
+        .feather-card-shape {
+            border-radius: 20px 4px 20px 20px;
+            border: 2px solid rgba(156, 39, 176, 0.12);
+            transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .feather-card-shape:hover {
+            border-color: var(--pigeon-purple);
+            box-shadow: 0 12px 28px -6px rgba(156, 39, 176, 0.22);
+        }
+
+        /* Active filter button style with Feather Slider */
+        .filter-btn {
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .filter-btn.active {
+            background: var(--feather-grad-3);
+            color: #ffffff;
+            box-shadow: 0 4px 16px rgba(197, 58, 204, 0.35);
+        }
+
+        .filter-btn.active::after {
+            content: '🪶';
+            position: absolute;
+            bottom: -8px;
+            left: 50%;
+            transform: translateX(-50%) rotate(-45deg);
+            font-size: 10px;
+            animation: featherBounce 1.5s infinite ease-in-out;
+        }
+
+        @keyframes featherBounce {
+            0%, 100% { transform: translateX(-50%) translateY(0) rotate(-45deg); }
+            50% { transform: translateX(-50%) translateY(-3px) rotate(-45deg); }
+        }
+
+        /* Wing Flutter animation for likes */
+        @keyframes wingFlutter {
+            0% { transform: scale(1) rotate(0deg); }
+            25% { transform: scale(1.35) rotate(-18deg); }
+            50% { transform: scale(1.1) rotate(18deg); }
+            75% { transform: scale(1.3) rotate(-10deg); }
+            100% { transform: scale(1) rotate(0deg); }
+        }
+
+        .wing-flutter-active {
+            color: var(--gold-accent) !important;
+            animation: wingFlutter 0.5s ease-in-out;
+        }
+
+        /* Sound visualizer wave animation */
+        .visualizer-bar {
+            animation: soundWave 1.2s ease-in-out infinite alternate;
+        }
+
+        @keyframes soundWave {
+            0% { height: 4px; }
+            100% { height: 18px; }
+        }
+
+        /* Modal viewport adaptation */
+        .modal-height {
+            height: 100vh;
+            height: 100dvh;
+        }
+
+        video::-webkit-media-controls { display: none !important; }
+
+        /* ==========================================
+           🏛️ 2. تنسيقات الفوتر (Footer Styling)
+           ========================================== */
+        .master-footer {
+            position: relative;
+            background: linear-gradient(135deg, #210444 0%, #3b0975 60%, #170230 100%);
+            color: #ffffff;
+            padding: 4.5rem 1.5rem 1.5rem 1.5rem;
+            margin-top: 5rem;
+            border-radius: 40px 40px 0 0;
+            overflow: hidden;
+            direction: rtl;
+            box-shadow: 0 -15px 40px rgba(33, 4, 68, 0.25);
+        }
+
+        .footer-pigeon-bg {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background-image: radial-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+            background-size: 28px 28px;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .footer-top-container {
+            max-width: 1150px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1.8fr;
+            gap: 2.5rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .footer-brand-header {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .brand-pigeon-icon {
+            width: 42px;
+            height: 42px;
+            background: rgba(255, 255, 255, 0.12);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #f3e5f5;
+            font-size: 1.1rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .footer-brand-header h3 {
+            font-size: 1.6rem;
+            font-weight: 900;
+            color: #fff;
+            margin: 0;
+        }
+
+        .brand-description {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.95rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        /* السوشيال ميديا في الفوتر لتجنب التضارب */
+        .footer-social-links {
+            display: flex;
+            gap: 0.8rem;
+        }
+
+        .footer-social-btn {
+            width: 42px;
+            height: 42px;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            color: #ffffff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: all 0.35s ease;
+        }
+
+        .footer-social-btn:hover {
+            background: #8e24aa;
+            border-color: #e1bee7;
+            transform: translateY(-4px) scale(1.08);
+            box-shadow: 0 8px 20px rgba(142, 36, 170, 0.4);
+        }
+
+        .footer-title {
+            font-size: 1.2rem;
+            font-weight: 800;
+            color: #ffffff;
+            margin-bottom: 1.2rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+
+        .footer-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 35px;
+            height: 3px;
+            background: #8e24aa;
+            border-radius: 2px;
+        }
+
+        .footer-menu {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footer-menu li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-menu a {
+            color: rgba(255, 255, 255, 0.75);
+            text-decoration: none;
+            font-size: 0.95rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .footer-menu a i {
+            font-size: 0.7rem;
+            color: #8e24aa;
+        }
+
+        .footer-menu a:hover {
+            color: #ffffff;
+            transform: translateX(-6px);
+        }
+
+        .footer-principles-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .footer-principles-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.8rem;
+        }
+
+        .footer-principles-list i {
+            color: #e1bee7;
+            background: rgba(142, 36, 170, 0.25);
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .footer-principles-list strong {
+            display: block;
+            color: #ffffff;
+            font-size: 0.92rem;
+            margin-bottom: 0.1rem;
+        }
+
+        .footer-principles-list span {
+            display: block;
+            color: rgba(255, 255, 255, 0.65);
+            font-size: 0.82rem;
+            line-height: 1.4;
+        }
+
+        .footer-divider {
+            max-width: 1150px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.15), transparent);
+            margin: 3rem auto 1.5rem auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .footer-bottom-container {
+            max-width: 1150px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: relative;
+            z-index: 2;
+        }
+
+        .copyright-text p {
+            margin: 0;
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.65);
+        }
+
+        .copyright-text strong {
+            color: #ffffff;
+        }
+
+        .developer-credit {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            font-size: 0.88rem;
+            color: rgba(255, 255, 255, 0.75);
+        }
+
+        .dev-whatsapp-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(37, 211, 102, 0.15);
+            color: #25d366;
+            border: 1px solid rgba(37, 211, 102, 0.35);
+            padding: 0.4rem 1rem;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.9rem;
+            transition: all 0.35s ease;
+        }
+
+        .dev-whatsapp-btn:hover {
+            background: #25d366;
+            color: #ffffff;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+            transform: translateY(-2px);
+        }
+
+        /* 📱 Responsive Footer (الشاشات الصغيرة والمتوسطة) */
+        @media (max-width: 992px) {
+            .footer-top-container {
+                grid-template-columns: 1fr 1fr;
+                gap: 2rem;
+            }
+            
+            .brand-col {
+                grid-column: span 2;
+            }
+        }
+
+        @media (max-width: 650px) {
+            .master-footer {
+                padding-top: 3.5rem;
+                border-radius: 30px 30px 0 0;
+            }
+
+            .footer-top-container {
+                grid-template-columns: 1fr;
+                gap: 2.2rem;
+            }
+
+            .brand-col {
+                grid-column: span 1;
+            }
+
+            .footer-bottom-container {
+                flex-direction: column;
+                gap: 1.2rem;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body class="flex flex-col justify-between selection:bg-pigeon-purple selection:text-white">
+
+    <!-- Interactive Canvas for Flying Feathers Ambient Effect -->
+    <canvas id="feathers-canvas"></canvas>
+
+    <!-- Main Container -->
+    <div class="relative z-10 flex-1">
+        
+        <!-- HEADER / DOVE WINGS HERO SECTION -->
+        <header class="wings-header-bg max-w-7xl mx-auto px-4 sm:px-6 pt-6 md:pt-10 pb-4 text-center">
+            <div class="flex flex-col items-center justify-center">
+                
+                <!-- Profile Avatar with Wings Badge -->
+                <div class="relative mb-3 group cursor-pointer">
+                    <div class="absolute -inset-1.5 bg-gradient-to-r from-pigeon-purple via-gold-accent to-emerald-sheen rounded-full blur-md opacity-70 group-hover:opacity-100 transition duration-500"></div>
+                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=300&auto=format&fit=crop&q=80" 
+                         alt="عهود |  التسويق بالمحتوى" 
+                         class="relative w-22 h-22 xs:w-24 xs:h-24 md:w-28 md:h-28 rounded-full object-cover border-2 border-white shadow-2xl">
+                    <span class="absolute bottom-1 left-0 bg-pigeon-purple text-white rounded-full w-6 h-6 md:w-7 md:h-7 flex items-center justify-center text-xs shadow-lg border border-white" title="حمامة التسويق - حساب موثق">
+                        <i class="fas fa-feather-pointed"></i>
+                    </span>
+                </div>
+
+                <!-- Bio Info -->
+                <div class="flex items-center justify-center gap-2 mb-1">
+                    <i class="fas fa-dove text-pigeon-purple text-lg md:text-xl"></i>
+                    <h1 class="text-xl xs:text-2xl md:text-4xl font-black tracking-tight leading-tight text-text-dark">
+                        عهود <span class="gradient-text">|  التسويق بالمحتوى</span>
+                    </h1>
+                </div>
+                <p class="text-text-muted max-w-lg text-xs md:text-sm mb-4 leading-relaxed px-2 font-semibold">
+                    تحليق ناعم بأفكار تسويقية استراتيجية 🕊️ | نحول الرسائل المعقدة إلى ريلز خفيفة ومؤثرة تخطف الأنظار وتحقق نتائج استثنائية.
+                </p>
+
+                <!-- Key Metrics Grid -->
+                <div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5 xs:gap-3 md:gap-4 w-full max-w-3xl glass-card rounded-3xl p-3 sm:p-4 mb-4 border border-pigeon-purple/20 shadow-xl">
+                    <div class="text-center p-2 rounded-2xl bg-white/50">
+                        <div class="text-lg xs:text-xl md:text-2xl font-black gradient-text">4.8M+</div>
+                        <div class="text-[10px] xs:text-xs text-text-muted font-bold">وصول تحليقي</div>
+                    </div>
+                    <div class="text-center p-2 rounded-2xl bg-white/50">
+                        <div class="text-lg xs:text-xl md:text-2xl font-black text-pigeon-dark">22.5%</div>
+                        <div class="text-[10px] xs:text-xs text-text-muted font-bold">معدل التفاعل</div>
+                    </div>
+                    <div class="text-center p-2 rounded-2xl bg-white/50">
+                        <div class="text-lg xs:text-xl md:text-2xl font-black gradient-text">640K+</div>
+                        <div class="text-[10px] xs:text-xs text-text-muted font-bold">متابع مهتم</div>
+                    </div>
+                    <div class="text-center p-2 rounded-2xl bg-white/50">
+                        <div class="text-lg xs:text-xl md:text-2xl font-black text-pigeon-dark">150+</div>
+                        <div class="text-[10px] xs:text-xs text-text-muted font-bold">حملة تسويقية</div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- STICKY FILTER BAR -->
+        <section class="max-w-7xl mx-auto px-3 sm:px-6 sticky top-2 z-40 mb-6 md:mb-8">
+            <div class="glass-card rounded-2xl p-1.5 md:p-2 flex items-center justify-between gap-2 shadow-lg border border-pigeon-purple/15">
+                
+                <!-- Scrollable Categories Buttons -->
+                <div class="flex items-center space-x-1.5 space-x-reverse overflow-x-auto no-scrollbar w-full py-1 px-1">
+                    <button onclick="filterReels('all', this)" class="filter-btn active px-3.5 py-1.5 xs:px-4 xs:py-2 rounded-xl text-xs font-bold transition-all border border-pigeon-purple/20 shrink-0">
+                        <i class="fas fa-border-all ml-1 text-[11px]"></i> الكل
+                    </button>
+                    <button onclick="filterReels('educational', this)" class="filter-btn px-3.5 py-1.5 xs:px-4 xs:py-2 rounded-xl text-xs font-bold transition-all border border-pigeon-purple/20 text-text-muted hover:text-pigeon-dark shrink-0">
+                        <i class="fas fa-graduation-cap ml-1 text-[11px]"></i> فويس اوفر
+                    </button>
+                    <button onclick="filterReels('awareness', this)" class="filter-btn px-3.5 py-1.5 xs:px-4 xs:py-2 rounded-xl text-xs font-bold transition-all border border-pigeon-purple/20 text-text-muted hover:text-pigeon-dark shrink-0">
+                        <i class="fas fa-dove ml-1 text-[11px]"></i>  تعريفي عني 
+                    </button>
+                    <button onclick="filterReels('sales', this)" class="filter-btn px-3.5 py-1.5 xs:px-4 xs:py-2 rounded-xl text-xs font-bold transition-all border border-pigeon-purple/20 text-text-muted hover:text-pigeon-dark shrink-0">
+                        <i class="fas fa-hand-holding-dollar ml-1 text-[11px]"></i> UGC 
+                    </button>
+                    <button onclick="filterReels('scripts', this)" class="filter-btn px-3.5 py-1.5 xs:px-4 xs:py-2 rounded-xl text-xs font-bold transition-all border border-pigeon-purple/20 text-text-muted hover:text-pigeon-dark shrink-0">
+                        <i class="fas fa-feather ml-1 text-[11px]"></i> سكريبتات
+                    </button>
+                    <button onclick="filterReels('cultural', this)" class="filter-btn px-3.5 py-1.5 xs:px-4 xs:py-2 rounded-xl text-xs font-bold transition-all border border-pigeon-purple/20 text-text-muted hover:text-pigeon-dark shrink-0">
+                        <i class="fas fa-book-open ml-1 text-[11px]"></i> طبي اورجانيك 
+                    </button>
+                </div>
+
+                <!-- Counter Badge -->
+                <div class="hidden lg:flex items-center text-[11px] text-text-muted bg-white/80 px-3 py-1.5 rounded-xl border border-pigeon-purple/20 shrink-0 shadow-sm">
+                    <span class="w-2 h-2 rounded-full bg-emerald-500 inline-block ml-1.5 animate-pulse"></span>
+                    معروض: <span id="reel-count" class="font-bold text-pigeon-dark mr-1">6</span> ريلز
+                </div>
+            </div>
+        </section>
+
+        <!-- MAIN REELS GRID (Compact: 2 on mobile, 5-6 on desktop) -->
+        <main class="max-w-7xl mx-auto px-3 sm:px-6 mb-12">
+            <div id="reels-grid" class="grid grid-cols-2 xxs:grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-3 sm:gap-4 justify-center">
+                <!-- Cards render dynamically via JS -->
+            </div>
+
+            <!-- Empty State -->
+            <div id="empty-state" class="hidden text-center py-12 glass-card rounded-3xl max-w-md mx-auto my-6 px-4">
+                <i class="fas fa-dove text-4xl text-pigeon-purple/50 mb-3"></i>
+                <h3 class="text-base font-bold text-text-dark">لا توجد تغريدات ريلز في هذا القسم</h3>
+                <p class="text-text-muted text-xs mt-1">اختر قسماً آخر لاستكشاف باقي الأعمال التسويقية.</p>
+            </div>
+        </main>
+    </div>
+
+    <!-- FULLSCREEN REEL MODAL -->
+    <div id="reel-modal" class="fixed inset-0 z-50 bg-pigeon-dark/95 backdrop-blur-2xl hidden flex items-center justify-center p-0 md:p-4 transition-opacity duration-300">
+        
+        <!-- Close Button -->
+        <button onclick="closeModal()" class="absolute top-3 left-3 md:top-6 md:left-6 z-50 text-white bg-black/40 hover:bg-gold-accent w-10 h-10 rounded-full flex items-center justify-center transition border border-white/20 shadow-2xl">
+            <i class="fas fa-xmark text-lg"></i>
+        </button>
+
+        <!-- Desktop Navigation Controls -->
+        <button onclick="navigateModal(-1)" class="hidden md:flex absolute right-6 top-1/2 -translate-y-1/2 z-50 text-white bg-black/40 hover:bg-pigeon-purple w-11 h-11 rounded-full items-center justify-center transition border border-white/20">
+            <i class="fas fa-chevron-right text-base"></i>
+        </button>
+        <button onclick="navigateModal(1)" class="hidden md:flex absolute left-6 top-1/2 -translate-y-1/2 z-50 text-white bg-black/40 hover:bg-pigeon-purple w-11 h-11 rounded-full items-center justify-center transition border border-white/20">
+            <i class="fas fa-chevron-left text-base"></i>
+        </button>
+
+        <!-- Modal Player Container -->
+        <div class="relative w-full modal-height md:h-[88vh] md:max-h-[800px] md:w-[380px] bg-black md:rounded-3xl overflow-hidden shadow-2xl border-0 md:border md:border-white/20 flex flex-col justify-between">
+            
+            <!-- Video Canvas -->
+            <video id="modal-video" class="absolute inset-0 w-full h-full object-cover cursor-pointer" loop playsinline onclick="toggleModalPlay()"></video>
+
+            <!-- Play Indicator -->
+            <div id="modal-play-indicator" class="absolute inset-0 flex items-center justify-center bg-black/20 pointer-events-none opacity-0 transition-opacity duration-200">
+                <div class="w-14 h-14 rounded-full bg-pigeon-purple/80 text-white flex items-center justify-center text-xl backdrop-blur-md">
+                    <i class="fas fa-play" id="modal-play-icon"></i>
+                </div>
+            </div>
+
+            <!-- Top Header Bar -->
+            <div class="relative z-10 p-3.5 bg-gradient-to-b from-black/90 via-black/40 to-transparent flex items-center justify-between">
+                <div class="flex items-center space-x-2 space-x-reverse">
+                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=100&auto=format&fit=crop&q=80" class="w-8 h-8 rounded-full border border-gold-accent object-cover">
+                    <div>
+                        <div class="text-[11px] font-bold text-white flex items-center gap-1">
+                            عهود 🕊️
+                            <i class="fas fa-check-circle text-gold-accent text-[9px]"></i>
+                        </div>
+                        <span id="modal-category-tag" class="text-[9px] text-white glass-pill px-2 py-0.5 rounded-full">تسويق</span>
+                    </div>
+                </div>
+
+                <button onclick="toggleModalMute(event)" id="modal-mute-btn" class="bg-black/50 text-white text-xs p-2 rounded-full border border-white/20 hover:bg-white/20 transition">
+                    <i class="fas fa-volume-up" id="modal-mute-icon"></i>
+                </button>
+            </div>
+
+            <!-- Left Interactive Bar -->
+            <div class="absolute left-3 bottom-24 md:bottom-20 z-20 flex flex-col items-center space-y-4 text-white">
+                
+                <!-- Like Button with Wing Flutter Animation -->
+                <button onclick="handleModalLike(event)" class="group flex flex-col items-center">
+                    <div class="w-10 h-10 rounded-full bg-black/50 backdrop-blur-md flex items-center justify-center border border-white/20 text-lg transition group-hover:scale-110">
+                        <i id="modal-like-icon" class="fas fa-feather-pointed text-white transition"></i>
+                    </div>
+                    <span id="modal-likes-count" class="text-[10px] font-bold mt-0.5 drop-shadow">0</span>
+                </button>
+
+                <!-- Comment -->
+                <button onclick="showToast('استشارات السكريبت والمحتوى متاحة للعملاء 🕊️')" class="group flex flex-col items-center">
+                    <div class="w-10 h-10 rounded-full bg-black/50 backdrop-blur-md flex items-center justify-center border border-white/20 text-lg transition group-hover:scale-110">
+                        <i class="fas fa-comment text-white"></i>
+                    </div>
+                    <span id="modal-comments-count" class="text-[10px] font-bold mt-0.5 drop-shadow">0</span>
+                </button>
+
+                <!-- Share -->
+                <button onclick="shareReelCurrent()" class="group flex flex-col items-center">
+                    <div class="w-10 h-10 rounded-full bg-black/50 backdrop-blur-md flex items-center justify-center border border-white/20 text-lg transition group-hover:scale-110">
+                        <i class="fas fa-share text-white"></i>
+                    </div>
+                    <span id="modal-shares-count" class="text-[10px] font-bold mt-0.5 drop-shadow">0</span>
+                </button>
+
+                <div class="flex flex-col items-center opacity-80">
+                    <div class="w-7 h-7 rounded-full bg-black/40 flex items-center justify-center text-[10px]">
+                        <i class="fas fa-eye text-gray-300"></i>
+                    </div>
+                    <span id="modal-views-count" class="text-[9px] font-bold mt-0.5">0</span>
+                </div>
+            </div>
+
+            <!-- Bottom Information & Sound Wave Visualizer Bar -->
+            <div class="relative z-10 p-4 bg-gradient-to-t from-black/95 via-black/80 to-transparent pr-14 pl-3 pb-6">
+                <h3 id="modal-title" class="text-xs font-bold text-white mb-1 leading-snug drop-shadow">عنوان التغريدة الريل</h3>
+                <p id="modal-desc" class="text-[10px] sm:text-[11px] text-gray-300 line-clamp-2 mb-2.5 leading-relaxed">وصف التغريدة التسويقية والنموذج المستخدم.</p>
+                
+                <!-- Dove Coo Sound Visualizer Bar -->
+                <div class="flex items-center gap-2 bg-white/10 backdrop-blur-md rounded-full px-3 py-1.5 w-fit border border-white/15">
+                    <i class="fas fa-dove text-gold-accent text-xs"></i>
+                    <div class="flex items-center gap-0.5 h-4">
+                        <span class="visualizer-bar w-1 bg-gold-accent rounded-full" style="animation-delay: 0.1s;"></span>
+                        <span class="visualizer-bar w-1 bg-pigeon-purple rounded-full" style="animation-delay: 0.3s;"></span>
+                        <span class="visualizer-bar w-1 bg-emerald-sheen rounded-full" style="animation-delay: 0.2s;"></span>
+                        <span class="visualizer-bar w-1 bg-gold-accent rounded-full" style="animation-delay: 0.4s;"></span>
+                    </div>
+                    <span class="text-[9px] text-gray-200 font-semibold truncate max-w-[140px]">تغريدات وتسريبات تسويقية | عهود</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Notification Toast -->
+    <div id="toast" class="fixed bottom-5 right-1/2 translate-x-1/2 z-50 glass-card bg-pigeon-dark/90 text-white px-4 py-2.5 rounded-2xl shadow-2xl flex items-center space-x-2 space-x-reverse opacity-0 transition-all duration-300 pointer-events-none w-[85%] max-w-xs justify-center border border-gold-accent/40">
+        <i class="fas fa-feather-pointed text-gold-accent text-sm"></i>
+        <span id="toast-message" class="text-xs font-bold text-center">تمت العملية بنجاح!</span>
+    </div>
+
+    <!-- 🏛️ الفوتر الفاخر -->
+    <footer class="master-footer" id="main-footer">
+        <div class="footer-pigeon-bg"></div>
+
+        <div class="footer-top-container">
+
+            <!-- العمود الأول: التعريف والبراند -->
+            <div class="footer-col brand-col">
+                <div class="footer-brand-header">
+                    <div class="brand-pigeon-icon">
+                        <i class="fa-solid fa-dove"></i>
+                    </div>
+                    <h3>ساحة الحرم التسويقي</h3>
+                </div>
+                <p class="brand-description">
+                    أهلاً بك في ساحتي التسويقية! أنا صانعة محتوى ومستشارة تسويقية أؤمن بأن كل علامة تجارية لها رحلتها
+                    الخاصة. هنا نحول أفكارك إلى استراتيجيات متكاملة ومحتوى مؤثر يترك أثراً حقيقياً، لتتفرع خدماتك
+                    كالدروب والحارات نحو نجاح براندك وتصدره في السوق.
+                </p>
+                <div class="footer-social-links">
+                    <a href="#" class="footer-social-btn" title="فيسبوك"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" class="footer-social-btn" title="انستجرام"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" class="footer-social-btn" title="لينكد إن"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="#" class="footer-social-btn" title="منصة X"><i class="fa-brands fa-x-twitter"></i></a>
+                </div>
+            </div>
+
+            <!-- العمود الثاني: روابط سريعة -->
+            <div class="footer-col links-col">
+                <h4 class="footer-title">روابط الساحة</h4>
+                <ul class="footer-menu">
+                    <li><a href="#about"><i class="fa-solid fa-chevron-left"></i> عن الساحة</a></li>
+                    <li><a href="#haram-services"><i class="fa-solid fa-chevron-left"></i> حارات الخدمات</a></li>
+                    <li><a href="#contact-map"><i class="fa-solid fa-chevron-left"></i> خريطة التواصل</a></li>
+                    <li><a href="#portfolio"><i class="fa-solid fa-chevron-left"></i> معرض الأعمال</a></li>
+                </ul>
+            </div>
+
+            <!-- العمود الثالث: مبادئ الساحة -->
+            <div class="footer-col vision-col">
+                <h4 class="footer-title">مبادئ الساحة</h4>
+                <ul class="footer-principles-list">
+                    <li>
+                        <i class="fa-solid fa-bullseye"></i>
+                        <div>
+                            <strong>استراتيجيات مبنية على بيانات</strong>
+                            <span>لا نعتمد على العشوائية، بل نخلق خططاً مدروسة.</span>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-gem"></i>
+                        <div>
+                            <strong>جودة وتفرد المحتوى</strong>
+                            <span>صياغة رسائل تشبه براندك وتصل لقلب جمهورك.</span>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-chart-line"></i>
+                        <div>
+                            <strong>أثر مستدام ونمو حقيقي</strong>
+                            <span>نتائج تضمن استمرارية نجاحك وتوسعك.</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+
+        <!-- خط فاصل -->
+        <div class="footer-divider"></div>
+
+        <!-- الجزء السفلي: الحقوق والتطوير -->
+        <div class="footer-bottom-container">
+            <div class="copyright-text">
+                <p>© 2026 جميع الحقوق محفوظة لـ <strong>ساحة الحرم التسويقي</strong></p>
+            </div>
+
+            <div class="developer-credit">
+                <span>تم التطوير بكل شغف بواسطة:</span>
+                <a href="https://wa.me/201000000000?text=مرحباً%20رضوى،%20شاهدت%20تصميم%20موقع%20ساحة%20الحرم%20التسويقي%20وأود%20التواصل%20معك"
+                    target="_blank" class="dev-whatsapp-btn" rel="noopener noreferrer">
+                    <span class="dev-name">رضوى محمد</span>
+                    <i class="fa-brands fa-whatsapp"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JAVASCRIPT & CANVAS FEATHERS ANIMATION -->
+    <script>
+        // Reels Data tailored to Ohood (Content Marketing Expert)
+        const reelsData = [
+            {
+                id: 1,
+                title: "هيكلة سكريبت الريلز الذكي: كيف تجذب عميلك بأول ثانيتين؟ 🕊️",
+                category: "scripts",
+                categoryLabel: "سكريبتات",
+                categoryIcon: "fa-feather",
+                duration: "0:42",
+                videoUrl: "https://assets.mixkit.co/videos/preview/mixkit-vertical-shot-of-a-woman-holding-a-smartphone-41485-large.mp4",
+                poster: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=500&auto=format&fit=crop&q=80",
+                views: "210K",
+                likes: 18400,
+                comments: "930",
+                shares: "3.2K",
+                description: "النموذج الانسيابي للسكريبت الذي يحول المشاهد العابر إلى متابع دائم لمحتواك."
+            },
+            {
+                id: 2,
+                title: "كيف تجعل علاماتك التجارية تحلق فوق المنافسين؟ 🚀",
+                category: "sales",
+                categoryLabel: "بيعي واستراتيجي",
+                categoryIcon: "fa-hand-holding-dollar",
+                duration: "0:55",
+                videoUrl: "https://assets.mixkit.co/videos/preview/mixkit-girl-in-a-park-recording-a-video-with-her-phone-41487-large.mp4",
+                poster: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=500&auto=format&fit=crop&q=80",
+                views: "180K",
+                likes: 14200,
+                comments: "610",
+                shares: "2.1K",
+                description: "استراتيجية كتابة المحتوى البيعي بدون إزعاج العميل أو إشعاره بالإعلان المباشر."
+            },
+            {
+                id: 3,
+                title: "توعية تسويقية: خرافات الفيديوهات القصيرة التي دمرت تفاعلك! 🛡️",
+                category: "awareness",
+                categoryLabel: "UGC",
+                categoryIcon: "fa-dove",
+                duration: "0:35",
+                videoUrl: "https://drive.google.com/file/d/1ONgwm19EFwU7bnevolrg_TmtXqM126dE/view?usp=drivesdk&fbclid=IwZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQMMzUwNjg1NTMxNzI4AAEeyEW10JBWGL6jr7HhttXbJtN745nYMj0_Wlz65YVV0IbF67VqOV6LmVE_BKs_aem_GXv_2yU5NrTiIYK_867NSw",
+                poster: "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=500&auto=format&fit=crop&q=80",
+                views: "340K",
+                likes: 29100,
+                comments: "2.1K",
+                shares: "9.5K",
+                description: "تصحيح المفاهيم الخاطئة عن خوارزميات إنستغرام وتيك توك وطريقة التعامل الصحيحة."
+            },
+            {
+                id: 4,
+                title: "5 خطوات تحول صناعة المحتوى اليومي لعملية سهلة وسريعة 💡",
+                category: "educational",
+                categoryLabel: "تعليمي",
+                categoryIcon: "fa-graduation-cap",
+                duration: "0:48",
+                videoUrl: "https://assets.mixkit.co/videos/preview/mixkit-young-woman-holding-a-smartphone-in-a-studio-41486-large.mp4",
+                poster: "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=500&auto=format&fit=crop&q=80",
+                views: "410K",
+                likes: 36000,
+                comments: "2.8K",
+                shares: "11K",
+                description: "نظام بناء الأفكار وجدولة المحتوى بدون احتراق وظيفي أو تشتت."
+            },
+            {
+                id: 5,
+                title: "تاريخ قوة القصة (Storytelling) في بناء العلامات العظيمة 📚",
+                category: "cultural",
+                categoryLabel: "طبية اورجانيك",
+                categoryIcon: "fa-book-open",
+                duration: "0:59",
+                videoUrl: "https://assets.mixkit.co/videos/preview/mixkit-woman-recording-a-vlog-with-her-phone-41488-large.mp4",
+                poster: "https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?w=500&auto=format&fit=crop&q=80",
+                views: "125K",
+                likes: 9800,
+                comments: "420",
+                shares: "1.8K",
+                description: "كيف استخدمت الشركات الكبرى قوة سرد القصص للتأثير في مشاعر المتابعين وجذبهم."
+            },
+            {
+                id: 6,
+                title: "كيف تستخرج 10 أفكار ريلز من فكرة واحدة فقط؟ 🎯",
+                category: "scripts",
+                categoryLabel: "سكريبتات",
+                categoryIcon: "fa-feather",
+                duration: "0:30",
+                videoUrl: "https://vt.tiktok.com/ZSqqboq27/",
+                poster: "https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=500&auto=format&fit=crop&q=80",
+                views: "290K",
+                likes: 22400,
+                comments: "1.1K",
+                shares: "5.4K",
+                description: "طريقة تدوير المحتوى المبتكرة لإطالة عمر أفكارك واستغلالها بأفضل صورة."
+            }
+        ];
+
+        let currentFilter = 'all';
+        let currentModalIndex = 0;
+        let filteredReels = [...reelsData];
+        let userLikedState = {};
+
+        // Canvas Flying Feathers Logic
+        function initFeathersCanvas() {
+            const canvas = document.getElementById('feathers-canvas');
+            const ctx = canvas.getContext('2d');
+
+            function resize() {
+                canvas.width = window.innerWidth;
+                canvas.height = window.innerHeight;
+            }
+            resize();
+            window.addEventListener('resize', resize);
+
+            const feathers = Array.from({ length: 18 }, () => ({
+                x: Math.random() * canvas.width,
+                y: Math.random() * canvas.height,
+                size: Math.random() * 12 + 10,
+                speedY: Math.random() * 0.6 + 0.3,
+                speedX: Math.sin(Math.random() * Math.PI) * 0.5,
+                angle: Math.random() * 360,
+                spin: (Math.random() - 0.5) * 0.8,
+                opacity: Math.random() * 0.4 + 0.2,
+                color: Math.random() > 0.5 ? '#9c27b0' : '#00b894'
+            }));
+
+            function drawFeather(f) {
+                ctx.save();
+                ctx.translate(f.x, f.y);
+                ctx.rotate((f.angle * Math.PI) / 180);
+                ctx.globalAlpha = f.opacity;
+
+                ctx.beginPath();
+                ctx.moveTo(0, -f.size);
+                ctx.quadraticCurveTo(f.size / 2, 0, 0, f.size);
+                ctx.quadraticCurveTo(-f.size / 2, 0, 0, -f.size);
+                
+                ctx.fillStyle = f.color;
+                ctx.fill();
+
+                // Spine of feather
+                ctx.beginPath();
+                ctx.moveTo(0, -f.size * 1.1);
+                ctx.lineTo(0, f.size * 1.1);
+                ctx.strokeStyle = '#ffffff';
+                ctx.lineWidth = 0.8;
+                ctx.stroke();
+
+                ctx.restore();
+            }
+
+            function animate() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                feathers.forEach(f => {
+                    f.y += f.speedY;
+                    f.x += Math.sin(f.y * 0.01) * 0.6;
+                    f.angle += f.spin;
+
+                    if (f.y > canvas.height + 20) {
+                        f.y = -20;
+                        f.x = Math.random() * canvas.width;
+                    }
+                    drawFeather(f);
+                });
+                requestAnimationFrame(animate);
+            }
+            animate();
+        }
+
+        window.onload = function() {
+            initFeathersCanvas();
+            renderReelsGrid();
+        };
+
+        // Render Cards Grid
+        function renderReelsGrid() {
+            const grid = document.getElementById('reels-grid');
+            const emptyState = document.getElementById('empty-state');
+            
+            filteredReels = currentFilter === 'all' 
+                ? reelsData 
+                : reelsData.filter(item => item.category === currentFilter);
+
+            const countElem = document.getElementById('reel-count');
+            if (countElem) countElem.innerText = filteredReels.length;
+
+            if (filteredReels.length === 0) {
+                grid.innerHTML = '';
+                emptyState.classList.remove('hidden');
+                return;
+            } else {
+                emptyState.classList.add('hidden');
+            }
+
+            grid.innerHTML = filteredReels.map((reel, index) => {
+                const isLiked = userLikedState[reel.id];
+                const displayLikes = isLiked ? reel.likes + 1 : reel.likes;
+
+                return `
+                <div class="feather-card-shape glass-card overflow-hidden group hover:-translate-y-1.5 flex flex-col max-w-[230px] mx-auto w-full">
+                    
+                    <div class="relative aspect-reel w-full bg-pigeon-dark overflow-hidden cursor-pointer" onclick="openModal(${index})">
+                        <img src="${reel.poster}" alt="${reel.title}" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
+                        
+                        <video src="${reel.videoUrl}" loop muted playsinline class="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-100 transition duration-500 hidden md:block" onmouseover="this.play()" onmouseout="this.pause(); this.currentTime=0;"></video>
+
+                        <div class="absolute inset-0 bg-gradient-to-t from-pigeon-dark/95 via-pigeon-dark/20 to-black/30 pointer-events-none"></div>
+
+                        <!-- Category Badge -->
+                        <div class="absolute top-2 right-2 z-10">
+                            <span class="glass-pill text-[9px] font-bold px-2 py-0.5 rounded-full flex items-center border border-white/20">
+                                <i class="fas ${reel.categoryIcon} ml-1 text-gold-accent"></i> ${reel.categoryLabel}
+                            </span>
+                        </div>
+
+                        <!-- Duration Badge -->
+                        <div class="absolute top-2 left-2 z-10">
+                            <span class="glass-pill text-[9px] font-semibold px-1.5 py-0.5 rounded-full">
+                                ${reel.duration}
+                            </span>
+                        </div>
+
+                        <!-- Play Button -->
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-gold-accent/90 text-white flex items-center justify-center text-xs sm:text-sm shadow-lg transform scale-90 group-hover:scale-110 transition duration-300 border border-white/30 backdrop-blur-md">
+                                <i class="fas fa-play mr-0.5"></i>
+                            </div>
+                        </div>
+
+                        <!-- Left Overlay Bar -->
+                        <div class="absolute left-1.5 bottom-2.5 z-20 flex flex-col items-center space-y-2 text-white" onclick="event.stopPropagation();">
+                            <button onclick="toggleCardLike(${reel.id})" class="flex flex-col items-center group/btn">
+                                <div class="w-7 h-7 rounded-full bg-black/50 backdrop-blur-md flex items-center justify-center border border-white/15 transition group-hover/btn:scale-110">
+                                    <i class="fas fa-feather-pointed text-[10px] ${isLiked ? 'wing-flutter-active' : 'text-white'}" id="card-heart-${reel.id}"></i>
+                                </div>
+                                <span class="text-[8px] sm:text-[9px] font-bold mt-0.5" id="card-likes-${reel.id}">${formatNumber(displayLikes)}</span>
+                            </button>
+
+                            <button onclick="openModal(${index})" class="flex flex-col items-center">
+                                <div class="w-7 h-7 rounded-full bg-black/50 backdrop-blur-md flex items-center justify-center border border-white/15">
+                                    <i class="fas fa-comment text-[10px] text-white"></i>
+                                </div>
+                                <span class="text-[8px] sm:text-[9px] font-bold mt-0.5">${reel.comments}</span>
+                            </button>
+
+                            <button onclick="shareReel(${reel.id})" class="flex flex-col items-center">
+                                <div class="w-7 h-7 rounded-full bg-black/50 backdrop-blur-md flex items-center justify-center border border-white/15">
+                                    <i class="fas fa-share text-[10px] text-white"></i>
+                                </div>
+                                <span class="text-[8px] sm:text-[9px] font-bold mt-0.5">${reel.shares}</span>
+                            </button>
+                        </div>
+
+                        <!-- Bottom Title & Views -->
+                        <div class="absolute bottom-2 right-2 left-10 z-10 text-right">
+                            <div class="text-[9px] text-gold-accent font-bold mb-0.5 flex items-center">
+                                <i class="fas fa-eye ml-1 text-[8px]"></i> ${reel.views}
+                            </div>
+                            <h3 class="text-[10px] sm:text-xs font-bold text-white line-clamp-2 leading-tight drop-shadow">
+                                ${reel.title}
+                            </h3>
+                        </div>
+                    </div>
+                </div>
+                `;
+            }).join('');
+        }
+
+        // Filter Categories Handler
+        function filterReels(category, btnElement) {
+            currentFilter = category;
+            
+            const buttons = document.querySelectorAll('.filter-btn');
+            buttons.forEach(btn => {
+                btn.classList.remove('active');
+                btn.classList.add('text-text-muted');
+            });
+
+            if (btnElement) {
+                btnElement.classList.add('active');
+                btnElement.classList.remove('text-text-muted');
+            }
+
+            renderReelsGrid();
+        }
+
+        function toggleCardLike(id) {
+            userLikedState[id] = !userLikedState[id];
+            renderReelsGrid();
+            
+            if (filteredReels[currentModalIndex] && filteredReels[currentModalIndex].id === id) {
+                updateModalLikeUI(userLikedState[id]);
+            }
+        }
+
+        function openModal(index) {
+            currentModalIndex = index;
+            const reel = filteredReels[currentModalIndex];
+            if (!reel) return;
+
+            const modal = document.getElementById('reel-modal');
+            const video = document.getElementById('modal-video');
+
+            video.src = reel.videoUrl;
+            video.muted = false;
+            updateMuteUI(false);
+
+            document.getElementById('modal-title').innerText = reel.title;
+            document.getElementById('modal-desc').innerText = reel.description;
+            document.getElementById('modal-category-tag').innerText = reel.categoryLabel;
+            
+            const isLiked = userLikedState[reel.id];
+            const displayLikes = isLiked ? reel.likes + 1 : reel.likes;
+            document.getElementById('modal-likes-count').innerText = formatNumber(displayLikes);
+            document.getElementById('modal-comments-count').innerText = reel.comments;
+            document.getElementById('modal-shares-count').innerText = reel.shares;
+            document.getElementById('modal-views-count').innerText = reel.views;
+
+            updateModalLikeUI(isLiked);
+
+            modal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+
+            video.play().catch(e => {
+                video.muted = true;
+                updateMuteUI(true);
+                video.play();
+            });
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('reel-modal');
+            const video = document.getElementById('modal-video');
+            
+            video.pause();
+            video.currentTime = 0;
+            modal.classList.add('hidden');
+            document.body.style.overflow = '';
+        }
+
+        function toggleModalPlay() {
+            const video = document.getElementById('modal-video');
+            const indicator = document.getElementById('modal-play-indicator');
+            const icon = document.getElementById('modal-play-icon');
+
+            if (video.paused) {
+                video.play();
+                icon.className = 'fas fa-play';
+            } else {
+                video.pause();
+                icon.className = 'fas fa-pause';
+            }
+
+            indicator.style.opacity = '1';
+            setTimeout(() => {
+                indicator.style.opacity = '0';
+            }, 400);
+        }
+
+        function toggleModalMute(e) {
+            e.stopPropagation();
+            const video = document.getElementById('modal-video');
+            video.muted = !video.muted;
+            updateMuteUI(video.muted);
+        }
+
+        function updateMuteUI(isMuted) {
+            const icon = document.getElementById('modal-mute-icon');
+            if (isMuted) {
+                icon.className = 'fas fa-volume-xmark text-gold-accent';
+            } else {
+                icon.className = 'fas fa-volume-up text-white';
+            }
+        }
+
+        function handleModalLike(e) {
+            e.stopPropagation();
+            const reel = filteredReels[currentModalIndex];
+            if (!reel) return;
+
+            userLikedState[reel.id] = !userLikedState[reel.id];
+            const isLiked = userLikedState[reel.id];
+            
+            const displayLikes = isLiked ? reel.likes + 1 : reel.likes;
+            document.getElementById('modal-likes-count').innerText = formatNumber(displayLikes);
+
+            updateModalLikeUI(isLiked);
+            renderReelsGrid();
+        }
+
+        function updateModalLikeUI(isLiked) {
+            const icon = document.getElementById('modal-like-icon');
+            if (isLiked) {
+                icon.className = 'fas fa-feather-pointed wing-flutter-active';
+            } else {
+                icon.className = 'fas fa-feather-pointed text-white';
+            }
+        }
+
+        function navigateModal(direction) {
+            let newIndex = currentModalIndex + direction;
+            if (newIndex < 0) newIndex = filteredReels.length - 1;
+            if (newIndex >= filteredReels.length) newIndex = 0;
+            openModal(newIndex);
+        }
+
+        function shareReel(id) {
+            showToast('تم نسخ رابط تغريدة الريل بنجاح 🕊️');
+        }
+
+        function shareReelCurrent() {
+            showToast('تم نسخ رابط تغريدة الريل بنجاح 🕊️');
+        }
+
+        function showToast(msg) {
+            const toast = document.getElementById('toast');
+            document.getElementById('toast-message').innerText = msg;
+            toast.classList.remove('opacity-0', 'pointer-events-none');
+            
+            setTimeout(() => {
+                toast.classList.add('opacity-0', 'pointer-events-none');
+            }, 2500);
+        }
+
+        function formatNumber(num) {
+            if (num >= 1000000) return (num / 1000000).toFixed(1) + 'M';
+            if (num >= 1000) return (num / 1000).toFixed(1) + 'K';
+            return num;
+        }
+
+        document.addEventListener('keydown', function(e) {
+            const modal = document.getElementById('reel-modal');
+            if (!modal.classList.contains('hidden')) {
+                if (e.key === 'Escape') closeModal();
+                if (e.key === 'ArrowUp' || e.key === 'ArrowRight') navigateModal(-1);
+                if (e.key === 'ArrowDown' || e.key === 'ArrowLeft') navigateModal(1);
+                if (e.key === ' ') { e.preventDefault(); toggleModalPlay(); }
+            }
+        });
+    </script>
+</body>
+</html>

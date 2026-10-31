@@ -19,7 +19,6 @@
     <meta name="keywords"
         content="كوتش محتوى، كونتنت ماركتنج، كتابة محتوى، سكريبتات ريلز، خطة محتوى، زيادة الأورجانيك ريتش، محتوى بيعي، إعلانات تسويقية، صناعة محتوى إبداعي، كورس كتابة محتوى، استشارات تسويقية، تحليل الجمهور، Content Marketing، Copywriting، Organic Reach.">
     <meta name="author" content="ُEng: Radwa Mohamed">
-
     <style>
         :root {
     --bg-creamy: #fbf9f6;
@@ -221,8 +220,7 @@ border-radius: 30px;
     }
 
     .dove-navbar {
-padding: 1.1rem 1.6rem;   
- }
+padding: 0.35rem 1.2rem !important; }
 
     .menu-toggle {
         display: flex;
@@ -1217,7 +1215,7 @@ will-change: transform, box-shadow;
 .company-logo-box img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* 🔥 تملأ الدائرة بالكامل بدون حواف أو فراغات */
+    object-fit: contain; /* 🔥 تملأ الدائرة بالكامل بدون حواف أو فراغات */
     display: block;
     transition: transform 0.4s ease;
 }
@@ -1800,8 +1798,404 @@ will-change: transform, box-shadow;
 
 
 
-   
-   </style>
+
+        /* ====================================================================
+            🕊️ تصميم ساحة الحرم الخارجية وحواري الخدمات الإبداعية
+            ==================================================================== */
+.haram-square-services {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    margin: 25px auto;
+    padding: 4rem 1rem 6rem 1rem;
+    /* خلفية تعطي طابع البلاط/الرخام للساحة */
+
+    background-image:
+        linear-gradient(rgba(156, 39, 176, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(156, 39, 176, 0.05) 1px, transparent 1px);
+    background-size: 40px 40px;
+    text-align: center;
+    border-radius: 40px;
+    box-shadow: 0 20px 50px rgba(59, 9, 117, 0.04);
+    animation: containerZoomIn 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* تصميم القبة العلوية */
+.square-dome-container {
+    max-width: 900px;
+    margin: 0 auto 3.5rem auto;
+    position: relative;
+    background: #fff;
+    border-radius: 450px 450px 0 0;
+    padding: 4rem 2rem 2.5rem 2rem;
+    box-shadow: 0 -15px 45px rgba(59, 9, 117, 0.08);
+    border: 3px solid rgba(156, 39, 176, 0.2);
+    border-bottom: none;
+}
+
+/* المنارة العلوية الصغيره فوق قمة القوس */
+.top-minaret-icon {
+    position: absolute;
+    top: -28px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--pigeon-purple-dark, #3b0975);
+    color: #fff;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    border: 3px solid #fff;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    z-index: 10;
+}
+
+.square-dome-title {
+    font-size: 2.8rem;
+    font-weight: 900;
+    color: var(--pigeon-purple-dark);
+    margin-bottom: 0.8rem;
+    letter-spacing: -0.5px;
+}
+
+.square-dome-subtitle {
+    font-size: 1.2rem;
+    color: var(--text-muted);
+    font-weight: 600;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+}
+
+/* إطار الحمامة المتحركة بالأعلى */
+.giant-flying-dove {
+    width: 150px;
+    height: 150px;
+    margin: 0 auto 1.5rem auto;
+    background: linear-gradient(135deg, #fefefe, #f3e5f5);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    border: 2px solid rgba(156, 39, 176, 0.2);
+    box-shadow: 0 10px 25px rgba(59, 9, 117, 0.12);
+    animation: floatDove 
+    3.5s ease-in-out infinite;
+}
+
+.giant-flying-dove img {
+    width: 85%;
+    height: auto;
+    display: block;
+    mix-blend-mode: multiply;
+}
+
+/* زر خدماتي البارز بشعاع الدائرة السفلية */
+.services-bottom-half-circle {
+    background: linear-gradient(135deg, var(--pigeon-purple-dark), var(--pigeon-purple));
+    color: #fff;
+    font-size: 1.8rem;
+    font-weight: 900;
+    padding: 1rem 4rem;
+    border-radius: 0 0 250px 250px;
+    display: inline-block;
+    box-shadow: 0 10px 25px rgba(156, 39, 176, 0.35);
+    border: 2px solid #fff;
+    border-top: none;
+    letter-spacing: 1.5px;
+    animation: pulseGlow 3s infinite;
+}
+
+/* خريطة الشوارع والحواري المتفرعة */
+.alleys-grid-container {
+    max-width: 1100px;
+    margin: 3rem auto 0 auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.2rem;
+    position: relative;
+    z-index: 5;
+}
+
+/* شريط الشارع المزدوج الواصل بين الحواري */
+.alleys-grid-container::before {
+    content: '';
+    position: absolute;
+    top: -20px;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 12px;
+    background: repeating-linear-gradient(180deg,
+            var(--pigeon-purple),
+            var(--pigeon-purple) 12px,
+            transparent 12px,
+            transparent 24px);
+    z-index: 1;
+    border-radius: 6px;
+}
+
+/* 🕊️ الحمامة المتجولة الذاتية */
+.traveling-route-dove {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 50px;
+    background: #fff;
+    border: 2px solid var(--pigeon-purple);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 5px 15px rgba(156, 39, 176, 0.3);
+    z-index: 10;
+    top: 0px;
+    animation: autoTravelDove 8s ease-in-out infinite;
+}
+
+.traveling-route-dove img {
+    width: 35px;
+    height: auto;
+    mix-blend-mode: multiply;
+}
+
+/* بطاقات الحواري إطار رصيف الشارع */
+.alley-card {
+    background: #ffffff;
+    padding: 1.6rem 2rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(59, 9, 117, 0.08);
+    /* تصميم حافة الرصيف مزدوجة الألوان */
+    border: 6px solid #d1c4e9;
+    outline: 2px dashed var(--pigeon-purple);
+    outline-offset: -4px;
+
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    z-index: 2;
+
+    opacity: 0;
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* دبوس الحارة المزدوج في زاوية كل مربع */
+.alley-pin {
+    position: absolute;
+    top: -12px;
+    right: 15px;
+    background: var(--pigeon-purple-dark, #3b0975);
+    color: #fff;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.85rem;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+    border: 2px solid #fff;
+}
+
+.alley-card:nth-child(odd) {
+    transform: translateX(100px) scale(0.96);
+}
+
+.alley-card:nth-child(even) {
+    transform: translateX(-100px) scale(0.96);
+}
+
+.alley-card.aos-animate {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+}
+
+.alley-card:hover {
+    transform: translateY(-8px) scale(1.02) !important;
+    border-color: var(--pigeon-purple);
+    box-shadow: 0 18px 40px rgba(156, 39, 176, 0.25);
+    background: linear-gradient(135deg, #ffffff, #f3e5f5);
+}
+
+.alley-content {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    text-align: right;
+}
+
+.alley-icon {
+    width: 60px;
+    height: 60px;
+    background: var(--pigeon-purple-light);
+    color: var(--pigeon-purple-dark);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    flex-shrink: 0;
+    transition: all 0.4s ease;
+}
+
+.alley-card:hover .alley-icon {
+    background: linear-gradient(135deg, var(--pigeon-purple-dark), var(--pigeon-purple));
+    color: #fff;
+    transform: rotate(-15deg) scale(1.1);
+}
+
+.alley-info h3 {
+    font-size: 1.25rem;
+    font-weight: 900;
+    color: var(--text-dark);
+    margin-bottom: 0.3rem;
+    transition: color 0.3s ease;
+}
+
+.alley-card:hover .alley-info h3 {
+    color: var(--pigeon-purple-dark);
+}
+
+.alley-info p {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+.alley-arrow {
+    color: var(--pigeon-purple);
+    font-size: 1.2rem;
+    transition: transform 0.3s ease;
+}
+
+.alley-card:hover .alley-arrow {
+    transform: translateX(-6px) scale(1.2);
+    color: var(--pigeon-purple-dark);
+}
+
+/* التجاوب مع الهواتف الذكية */
+@media (max-width: 768px) {
+    body {
+        padding: 2rem 0.5rem;
+    }
+
+    .haram-square-services {
+        padding: 2rem 0.5rem 4rem 0.5rem;
+        border-radius: 25px;
+        background-size: 25px 25px;
+    }
+
+    .alleys-grid-container {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .alleys-grid-container::before {
+        left: 22px;
+        transform: none;
+    }
+
+    .traveling-route-dove {
+        left: 22px;
+        transform: translateX(-50%);
+        width: 40px;
+        height: 40px;
+    }
+
+    .traveling-route-dove img {
+        width: 26px;
+    }
+
+    .square-dome-container {
+        border-radius: 200px 200px 0 0;
+        padding: 2.5rem 1rem;
+    }
+
+    .square-dome-title {
+        font-size: 2.1rem;
+    }
+
+    .alley-card:nth-child(odd),
+    .alley-card:nth-child(even) {
+        transform: translateY(40px) scale(0.96);
+    }
+
+    .alley-card.aos-animate {
+        transform: translateY(0) scale(1);
+    }
+
+    .alley-card {
+        padding: 1.2rem 1.2rem 1.2rem 1.5rem;
+    }
+}
+
+    /* الحمامة تتبع الخدمة النشطة */
+.traveling-route-dove {
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: top 0.55s cubic-bezier(.22, 1, .36, 1),
+                left 0.55s cubic-bezier(.22, 1, .36, 1);
+    animation: none !important;
+    will-change: top;
+    pointer-events: none;
+      position: absolute;
+    transition: top 0.55s cubic-bezier(.22, 1, .36, 1);
+    z-index: 10;
+}
+
+/* تمييز الخدمة التي وصلت إليها الحمامة */
+.alley-card.dove-active {
+    border-color: var(--pigeon-purple);
+    box-shadow: 0 12px 30px rgba(156, 39, 176, .2);
+}
+
+/* ==========================================
+   تصغير قبة ساحة الخدمات على جميع الأجهزة
+========================================== */
+
+.square-dome-container {
+    width: 82% !important;
+    max-width: 850px !important;
+    height: 470px !important;
+    min-height: unset !important;
+    margin-inline: auto !important;
+    box-sizing: border-box;
+}
+
+/* الشاشات المتوسطة والتابلت */
+@media (max-width: 992px) {
+    .square-dome-container {
+        width: 86% !important;
+        max-width: 700px !important;
+        height: 400px !important;
+    }
+}
+
+/* الموبايل */
+@media (max-width: 576px) {
+    .square-dome-container {
+        width: 92% !important;
+        max-width: 420px !important;
+        height: 340px !important;
+    }
+}
+
+/* الموبايلات الصغيرة */
+@media (max-width: 380px) {
+    .square-dome-container {
+        width: 94% !important;
+        height: 310px !important;
+    }
+}
+
+
+    </style>
 </head>
 <body>
     
@@ -1885,7 +2279,7 @@ will-change: transform, box-shadow;
 </div>
         <div class="about-card-body">
             <div class="about-image-wrapper">
-                <img src="imgs/838cdbed-9c6c-465d-891d-f16bf4e576a9.jpeg" alt="عهود جمعة - خبيرة التسويق بالمحتوى" loading="lazy">
+                <img src="imgs/add.jpg" alt="عهود جمعة - خبيرة التسويق بالمحتوى" loading="lazy">
             </div>
             <div class="about-text-content">
                 <h3>كيف التقينا؟</h3>
@@ -1945,72 +2339,82 @@ will-change: transform, box-shadow;
             
             <div class="trusted-badge-item">
                 <div class="company-logo-box">
-                    <img src="imgs/loges/1.png" alt="Knoz Academy" loading="lazy">
+                    <img src="imgs/loges/1_.png" alt="Knoz Academy" loading="lazy">
                 </div>
             </div>
 
             <div class="trusted-badge-item">
                 <div class="company-logo-box">
-                    <img src="imgs/loges/2.png" alt="شريك 2" loading="lazy" onerror="this.src='https://api.dicebear.com/8.x/identicon/svg?seed=2'">
+                    <img src="imgs/loges/2_.png" alt="شريك 2" loading="lazy" onerror="this.src='https://api.dicebear.com/8.x/identicon/svg?seed=2'">
                 </div>
             </div>
 
             <div class="trusted-badge-item">
                 <div class="company-logo-box">
-                    <img src="imgs/loges/3.png" alt="شريك 3" loading="lazy" onerror="this.src='https://api.dicebear.com/8.x/identicon/svg?seed=3'">
+                    <img src="imgs/loges/3_.png" alt="شريك 3" loading="lazy" onerror="this.src='https://api.dicebear.com/8.x/identicon/svg?seed=3'">
                 </div>
             </div>
 
             <div class="trusted-badge-item">
                 <div class="company-logo-box">
-                    <img src="imgs/loges/4.png" alt="شريك 4" loading="lazy" onerror="this.src='https://api.dicebear.com/8.x/identicon/svg?seed=4'">
+                    <img src="imgs/loges/4_.png" alt="شريك 4" loading="lazy" onerror="this.src='https://api.dicebear.com/8.x/identicon/svg?seed=4'">
                 </div>
             </div>
 
             <div class="trusted-badge-item">
                 <div class="company-logo-box">
-                    <img src="imgs/loges/5.png" alt="شريك 5" loading="lazy" onerror="this.src='https://api.dicebear.com/8.x/identicon/svg?seed=5'">
+                    <img src="imgs/loges/5_.png" alt="شريك 5" loading="lazy" onerror="this.src='https://api.dicebear.com/8.x/identicon/svg?seed=5'">
                 </div>
             </div>
 
             <div class="trusted-badge-item">
                 <div class="company-logo-box">
-                    <img src="imgs/loges/6.png" alt="شريك 6" loading="lazy" onerror="this.src='https://api.dicebear.com/8.x/identicon/svg?seed=6'">
+                    <img src="imgs/loges/6_.png" alt="شريك 6" loading="lazy" onerror="this.src='https://api.dicebear.com/8.x/identicon/svg?seed=6'">
                 </div>
             </div>
             <div class="trusted-badge-item">
                 <div class="company-logo-box">
-                    <img src="imgs/loges/7.png" alt="Knoz Academy" loading="lazy">
+                    <img src="imgs/loges/7_.png" alt="Knoz Academy" loading="lazy">
                 </div>
             </div>
-
             <div class="trusted-badge-item">
                 <div class="company-logo-box">
-                    <img src="imgs/loges/8.png" alt="شريك 2" loading="lazy" onerror="this.src='https://api.dicebear.com/8.x/identicon/svg?seed=2'">
+                    <img src="imgs/loges/8_.png" alt="Knoz Academy" loading="lazy">
                 </div>
             </div>
-
             <div class="trusted-badge-item">
                 <div class="company-logo-box">
-                    <img src="imgs/loges/9.png" alt="شريك 3" loading="lazy" onerror="this.src='https://api.dicebear.com/8.x/identicon/svg?seed=3'">
-                </div>
-            </div>
-
-            <div class="trusted-badge-item">
-                <div class="company-logo-box">
-                    <img src="imgs/loges/10.png" alt="شريك 4" loading="lazy" onerror="this.src='https://api.dicebear.com/8.x/identicon/svg?seed=4'">
+                    <img src="imgs/loges/9_.png" alt="Knoz Academy" loading="lazy">
                 </div>
             </div>
 
             <div class="trusted-badge-item">
                 <div class="company-logo-box">
-                    <img src="imgs/loges/11.png" alt="شريك 5" loading="lazy" onerror="this.src='https://api.dicebear.com/8.x/identicon/svg?seed=5'">
+                    <img src="imgs/loges/10_.png" alt="شريك 2" loading="lazy" onerror="this.src='https://api.dicebear.com/8.x/identicon/svg?seed=2'">
                 </div>
             </div>
 
             <div class="trusted-badge-item">
                 <div class="company-logo-box">
-                    <img src="imgs/loges/12.png" alt="شريك 6" loading="lazy" onerror="this.src='https://api.dicebear.com/8.x/identicon/svg?seed=6'">
+                    <img src="imgs/loges/11_.png" alt="شريك 3" loading="lazy" onerror="this.src='https://api.dicebear.com/8.x/identicon/svg?seed=3'">
+                </div>
+            </div>
+
+            <div class="trusted-badge-item">
+                <div class="company-logo-box">
+                    <img src="imgs/loges/12_.png" alt="شريك 4" loading="lazy" onerror="this.src='https://api.dicebear.com/8.x/identicon/svg?seed=4'">
+                </div>
+            </div>
+
+            <div class="trusted-badge-item">
+                <div class="company-logo-box">
+                    <img src="imgs/loges/13_.png" alt="شريك 5" loading="lazy" onerror="this.src='https://api.dicebear.com/8.x/identicon/svg?seed=5'">
+                </div>
+            </div>
+
+            <div class="trusted-badge-item">
+                <div class="company-logo-box">
+                    <img src="imgs/loges/14_.png" alt="شريك 6" loading="lazy" onerror="this.src='https://api.dicebear.com/8.x/identicon/svg?seed=6'">
                 </div>
             </div>
 
@@ -2020,6 +2424,199 @@ will-change: transform, box-shadow;
 </section>
 
    
+    <!-- قسم ساحة الخدمات والشوارع (الحواري) -->
+    <section class="haram-square-services" id="haram-services">
+        <div class="square-dome-container">
+            <!-- المنارة الصغيرة أعلى قمة النصف دائرة -->
+            <div class="top-minaret-icon">
+                <i class="fa-solid fa-kaaba"></i>
+                <!-- أو استخدام صورة/أيقونة مئذنة صغيرة مثل: <img src="imgs/minaret.png" alt="منارة"> -->
+            </div>
+
+            <h2 class="square-dome-title">ساحة الخدمات الخارجية</h2>
+            <p class="square-dome-subtitle">حيث تحلق الحمامة من الساحة الكبرى لتتفرع في شوارع وحواري الإبداع التسويقي
+            </p>
+
+            <!-- الحمامة البنفسجية الرئيسية -->
+            <div class="giant-flying-dove">
+                <img src="imgs/Sticker-3.png" alt="حمامة الحرم"
+                    onerror="this.src='https://images.unsplash.com/photo-1598880940371-c756e0154fb8?w=200&auto=format&fit=crop&q=80'">
+            </div>
+
+            <!-- زر خدماتي بالقوس السفلي -->
+            <div class="services-bottom-half-circle">
+                خدماتي
+            </div>
+        </div>
+
+        <!-- حواري وشوارع الخدمات المتفرعة يمين ويسار -->
+        <div class="alleys-grid-container" id="alleysContainer">
+
+            <!-- 🕊️ الحمامة المتجولة الذاتية -->
+            <div class="traveling-route-dove" id="travelingDove">
+                <img src="imgs/Sticker-4.png" alt="الحمامة المتجولة"
+                    onerror="this.src='https://images.unsplash.com/photo-1598880940371-c756e0154fb8?w=100&auto=format&fit=crop&q=80'">
+            </div>
+
+            <!-- حارة 1 -->
+            <a href="test.html" class="alley-card">
+                <div class="alley-pin"><i class="fa-solid fa-location-dot"></i></div>
+                <div class="alley-content">
+                    <div class="alley-icon"><i class="fa-solid fa-hashtag"></i></div>
+                    <div class="alley-info">
+                        <h3>حارة محتوى السوشيال ميديا</h3>
+                        <p>استراتيجيات ومنشورات تفاعلية تبني جمهورك</p>
+                    </div>
+                </div>
+                <div class="alley-arrow"><i class="fa-solid fa-arrow-left"></i></div>
+            </a>
+
+            <!-- حارة 2 -->
+            <a href="#service-details" class="alley-card">
+                <div class="alley-pin"><i class="fa-solid fa-location-dot"></i></div>
+                <div class="alley-content">
+                    <div class="alley-icon"><i class="fa-solid fa-book-open"></i></div>
+                    <div class="alley-info">
+                        <h3>حارة كتابة المقالات</h3>
+                        <p>مقالات مرجعية وعميقة تجذب الزوار بانتظام</p>
+                    </div>
+                </div>
+                <div class="alley-arrow"><i class="fa-solid fa-arrow-left"></i></div>
+            </a>
+
+            <!-- حارة 3 -->
+            <a href="#service-details" class="alley-card">
+                <div class="alley-pin"><i class="fa-solid fa-location-dot"></i></div>
+                <div class="alley-content">
+                    <div class="alley-icon"><i class="fa-solid fa-video"></i></div>
+                    <div class="alley-info">
+                        <h3>حارة UGC CONTENT</h3>
+                        <p>محتوى مستخدمين واقعي وفعال لزيادة الثقة</p>
+                    </div>
+                </div>
+                <div class="alley-arrow"><i class="fa-solid fa-arrow-left"></i></div>
+            </a>
+
+            <!-- حارة 4 -->
+            <a href="#service-details" class="alley-card">
+                <div class="alley-pin"><i class="fa-solid fa-location-dot"></i></div>
+                <div class="alley-content">
+                    <div class="alley-icon"><i class="fa-solid fa-palette"></i></div>
+                    <div class="alley-info">
+                        <h3>حارة تصميم الجرافيك</h3>
+                        <p>هويات بصرية وتصاميم تخطف الأنظار</p>
+                    </div>
+                </div>
+                <div class="alley-arrow"><i class="fa-solid fa-arrow-left"></i></div>
+            </a>
+
+            <!-- حارة 5 -->
+            <a href="#service-details" class="alley-card">
+                <div class="alley-pin"><i class="fa-solid fa-location-dot"></i></div>
+                <div class="alley-content">
+                    <div class="alley-icon"><i class="fa-solid fa-share-nodes"></i></div>
+                    <div class="alley-info">
+                        <h3>حارة إدارة السوشيال ميديا</h3>
+                        <p>إدارة شاملة وجدولة ذكية لحساباتك</p>
+                    </div>
+                </div>
+                <div class="alley-arrow"><i class="fa-solid fa-arrow-left"></i></div>
+            </a>
+
+            <!-- حارة 6 -->
+            <a href="#service-details" class="alley-card">
+                <div class="alley-pin"><i class="fa-solid fa-location-dot"></i></div>
+                <div class="alley-content">
+                    <div class="alley-icon"><i class="fa-solid fa-camera-retro"></i></div>
+                    <div class="alley-info">
+                        <h3>حارة التصوير والمونتاج</h3>
+                        <p>فيديوهات ريلز وتيك توك تحقق أعلى تفاعل</p>
+                    </div>
+                </div>
+                <div class="alley-arrow"><i class="fa-solid fa-arrow-left"></i></div>
+            </a>
+
+            <!-- حارة 7 -->
+            <a href="#service-details" class="alley-card">
+                <div class="alley-pin"><i class="fa-solid fa-location-dot"></i></div>
+                <div class="alley-content">
+                    <div class="alley-icon"><i class="fa-solid fa-rectangle-ad"></i></div>
+                    <div class="alley-info">
+                        <h3>حارة الإعلانات المدفوعة</h3>
+                        <p>حملات ممولة موجهة لتحقيق مبيعات حقيقية</p>
+                    </div>
+                </div>
+                <div class="alley-arrow"><i class="fa-solid fa-arrow-left"></i></div>
+            </a>
+
+            <!-- حارة 8 -->
+            <a href="#service-details" class="alley-card">
+                <div class="alley-pin"><i class="fa-solid fa-location-dot"></i></div>
+                <div class="alley-content">
+                    <div class="alley-icon"><i class="fa-solid fa-magnifying-glass-chart"></i></div>
+                    <div class="alley-info">
+                        <h3>حارة تحسين محركات البحث (SEO)</h3>
+                        <p>تصدر نتائج محركات البحث لجلب عملاء دائمين</p>
+                    </div>
+                </div>
+                <div class="alley-arrow"><i class="fa-solid fa-arrow-left"></i></div>
+            </a>
+
+            <!-- حارة 9 -->
+            <a href="#service-details" class="alley-card">
+                <div class="alley-pin"><i class="fa-solid fa-location-dot"></i></div>
+                <div class="alley-content">
+                    <div class="alley-icon"><i class="fa-solid fa-comments"></i></div>
+                    <div class="alley-info">
+                        <h3>حارة الاستشارات التسويقية</h3>
+                        <p>توجيه دقيق لحل مشاكل براندك التسويقية</p>
+                    </div>
+                </div>
+                <div class="alley-arrow"><i class="fa-solid fa-arrow-left"></i></div>
+            </a>
+
+            <!-- حارة 10 -->
+            <a href="#service-details" class="alley-card">
+                <div class="alley-pin"><i class="fa-solid fa-location-dot"></i></div>
+                <div class="alley-content">
+                    <div class="alley-icon"><i class="fa-solid fa-chess"></i></div>
+                    <div class="alley-info">
+                        <h3>حارة استراتيجيات المحتوى</h3>
+                        <p>خطط ربع سنوية مبنية على بيانات دقيقة</p>
+                    </div>
+                </div>
+                <div class="alley-arrow"><i class="fa-solid fa-arrow-left"></i></div>
+            </a>
+
+            <!-- حارة 11 -->
+            <a href="#service-details" class="alley-card">
+                <div class="alley-pin"><i class="fa-solid fa-location-dot"></i></div>
+                <div class="alley-content">
+                    <div class="alley-icon"><i class="fa-solid fa-chart-line"></i></div>
+                    <div class="alley-info">
+                        <h3>حارة تحليل البيانات</h3>
+                        <p>فحص شامل وتقارير أداء تفصيلية لحساباتك</p>
+                    </div>
+                </div>
+                <div class="alley-arrow"><i class="fa-solid fa-arrow-left"></i></div>
+            </a>
+
+            <!-- حارة 12 -->
+            <a href="#service-details" class="alley-card">
+                <div class="alley-pin"><i class="fa-solid fa-location-dot"></i></div>
+                <div class="alley-content">
+                    <div class="alley-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+                    <div class="alley-info">
+                        <h3>حارة التدريب والورش</h3>
+                        <p>تمكين صناع المحتوى ورواد الأعمال بالمهارات</p>
+                    </div>
+                </div>
+                <div class="alley-arrow"><i class="fa-solid fa-arrow-left"></i></div>
+            </a>
+        </div>
+    </section>
+
+    
     
     
     <!-- 🕊️ قسم خريطة التواصل بنمط الحمامة -->
@@ -2221,6 +2818,191 @@ will-change: transform, box-shadow;
             }
         });
     }
+});
+
+
+
+// ==========================================
+// JavaScript الخاص بقسم ساحة الخدمات والحواري
+// ==========================================
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    // ==========================================
+    // 1) إظهار كروت الخدمات عند ظهورها أثناء التمرير
+    // ==========================================
+
+    const cards = document.querySelectorAll(".alley-card");
+
+    const observerOptions = {
+        root: null,
+        rootMargin: "0px 0px -40px 0px",
+        threshold: 0.12
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("aos-animate");
+            } else {
+                entry.target.classList.remove("aos-animate");
+            }
+        });
+    }, observerOptions);
+
+    cards.forEach(card => {
+        observer.observe(card);
+    });
+
+
+    // ==========================================
+    // 2) تحريك الحمامة المتجولة بين الخدمات
+    // ==========================================
+
+    const container = document.getElementById("alleysContainer");
+    const dove = document.getElementById("travelingDove");
+
+    if (!container || !dove || !cards.length) return;
+
+    const serviceCards = Array.from(
+        container.querySelectorAll(".alley-card")
+    );
+
+    let animationFrame = null;
+    let hoveredCard = null;
+
+    // تحريك الحمامة إلى كارت خدمة محدد
+    function moveDoveToCard(card) {
+
+        if (!card) return;
+
+        const containerRect = container.getBoundingClientRect();
+        const cardRect = card.getBoundingClientRect();
+
+        const targetTop =
+            cardRect.top -
+            containerRect.top +
+            cardRect.height / 2;
+
+        dove.style.top = `${targetTop}px`;
+
+        serviceCards.forEach(item => {
+            item.classList.toggle("dove-active", item === card);
+        });
+    }
+
+
+    // تحديد أقرب خدمة إلى منتصف الشاشة
+    function getCurrentCard() {
+
+        const screenPosition = window.innerHeight * 0.55;
+
+        let closestCard = serviceCards[0];
+        let smallestDistance = Infinity;
+
+        serviceCards.forEach(card => {
+
+            const rect = card.getBoundingClientRect();
+            const cardCenter = rect.top + rect.height / 2;
+
+            const distance = Math.abs(
+                cardCenter - screenPosition
+            );
+
+            if (distance < smallestDistance) {
+                smallestDistance = distance;
+                closestCard = card;
+            }
+        });
+
+        return closestCard;
+    }
+
+
+    // تحديث مكان الحمامة
+    function updateDove() {
+
+        if (hoveredCard) {
+            moveDoveToCard(hoveredCard);
+            return;
+        }
+
+        const containerRect = container.getBoundingClientRect();
+
+        // إيقاف التحديث خارج منطقة الخدمات
+        if (
+            containerRect.bottom < 0 ||
+            containerRect.top > window.innerHeight
+        ) {
+            return;
+        }
+
+        const currentCard = getCurrentCard();
+
+        moveDoveToCard(currentCard);
+    }
+
+
+    // منع تكرار تنفيذ الحركة أثناء التمرير
+    function requestUpdate() {
+
+        if (animationFrame) return;
+
+        animationFrame = requestAnimationFrame(() => {
+
+            updateDove();
+
+            animationFrame = null;
+        });
+    }
+
+
+    // الوقوف عند الخدمة عند المرور عليها بالماوس
+    serviceCards.forEach(card => {
+
+        card.addEventListener("mouseenter", () => {
+
+            hoveredCard = card;
+
+            moveDoveToCard(card);
+        });
+
+        card.addEventListener("mouseleave", () => {
+
+            hoveredCard = null;
+
+            requestUpdate();
+        });
+
+        // دعم التنقل باستخدام لوحة المفاتيح
+        card.addEventListener("focus", () => {
+
+            hoveredCard = card;
+
+            moveDoveToCard(card);
+        });
+
+        card.addEventListener("blur", () => {
+
+            hoveredCard = null;
+
+            requestUpdate();
+        });
+
+    });
+
+
+    // متابعة التمرير وتغيير حجم الشاشة
+    window.addEventListener("scroll", requestUpdate, {
+        passive: true
+    });
+
+    window.addEventListener("resize", requestUpdate);
+
+
+    // تحديد مكان الحمامة عند تحميل الصفحة
+    requestUpdate();
+
 });
 
 
