@@ -2955,3 +2955,314 @@ body::before {
         font-size: 0.82rem;
     }
 }
+
+
+
+/* ==========================================
+   FEEDBACK SECTION - NEW DESIGN
+========================================== */
+
+.feedback-section {
+    position: relative;
+    width: 100%;
+    max-width: 850px;
+    margin: 5rem auto;
+    padding: 3rem 1.5rem;
+    direction: rtl;
+    background: #fbf7f4;
+    border-radius: 25px;
+    overflow: hidden;
+    font-family: inherit;
+    box-sizing: border-box;
+}
+
+.feedback-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+/* الحمامة الرئيسية */
+.feedback-pigeon-hero {
+    width: 190px;
+    height: 190px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0.5rem;
+    animation: feedbackDoveFloat 3.5s ease-in-out infinite;
+}
+
+.feedback-pigeon-hero img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    mix-blend-mode: multiply;
+    filter: drop-shadow(0 8px 12px rgba(0,0,0,0.12));
+}
+
+@keyframes feedbackDoveFloat {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* العنوان */
+.feedback-header {
+    width: 100%;
+    max-width: 650px;
+    text-align: center;
+}
+
+.feedback-main-title {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    background: linear-gradient(135deg, #a944bd, #c05acb);
+    color: #24102f;
+    font-size: 2rem;
+    font-weight: 900;
+    line-height: 1.6;
+    padding: 0.7rem 1.2rem;
+    border-radius: 18px;
+    margin: 0 0 1rem;
+    box-shadow: 0 7px 18px rgba(156, 39, 176, 0.15);
+}
+
+.feedback-subtitle {
+    color: #77716f;
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 1.9;
+    margin: 0 auto;
+    max-width: 600px;
+}
+
+/* شبكة التقييمات */
+.feedback-grid-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 620px;
+    gap: 18px;
+    margin-top: 1.5rem;
+}
+
+.feedback-column {
+    display: contents;
+}
+
+/* كارت التقييم */
+.chat-bubble {
+    position: relative;
+    width: 100%;
+    box-sizing: border-box;
+    background: #202c38;
+    color: #fff;
+    padding: 1.5rem 1.4rem;
+    border-radius: 22px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+    min-height: 145px;
+    box-shadow: 0 7px 18px rgba(20, 35, 48, 0.13);
+    border: 1px solid rgba(255,255,255,0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.chat-bubble:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 25px rgba(20, 35, 48, 0.2);
+}
+
+/* الحمامات الزخرفية على أطراف الكروت */
+.chat-bubble::before {
+    content: "";
+    position: absolute;
+    width: 58px;
+    height: 58px;
+    background-image: url("imgs/Sticker-4.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.chat-bubble:nth-child(odd)::before {
+    right: -25px;
+    top: -23px;
+    transform: rotate(-15deg);
+}
+
+.chat-bubble:nth-child(even)::before {
+    left: -25px;
+    top: -23px;
+    transform: scaleX(-1) rotate(-15deg);
+}
+
+/* اسم صاحب التقييم */
+.chat-content-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.2rem;
+}
+
+.chat-name {
+    font-size: 1.05rem;
+    font-weight: 900;
+}
+
+/* نص التقييم */
+.message-text {
+    color: #f2f2f2;
+    font-size: 0.98rem;
+    line-height: 1.9;
+    text-align: right;
+    word-break: break-word;
+}
+
+.message-meta {
+    color: #aeb8c2;
+    font-size: 0.75rem;
+    text-align: left;
+    margin-top: 0.2rem;
+}
+
+/* زر إضافة توصية */
+.add-feedback-wrapper {
+    text-align: center;
+    margin-top: 1.5rem;
+}
+
+.add-feedback-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    background: linear-gradient(135deg, #3b0975, #9c27b0);
+    color: #fff;
+    padding: 0.9rem 2.2rem;
+    border-radius: 35px;
+    font-size: 1rem;
+    font-weight: 800;
+    text-decoration: none;
+    box-shadow: 0 7px 20px rgba(59, 9, 117, 0.25);
+    transition: all 0.3s ease;
+}
+
+.add-feedback-btn:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(59, 9, 117, 0.35);
+    color: #fff;
+}
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media (max-width: 768px) {
+
+    .feedback-section {
+        width: 96%;
+        margin: 3rem auto;
+        padding: 2.5rem 1.2rem;
+        border-radius: 20px;
+    }
+
+    .feedback-pigeon-hero {
+        width: 165px;
+        height: 165px;
+    }
+
+    .feedback-main-title {
+        font-size: 1.55rem;
+        padding: 0.7rem 0.9rem;
+    }
+
+    .feedback-subtitle {
+        font-size: 0.92rem;
+    }
+
+    .feedback-grid-container {
+        gap: 20px;
+    }
+
+    .chat-bubble {
+        padding: 1.3rem 1.1rem;
+        border-radius: 19px;
+    }
+
+    .message-text {
+        font-size: 0.92rem;
+        line-height: 1.85;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .feedback-section {
+        width: 100%;
+        padding: 2rem 1rem;
+        margin: 2.5rem auto;
+    }
+
+    .feedback-pigeon-hero {
+        width: 145px;
+        height: 145px;
+    }
+
+    .feedback-main-title {
+        font-size: 1.3rem;
+        line-height: 1.7;
+        border-radius: 14px;
+    }
+
+    .feedback-subtitle {
+        font-size: 0.85rem;
+        line-height: 1.8;
+    }
+
+    .chat-bubble {
+        padding: 1.2rem 1rem;
+        min-height: 130px;
+    }
+
+    .chat-bubble::before {
+        width: 48px;
+        height: 48px;
+    }
+
+    .chat-bubble:nth-child(odd)::before {
+        right: -15px;
+    }
+
+    .chat-bubble:nth-child(even)::before {
+        left: -15px;
+    }
+
+    .chat-name {
+        font-size: 0.95rem;
+    }
+
+    .message-text {
+        font-size: 0.87rem;
+    }
+}
+
+/* تقليل الحركة لمن يفضل ذلك */
+@media (prefers-reduced-motion: reduce) {
+    .feedback-pigeon-hero {
+        animation: none;
+    }
+
+    .chat-bubble,
+    .add-feedback-btn {
+        transition: none;
+    }
+}

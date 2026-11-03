@@ -2194,6 +2194,343 @@ will-change: transform, box-shadow;
     }
 }
 
+/* =========================================
+   🕊️ TESTIMONIAL GALLERY
+========================================= */
+
+.testimonial-gallery {
+    position: relative;
+    width: 100%;
+    padding: 5rem 2rem;
+    margin: 4rem auto;
+  
+    overflow: hidden;
+    direction: rtl;
+}
+
+.testimonial-container {
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+}
+
+/* Header */
+
+.testimonial-header {
+    max-width: 700px;
+    text-align: center;
+}
+
+.testimonial-label {
+    display: inline-block;
+    color: #9c27b0;
+    font-size: 1rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    padding: 0.6rem 1.5rem;
+    background: #f3e5f5;
+    border-radius: 30px;
+}
+
+.testimonial-header h2 {
+    font-size: 2.2rem;
+    font-weight: 900;
+    color: #3b0975;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.testimonial-header p {
+    color: #77716f;
+    font-size: 1.1rem;
+    line-height: 1.9;
+}
+
+/* Screens Grid */
+
+.testimonial-grid {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(
+        auto-fit,
+        minmax(min(100%, 320px), 1fr)
+    );
+    gap: 3rem;
+    justify-items: center;
+    align-items: start;
+}
+
+/* Main Card */
+
+.testimonial-card {
+    position: relative;
+    width: 100%;
+    max-width: 440px;
+    padding: 12px;
+    background: rgba(255,255,255,0.85);
+    border: 2px solid #e8c8f0;
+    border-radius: 30px;
+    box-shadow:
+        0 12px 30px rgba(59, 9, 117, 0.09),
+        0 3px 10px rgba(156, 39, 176, 0.05);
+    transition: all 0.4s ease;
+}
+
+/* Screenshot Frame */
+
+.testimonial-screen {
+    width: 100%;
+    overflow: hidden;
+    border-radius: 20px;
+    background: #fff;
+    line-height: 0;
+}
+
+.testimonial-screen img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    transition: transform 0.5s ease;
+}
+
+/* Hover */
+
+.testimonial-card:hover {
+    transform: translateY(-8px);
+    box-shadow:
+        0 20px 40px rgba(59, 9, 117, 0.15);
+    border-color: #bd78ce;
+}
+
+.testimonial-card:hover .testimonial-screen img {
+    transform: scale(1.015);
+}
+
+/* Decorative Pigeon */
+
+.testimonial-dove {
+    position: absolute;
+    width: 85px;
+    height: auto;
+    object-fit: contain;
+    z-index: 5;
+    pointer-events: none;
+    filter: drop-shadow(
+        0 5px 8px rgba(0,0,0,0.15)
+    );
+    animation: testimonialDoveFloat 3.5s ease-in-out infinite;
+}
+
+.dove-right {
+    top: -35px;
+    right: -35px;
+}
+
+.dove-left {
+    bottom: 30px;
+    left: -35px;
+    transform: scaleX(-1);
+    animation-delay: 0.8s;
+}
+
+@keyframes testimonialDoveFloat {
+    0%, 100% {
+        translate: 0 0;
+    }
+
+    50% {
+        translate: 0 -9px;
+    }
+}
+
+/* Footer Button */
+
+.testimonial-footer {
+    text-align: center;
+}
+
+.testimonial-add-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 0.9rem 2.2rem;
+    color: white;
+    text-decoration: none;
+    font-weight: 800;
+    background: linear-gradient(
+        135deg,
+        #3b0975,
+        #9c27b0
+    );
+    border-radius: 35px;
+    box-shadow: 0 7px 20px rgba(59, 9, 117, 0.2);
+    transition: 0.3s ease;
+}
+
+.testimonial-add-btn:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 25px rgba(59, 9, 117, 0.3);
+    color: white;
+}
+
+/* Responsive */
+
+@media (max-width: 768px) {
+
+    .testimonial-gallery {
+        padding: 3.5rem 1.2rem;
+    }
+
+    .testimonial-container {
+        gap: 2.5rem;
+    }
+
+    .testimonial-header h2 {
+        font-size: 1.7rem;
+    }
+
+    .testimonial-header p {
+        font-size: 0.95rem;
+    }
+
+    .testimonial-grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 2.5rem;
+    }
+
+    .testimonial-card {
+        max-width: 420px;
+    }
+
+    .testimonial-dove {
+        width: 65px;
+    }
+
+    .dove-right {
+        right: -20px;
+        top: -25px;
+    }
+
+    .dove-left {
+        left: -20px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .testimonial-gallery {
+        padding: 2.5rem 1rem;
+    }
+
+    .testimonial-header h2 {
+        font-size: 1.4rem;
+    }
+
+    .testimonial-card {
+        padding: 8px;
+        border-radius: 22px;
+    }
+
+    .testimonial-screen {
+        border-radius: 15px;
+    }
+
+    .testimonial-dove {
+        width: 55px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .testimonial-dove {
+        animation: none;
+    }
+
+    .testimonial-card,
+    .testimonial-screen img {
+        transition: none;
+    }
+}
+
+/* =========================================
+   FEEDBACK SCREENSHOTS - ORIGINAL STYLE
+========================================= */
+
+.feedback-image-bubble {
+    position: relative;
+    width: 100%;
+    max-width: 300px;
+    padding: 5px;
+    background: #202c38;
+    border-radius: 22px;
+    overflow: visible;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+}
+
+.feedback-image-bubble img {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: 750px;
+    object-fit: contain;
+    border-radius: 13px;
+    background: #fff;
+}
+
+/* الحمامة على أطراف الكروت */
+.feedback-image-bubble::before {
+    content: "";
+    position: absolute;
+    width: 58px;
+    height: 58px;
+    background-image: url("imgs/Sticker-4.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    pointer-events: none;
+    z-index: 3;
+}
+
+.feedback-image-bubble:nth-child(odd)::before {
+    right: -25px;
+    top: -23px;
+    transform: rotate(-15deg);
+}
+
+.feedback-image-bubble:nth-child(even)::before {
+    left: -25px;
+    top: -23px;
+    transform: scaleX(-1) rotate(-15deg);
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+
+    .feedback-image-bubble {
+        padding: 8px;
+        border-radius: 18px;
+    }
+
+    .feedback-image-bubble img {
+        border-radius: 12px;
+    }
+
+    .feedback-image-bubble::before {
+        width: 48px;
+        height: 48px;
+    }
+
+}
+
+
 
     </style>
 </head>
@@ -2618,6 +2955,213 @@ will-change: transform, box-shadow;
 
     
     
+    <!-- 💌 Feedback Section -->
+<section class="testimonial-gallery" id="feedback">
+
+    <div class="testimonial-container">
+
+        <!-- Section Header -->
+        <div class="testimonial-header">
+            <span class="testimonial-label">🕊️ رسائل من رحلتنا</span>
+
+            <h2>
+                أثرٌ يترك بصمة في قلوب وعقول من عملت معهم
+            </h2>
+
+            <p>
+                النجاح الحقيقي لا يُقاس بالأرقام فقط،
+                بل بالأثر الذي نتركه في طريقة تفكير وعمل الآخرين.
+                إليكم نماذج من تجارب حقيقية نعتز بها.
+            </p>
+        </div>
+
+        <!-- Feedback Screens -->
+        <div class="testimonial-grid">
+
+            <!-- Feedback 1 -->
+            <article class="testimonial-card">
+
+                <div class="testimonial-screen">
+                    <img
+                        src="imgs/Fadbook/20260823_235359_٠٠٠٠.png"
+                        alt="توصية أحمد حمزة"
+                        loading="lazy"
+                    />
+                </div>
+
+                <img
+                    src="imgs/Sticker-4.png"
+                    class="testimonial-dove dove-right"
+                    alt=""
+                />
+
+            </article>
+
+            <!-- Feedback 2 -->
+            <article class="testimonial-card">
+
+                <div class="testimonial-screen">
+                    <img
+                        src="imgs/Fadbook/20260823_235359_٠٠٠١.png"
+                        alt="توصية عميل"
+                        loading="lazy"
+                    />
+                </div>
+
+                <img
+                    src="imgs/Sticker-4.png"
+                    class="testimonial-dove dove-left"
+                    alt=""
+                />
+
+            </article>
+
+            <!-- Feedback 3 -->
+            <article class="testimonial-card">
+
+                <div class="testimonial-screen">
+                    <img
+                        src="imgs/Fadbook/20260823_235359_٠٠٠٢.png"
+                        alt="توصية عميل"
+                        loading="lazy"
+                    />
+                </div>
+
+                <img
+                    src="imgs/Sticker-4.png"
+                    class="testimonial-dove dove-right"
+                    alt=""
+                />
+
+            </article>
+            <!-- Feedback 1 -->
+            <article class="testimonial-card">
+
+                <div class="testimonial-screen">
+                    <img
+                        src="imgs/Fadbook/20260823_235359_٠٠٠٤.png"
+                        alt="توصية أحمد حمزة"
+                        loading="lazy"
+                    />
+                </div>
+
+                <img
+                    src="imgs/Sticker-4.png"
+                    class="testimonial-dove dove-right"
+                    alt=""
+                />
+
+            </article>
+
+            <!-- Feedback 2 -->
+            <article class="testimonial-card">
+
+                <div class="testimonial-screen">
+                    <img
+                        src="imgs/Fadbook/20260823_235359_٠٠٠٥.png"
+                        alt="توصية عميل"
+                        loading="lazy"
+                    />
+                </div>
+
+                <img
+                    src="imgs/Sticker-4.png"
+                    class="testimonial-dove dove-left"
+                    alt=""
+                />
+
+            </article>
+
+            <!-- Feedback 3 -->
+            <article class="testimonial-card">
+
+                <div class="testimonial-screen">
+                    <img
+                        src="imgs/Fadbook/20260823_235359_٠٠٠٦.png"
+                        alt="توصية عميل"
+                        loading="lazy"
+                    />
+                </div>
+
+                <img
+                    src="imgs/Sticker-4.png"
+                    class="testimonial-dove dove-right"
+                    alt=""
+                />
+
+            </article>
+            <!-- Feedback 1 -->
+            <article class="testimonial-card">
+
+                <div class="testimonial-screen">
+                    <img
+                        src="imgs/Fadbook/20260823_235400_٠٠٠٧.png"
+                        alt="توصية أحمد حمزة"
+                        loading="lazy"
+                    />
+                </div>
+
+                <img
+                    src="imgs/Sticker-4.png"
+                    class="testimonial-dove dove-right"
+                    alt=""
+                />
+
+            </article>
+
+            <!-- Feedback 2 -->
+            <article class="testimonial-card">
+
+                <div class="testimonial-screen">
+                    <img
+                        src="imgs/Fadbook/20260823_235400_٠٠٠٨.png"
+                        alt="توصية عميل"
+                        loading="lazy"
+                    />
+                </div>
+
+                <img
+                    src="imgs/Sticker-4.png"
+                    class="testimonial-dove dove-left"
+                    alt=""
+                />
+
+            </article>
+
+            <!-- Feedback 3 -->
+            <article class="testimonial-card">
+
+                <div class="testimonial-screen">
+                    <img
+                        src="imgs/Fadbook/20260823_235359_٠٠٠٦.png"
+                        alt="توصية عميل"
+                        loading="lazy"
+                    />
+                </div>
+
+                <img
+                    src="imgs/Sticker-4.png"
+                    class="testimonial-dove dove-right"
+                    alt=""
+                />
+
+            </article>
+
+        </div>
+
+        <!-- Add Feedback -->
+        <div class="testimonial-footer">
+            <a href="#add-review" class="testimonial-add-btn">
+                <i class="fa-solid fa-plus"></i>
+                أضف توصية
+            </a>
+        </div>
+
+    </div>
+
+</section>
+
+
     
     <!-- 🕊️ قسم خريطة التواصل بنمط الحمامة -->
 <section class="pigeon-contact-map-section" id="contact-map">
