@@ -968,20 +968,58 @@
             }
         }
 
-        @media (max-width: 576px) {
-            .hero-section {
-                padding-top: 0.5rem;
-            }
+       
 
-            .hero-video-wrapper {
+        /* ==========================================
+   ✨ إصلاح مشاكل الهيرو في الموبايل (Responsive Fix)
+   ========================================== */
+@media (max-width: 768px) {
+    /* 1. زيادة الـ Padding العلوي للقسم ليظهر أسفل الـ Navbar الثابت تماماً */
+    .hero-section {
+        padding-top: calc(var(--navbar-height, 70px) + 1.5rem);
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    /* 2. ضبط حجم الاسم ليصبح متناسقاً ولا يتسبب في كسر الشاشة */
+    .hero-name {
+        font-size: clamp(1.8rem, 7vw, 2.6rem);
+        margin-top: 0.5rem;
+        line-height: 1.2;
+    }
+
+    /* 3. ضمان ظهور الـ Badge والـ Tagline بدون تداخل */
+    .hero-title-badge {
+        padding: 0.4rem 1.2rem;
+        margin-bottom: 0.8rem;
+    }
+
+    .hero-tagline {
+        font-size: clamp(0.95rem, 4vw, 1.2rem);
+        margin-bottom: 1rem;
+    }
+
+    /* 4. ضبط بطاقة القصة لتتجنب التداخل مع العناصر السابقة */
+    .about-card {
+        padding: 3rem 1.2rem 1.5rem 1.2rem;
+        margin-top: 1.5rem;
+                        border-radius: 24px;
+
+    }
+
+       .hero-video-wrapper {
                 border-radius: 16px;
             }
 
-            .about-card {
-                border-radius: 24px;
-                padding: 3.2rem 1.2rem 1.5rem 1.2rem;
-            }
-        }
+            
+    /* تعديل مكان عنوان الكارد العلوي ليكون متجاوباً في الموبايل */
+    .about-card-title {
+        right: 20px;
+        font-size: 1rem;
+        padding: 0.5rem 1.5rem;
+        top: -20px;
+    }
+}
 
         /* حركة الطفو الناعمة للرسالة الترحيبية */
         .speech-bubble-under-video {
