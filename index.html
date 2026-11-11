@@ -968,58 +968,59 @@
             }
         }
 
-       
+
 
         /* ==========================================
    ✨ إصلاح مشاكل الهيرو في الموبايل (Responsive Fix)
    ========================================== */
-@media (max-width: 768px) {
-    /* 1. زيادة الـ Padding العلوي للقسم ليظهر أسفل الـ Navbar الثابت تماماً */
-    .hero-section {
-        padding-top: calc(var(--navbar-height, 70px) + 1.5rem);
-        padding-left: 1rem;
-        padding-right: 1rem;
-    }
+        @media (max-width: 768px) {
 
-    /* 2. ضبط حجم الاسم ليصبح متناسقاً ولا يتسبب في كسر الشاشة */
-    .hero-name {
-        font-size: clamp(1.8rem, 7vw, 2.6rem);
-        margin-top: 0.5rem;
-        line-height: 1.2;
-    }
+            /* 1. زيادة الـ Padding العلوي للقسم ليظهر أسفل الـ Navbar الثابت تماماً */
+            .hero-section {
+                padding-top: calc(var(--navbar-height, 70px) + 1.5rem);
+                padding-left: 1rem;
+                padding-right: 1rem;
+            }
 
-    /* 3. ضمان ظهور الـ Badge والـ Tagline بدون تداخل */
-    .hero-title-badge {
-        padding: 0.4rem 1.2rem;
-        margin-bottom: 0.8rem;
-    }
+            /* 2. ضبط حجم الاسم ليصبح متناسقاً ولا يتسبب في كسر الشاشة */
+            .hero-name {
+                font-size: clamp(1.8rem, 7vw, 2.6rem);
+                margin-top: 0.5rem;
+                line-height: 1.2;
+            }
 
-    .hero-tagline {
-        font-size: clamp(0.95rem, 4vw, 1.2rem);
-        margin-bottom: 1rem;
-    }
+            /* 3. ضمان ظهور الـ Badge والـ Tagline بدون تداخل */
+            .hero-title-badge {
+                padding: 0.4rem 1.2rem;
+                margin-bottom: 0.8rem;
+            }
 
-    /* 4. ضبط بطاقة القصة لتتجنب التداخل مع العناصر السابقة */
-    .about-card {
-        padding: 3rem 1.2rem 1.5rem 1.2rem;
-        margin-top: 1.5rem;
-                        border-radius: 24px;
+            .hero-tagline {
+                font-size: clamp(0.95rem, 4vw, 1.2rem);
+                margin-bottom: 1rem;
+            }
 
-    }
+            /* 4. ضبط بطاقة القصة لتتجنب التداخل مع العناصر السابقة */
+            .about-card {
+                padding: 3rem 1.2rem 1.5rem 1.2rem;
+                margin-top: 1.5rem;
+                border-radius: 24px;
 
-       .hero-video-wrapper {
+            }
+
+            .hero-video-wrapper {
                 border-radius: 16px;
             }
 
-            
-    /* تعديل مكان عنوان الكارد العلوي ليكون متجاوباً في الموبايل */
-    .about-card-title {
-        right: 20px;
-        font-size: 1rem;
-        padding: 0.5rem 1.5rem;
-        top: -20px;
-    }
-}
+
+            /* تعديل مكان عنوان الكارد العلوي ليكون متجاوباً في الموبايل */
+            .about-card-title {
+                right: 20px;
+                font-size: 1rem;
+                padding: 0.5rem 1.5rem;
+                top: -20px;
+            }
+        }
 
         /* حركة الطفو الناعمة للرسالة الترحيبية */
         .speech-bubble-under-video {
@@ -2542,328 +2543,565 @@
             }
         }
 
-    /* =========================================
+        /* =========================================
     FEEDBACK SCREENSHOTS - تصغير مكثف وضبط الحواف
 ========================================= */
 
-    .feedback-image-bubble {
-        position: relative;
-        width: 100%;
-        max-width: 200px; /* تصغير حجم البوكس أكثر ليكون مريحاً ومنطوياً للداخل */
-        margin: 0 auto 20px auto;
-        padding: 4px;
-        background: #202c38;
-        border-radius: 16px;
-        overflow: visible;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        box-sizing: border-box;
-    }
-
-    .feedback-image-bubble img {
-        display: block;
-        width: 100%;
-        height: auto;
-        max-height: 450px;
-        object-fit: contain;
-        border-radius: 12px;
-        background: #fff;
-    }
-
-    /* الحمامة على أطراف الكروت - تم تصغيرها وجعلها داخل إطار البوكس تقريباً */
-    .feedback-image-bubble::before {
-        content: "";
-        position: absolute;
-        width: 32px; /* تصغير حجم أيقونة الحمامة */
-        height: 32px;
-        background-image: url("imgs/Sticker-4.png");
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: contain;
-        pointer-events: none;
-        z-index: 3;
-    }
-
-    /* ضبط مكان الطيور بحيث لا تخرج نهائياً خارج الشاشة */
-    .feedback-image-bubble:nth-child(odd)::before {
-        right: -6px; /* قريبة جداً لحافة البوكس بدون خروج */
-        top: -10px;
-        transform: rotate(-15deg);
-    }
-
-    .feedback-image-bubble:nth-child(even)::before {
-        left: -6px; /* قريبة جداً لحافة البوكس بدون خروج */
-        top: -10px;
-        transform: scaleX(-1) rotate(-15deg);
-    }
-
-    /* Mobile adjustments */
-    @media (max-width: 480px) {
         .feedback-image-bubble {
-            max-width: 170px; /* حجم صغير ومناسب جداً لشاشات الموبايل الضيقة */
-            padding: 3px;
-            border-radius: 14px;
+            position: relative;
+            width: 100%;
+            max-width: 200px;
+            /* تصغير حجم البوكس أكثر ليكون مريحاً ومنطوياً للداخل */
+            margin: 0 auto 20px auto;
+            padding: 4px;
+            background: #202c38;
+            border-radius: 16px;
+            overflow: visible;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-sizing: border-box;
         }
 
         .feedback-image-bubble img {
-            border-radius: 10px;
+            display: block;
+            width: 100%;
+            height: auto;
+            max-height: 450px;
+            object-fit: contain;
+            border-radius: 12px;
+            background: #fff;
         }
 
+        /* الحمامة على أطراف الكروت - تم تصغيرها وجعلها داخل إطار البوكس تقريباً */
         .feedback-image-bubble::before {
-            width: 28px;
-            height: 28px;
+            content: "";
+            position: absolute;
+            width: 32px;
+            /* تصغير حجم أيقونة الحمامة */
+            height: 32px;
+            background-image: url("imgs/Sticker-4.png");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain;
+            pointer-events: none;
+            z-index: 3;
         }
-        
+
+        /* ضبط مكان الطيور بحيث لا تخرج نهائياً خارج الشاشة */
         .feedback-image-bubble:nth-child(odd)::before {
-            right: -4px;
-            top: -8px;
+            right: -6px;
+            /* قريبة جداً لحافة البوكس بدون خروج */
+            top: -10px;
+            transform: rotate(-15deg);
         }
 
         .feedback-image-bubble:nth-child(even)::before {
-            left: -4px;
-            top: -8px;
+            left: -6px;
+            /* قريبة جداً لحافة البوكس بدون خروج */
+            top: -10px;
+            transform: scaleX(-1) rotate(-15deg);
         }
-    }
-        
-/* 🌿🟣 السكشن الأساسي بألوان الرمادي الفاخر */
-.projects-section {
-    padding: 60px 20px; /* تقليل البادنج العلوي والسفلي */
-}
 
-.section-header {
-    text-align: center;
-    max-width: 650px;
-    margin: 0 auto 35px;
-}
+        /* Mobile adjustments */
+        @media (max-width: 480px) {
+            .feedback-image-bubble {
+                max-width: 170px;
+                /* حجم صغير ومناسب جداً لشاشات الموبايل الضيقة */
+                padding: 3px;
+                border-radius: 14px;
+            }
 
-.section-header .sub-title {
-    color: #2f6b52;
-    font-weight: 700;
-    font-size: 0.95rem;
-    display: inline-block;
-    margin-bottom: 6px;
-}
+            .feedback-image-bubble img {
+                border-radius: 10px;
+            }
 
-.section-header h2 {
-    color: #1b3028;
-    font-size: 1.9rem;
-    font-weight: 800;
-}
+            .feedback-image-bubble::before {
+                width: 28px;
+                height: 28px;
+            }
 
-/* 📐 شبكة الـ 3 في الصف - تصغير العرض الأقصى والمسافات */
-.projects-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 22px; /* تقليل الفراغ بين الكروت */
-    max-width: 1000px; /* تقليل العرض الإجمالي لتصغير البوكسات */
-    margin: 0 auto;
-}
+            .feedback-image-bubble:nth-child(odd)::before {
+                right: -4px;
+                top: -8px;
+            }
 
-/* 🕊️ الكارد الانسيابي - حجم أصغر */
-.wing-card {
-    background: #ffffff;
-    border-radius: 35px 10px 35px 10px; /* تصغير الانحناءات قليلاً لتناسب الحجم الجديد */
-    border: 1px solid #d8e2dd;
-    box-shadow: 0 8px 20px rgba(27, 48, 40, 0.05);
-    position: relative;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    transition: all 0.45s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-}
+            .feedback-image-bubble:nth-child(even)::before {
+                left: -4px;
+                top: -8px;
+            }
+        }
 
-/* 🌟 أنيميشن الحركة عند الهوفر */
-.wing-card:hover {
-    transform: translateY(-8px) rotate(-1.5deg);
-    box-shadow: 0 18px 35px rgba(47, 107, 82, 0.15);
-    border-radius: 10px 35px 10px 35px;
-}
+        /* 🌿🟣 السكشن الأساسي بألوان الرمادي الفاخر */
+        .projects-section {
+            padding: 60px 20px;
+            /* تقليل البادنج العلوي والسفلي */
+        }
 
-/* 🟢 Style الأخضر الزاجلي */
-.wing-card.pigeon-green-style {
-    border-top: 4px solid #2f6b52;
-    border-right: 3px solid #3d8b6a;
-}
+        .section-header {
+            text-align: center;
+            max-width: 650px;
+            margin: 0 auto 35px;
+        }
 
-.green-badge {
-    background: #2f6b52;
-    color: #fff;
-}
+        .section-header .sub-title {
+            color: #2f6b52;
+            font-weight: 700;
+            font-size: 0.95rem;
+            display: inline-block;
+            margin-bottom: 6px;
+        }
 
-.green-btn {
-    background: linear-gradient(135deg, #2f6b52, #1b4d3e);
-    color: #fff;
-}
+        .section-header h2 {
+            color: #1b3028;
+            font-size: 1.9rem;
+            font-weight: 800;
+        }
 
-.green-btn:hover {
-    background: linear-gradient(135deg, #3d8b6a, #2f6b52);
-}
+        /* 📐 شبكة الـ 3 في الصف - تصغير العرض الأقصى والمسافات */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+            /* تقليل الفراغ بين الكروت */
+            max-width: 1000px;
+            /* تقليل العرض الإجمالي لتصغير البوكسات */
+            margin: 0 auto;
+        }
 
-/* 🟣 Style البنفسجي الزاجلي */
-.wing-card.pigeon-violet-style {
-    border-top: 4px solid #7d4e8c;
-    border-right: 3px solid #9c5cb0;
-}
+        /* 🕊️ الكارد الانسيابي - حجم أصغر */
+        .wing-card {
+            background: #ffffff;
+            border-radius: 35px 10px 35px 10px;
+            /* تصغير الانحناءات قليلاً لتناسب الحجم الجديد */
+            border: 1px solid #d8e2dd;
+            box-shadow: 0 8px 20px rgba(27, 48, 40, 0.05);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            transition: all 0.45s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
 
-.violet-badge {
-    background: #7d4e8c;
-    color: #fff;
-}
+        /* 🌟 أنيميشن الحركة عند الهوفر */
+        .wing-card:hover {
+            transform: translateY(-8px) rotate(-1.5deg);
+            box-shadow: 0 18px 35px rgba(47, 107, 82, 0.15);
+            border-radius: 10px 35px 10px 35px;
+        }
 
-.violet-btn {
-    background: linear-gradient(135deg, #7d4e8c, #5b2e6b);
-    color: #fff;
-}
+        /* 🟢 Style الأخضر الزاجلي */
+        .wing-card.pigeon-green-style {
+            border-top: 4px solid #2f6b52;
+            border-right: 3px solid #3d8b6a;
+        }
 
-.violet-btn:hover {
-    background: linear-gradient(135deg, #9c5cb0, #7d4e8c);
-}
+        .green-badge {
+            background: #2f6b52;
+            color: #fff;
+        }
 
-/* 🕋 Style مكة الكعبة والذهبي */
-.wing-card.kaaba-style {
-    border-top: 4px solid #2f453c;
-    border-right: 3px solid #d4af37;
-}
+        .green-btn {
+            background: linear-gradient(135deg, #2f6b52, #1b4d3e);
+            color: #fff;
+        }
 
-.gold-badge {
-    background: #2f453c;
-    color: #d4af37;
-    border: 1px solid #d4af37;
-}
+        .green-btn:hover {
+            background: linear-gradient(135deg, #3d8b6a, #2f6b52);
+        }
 
-.gold-btn {
-    background: linear-gradient(135deg, #2f453c, #1b3028);
-    color: #d4af37;
-    border: 1px solid #d4af37;
-}
+        /* 🟣 Style البنفسجي الزاجلي */
+        .wing-card.pigeon-violet-style {
+            border-top: 4px solid #7d4e8c;
+            border-right: 3px solid #9c5cb0;
+        }
 
-.gold-btn:hover {
-    background: #1b3028;
-    color: #fff;
-}
+        .violet-badge {
+            background: #7d4e8c;
+            color: #fff;
+        }
 
-/* شارات المحطة */
-.project-badge {
-    position: absolute;
-    top: 12px;
-    right: 12px;
-    padding: 4px 10px;
-    border-radius: 15px;
-    font-size: 0.73rem;
-    font-weight: 700;
-    z-index: 10;
-}
+        .violet-btn {
+            background: linear-gradient(135deg, #7d4e8c, #5b2e6b);
+            color: #fff;
+        }
 
-/* Container الصورة - تصغير الارتفاع */
-.wing-image-container {
-    height: 140px; /* تصغير الارتفاع من 185px */
-    overflow: hidden;
-    border-radius: 30px 10px 0 0;
-    transition: border-radius 0.45s ease;
-}
+        .violet-btn:hover {
+            background: linear-gradient(135deg, #9c5cb0, #7d4e8c);
+        }
 
-.wing-card:hover .wing-image-container {
-    border-radius: 10px 30px 0 0;
-}
+        /* 🕋 Style مكة الكعبة والذهبي */
+        .wing-card.kaaba-style {
+            border-top: 4px solid #2f453c;
+            border-right: 3px solid #d4af37;
+        }
 
-.wing-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.6s ease;
-}
+        .gold-badge {
+            background: #2f453c;
+            color: #d4af37;
+            border: 1px solid #d4af37;
+        }
 
-.wing-card:hover .wing-img {
-    transform: scale(1.09);
-}
+        .gold-btn {
+            background: linear-gradient(135deg, #2f453c, #1b3028);
+            color: #d4af37;
+            border: 1px solid #d4af37;
+        }
 
-/* تفاصيل الكارد - تصغير الحشوة الداخلية والخطوط */
-.wing-card-body {
-    padding: 16px 14px; /* تقليل البادنج من 22px 20px */
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1;
-}
+        .gold-btn:hover {
+            background: #1b3028;
+            color: #fff;
+        }
 
-.wing-card-body .category {
-    font-size: 0.75rem;
-    color: #64756f;
-    font-weight: 700;
-    margin-bottom: 3px;
-}
+        /* شارات المحطة */
+        .project-badge {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            padding: 4px 10px;
+            border-radius: 15px;
+            font-size: 0.73rem;
+            font-weight: 700;
+            z-index: 10;
+        }
 
-.wing-card-body h3 {
-    font-size: 1.05rem; /* تصغير الخط من 1.25rem */
-    color: #1b3028;
-    margin-bottom: 6px;
-    font-weight: 800;
-}
+        /* Container الصورة - تصغير الارتفاع */
+        .wing-image-container {
+            height: 140px;
+            /* تصغير الارتفاع من 185px */
+            overflow: hidden;
+            border-radius: 30px 10px 0 0;
+            transition: border-radius 0.45s ease;
+        }
 
-.wing-card-body p {
-    font-size: 0.82rem; /* تصغير خط الوصف */
-    color: #52615b;
-    line-height: 1.45;
-    margin-bottom: 12px;
-}
+        .wing-card:hover .wing-image-container {
+            border-radius: 10px 30px 0 0;
+        }
 
-.mini-stats {
-    margin-top: auto;
-    display: flex;
-    justify-content: space-between;
-    background: #f4f7f6;
-    padding: 6px 10px;
-    border-radius: 10px;
-    font-size: 0.75rem;
-    margin-bottom: 12px;
-}
+        .wing-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
 
-.mini-stats strong {
-    color: #1b3028;
-    font-weight: 800;
-}
+        .wing-card:hover .wing-img {
+            transform: scale(1.09);
+        }
 
-/* 🔘 بوتون الدخول للمشروع */
-.project-enter-btn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    padding: 9px 14px; /* تقليل حجم الزر */
-    border-radius: 20px 6px 20px 6px;
-    text-decoration: none;
-    font-size: 0.8rem;
-    font-weight: bold;
-    transition: all 0.35s ease;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
-}
+        /* تفاصيل الكارد - تصغير الحشوة الداخلية والخطوط */
+        .wing-card-body {
+            padding: 16px 14px;
+            /* تقليل البادنج من 22px 20px */
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
 
-.project-enter-btn .arrow-icon {
-    font-style: normal;
-    display: inline-block;
-    transition: transform 0.3s ease;
-}
+        .wing-card-body .category {
+            font-size: 0.75rem;
+            color: #64756f;
+            font-weight: 700;
+            margin-bottom: 3px;
+        }
 
-.project-enter-btn:hover .arrow-icon {
-    transform: translateX(-5px);
-}
+        .wing-card-body h3 {
+            font-size: 1.05rem;
+            /* تصغير الخط من 1.25rem */
+            color: #1b3028;
+            margin-bottom: 6px;
+            font-weight: 800;
+        }
 
-/* responsive للموبايل */
-@media (max-width: 992px) {
-    .projects-grid {
-        grid-template-columns: repeat(2, 1fr);
-        max-width: 700px;
-    }
-}
+        .wing-card-body p {
+            font-size: 0.82rem;
+            /* تصغير خط الوصف */
+            color: #52615b;
+            line-height: 1.45;
+            margin-bottom: 12px;
+        }
 
-@media (max-width: 600px) {
-    .projects-grid {
-        grid-template-columns: 1fr;
-        max-width: 350px;
-    }
-}
+        .mini-stats {
+            margin-top: auto;
+            display: flex;
+            justify-content: space-between;
+            background: #f4f7f6;
+            padding: 6px 10px;
+            border-radius: 10px;
+            font-size: 0.75rem;
+            margin-bottom: 12px;
+        }
 
+        .mini-stats strong {
+            color: #1b3028;
+            font-weight: 800;
+        }
 
+        /* 🔘 بوتون الدخول للمشروع */
+        .project-enter-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 9px 14px;
+            /* تقليل حجم الزر */
+            border-radius: 20px 6px 20px 6px;
+            text-decoration: none;
+            font-size: 0.8rem;
+            font-weight: bold;
+            transition: all 0.35s ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+        }
+
+        .project-enter-btn .arrow-icon {
+            font-style: normal;
+            display: inline-block;
+            transition: transform 0.3s ease;
+        }
+
+        .project-enter-btn:hover .arrow-icon {
+            transform: translateX(-5px);
+        }
+
+        /* responsive للموبايل */
+        @media (max-width: 992px) {
+            .projects-grid {
+                grid-template-columns: repeat(2, 1fr);
+                max-width: 700px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .projects-grid {
+                grid-template-columns: 1fr;
+                max-width: 350px;
+            }
+        }
+
+         .alkhammah-stats-scope {
+            --brand-dark-purple: #1e0936;
+            --brand-deep-purple: #2b0e4d;
+            --brand-accent-purple: #7b2cbf;
+            --brand-light-purple: #f3e8ff;
+            --brand-text-dark: #1b0a33;
+            --brand-text-muted: #5e4b75;
+            
+            --card-bg-grad: linear-gradient(135deg, #ffffff 0%, #f9f5fd 60%, #f2e9fc 100%);
+            --wing-color-1: rgba(123, 44, 191, 0.12);
+            --wing-color-2: rgba(43, 14, 77, 0.08);
+
+            font-family: 'Tajawal', sans-serif;
+            color: var(--brand-text-dark);
+            position: relative;
+            overflow-x: hidden;
+            padding: 2rem 1.5rem;
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            box-sizing: border-box;
+        }
+
+        .alkhammah-stats-scope *, 
+        .alkhammah-stats-scope *::before, 
+        .alkhammah-stats-scope *::after {
+            box-sizing: border-box;
+            font-family: 'Tajawal', sans-serif;
+        }
+
+        /* الكارت الرئيسي */
+        .alkhammah-stats-scope .main-stats-card {
+            background: var(--card-bg-grad);
+            border: 1px solid rgba(123, 44, 191, 0.18);
+            box-shadow: 0 20px 40px rgba(30, 9, 54, 0.06);
+            position: relative;
+            border-radius: 2rem;
+            overflow: visible;
+            padding: 3rem 2rem;
+            width: 100%;
+        }
+
+        /* أجناب ريشية */
+        .alkhammah-stats-scope .feather-wing-left, 
+        .alkhammah-stats-scope .feather-wing-right {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 50px;
+            height: 85%;
+            pointer-events: none;
+            z-index: 5;
+            opacity: 0.8;
+        }
+        .alkhammah-stats-scope .feather-wing-left { right: -24px; }
+        .alkhammah-stats-scope .feather-wing-right { left: -24px; transform: translateY(-50%) scaleX(-1); }
+
+        /* الهيدر */
+        .alkhammah-stats-scope .stats-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        .alkhammah-stats-scope .stats-main-title {
+            font-size: 1.75rem;
+            font-weight: 800;
+            color: var(--brand-text-dark);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+        }
+        @media (min-width: 768px) {
+            .alkhammah-stats-scope .stats-main-title { font-size: 2.25rem; }
+        }
+
+        /* حاوية الـ Flex للعرض الأفقي للأرقام (مرتبة من اليمين لليسار RTL) */
+        .alkhammah-stats-scope .stats-timeline-container {
+            position: relative;
+            margin-top: 1.5rem;
+        }
+
+        .alkhammah-stats-scope .stats-items-flex {
+            display: flex;
+            flex-direction: row-reverse;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+            z-index: 10;
+            gap: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .alkhammah-stats-scope .stats-items-flex {
+                flex-direction: column;
+                gap: 2.5rem;
+            }
+            .alkhammah-stats-scope .timeline-track {
+                display: none;
+            }
+        }
+
+        /* خط التايم لاين */
+        .alkhammah-stats-scope .timeline-track {
+            display: block;
+            position: absolute;
+            top: 50%;
+            left: 5%;
+            right: 5%;
+            height: 3px;
+            transform: translateY(-50%);
+            background: linear-gradient(90deg, 
+                rgba(123, 44, 191, 0.1) 0%, 
+                var(--brand-accent-purple) 35%, 
+                var(--brand-deep-purple) 70%, 
+                rgba(123, 44, 191, 0.1) 100%);
+            z-index: 0;
+        }
+
+        /* عناصر الإحصائيات الفردية */
+        .alkhammah-stats-scope .stat-card-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            flex: 1;
+            cursor: default;
+        }
+
+        .alkhammah-stats-scope .stat-number {
+            font-size: 2rem;
+            font-weight: 900;
+            color: var(--brand-dark-purple);
+            margin-bottom: 0.25rem;
+            direction: ltr;
+            font-family: sans-serif;
+        }
+        @media (min-width: 1024px) {
+            .alkhammah-stats-scope .stat-number { font-size: 2.25rem; }
+        }
+
+        .alkhammah-stats-scope .node-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0.75rem 0;
+            z-index: 10;
+        }
+
+        .alkhammah-stats-scope .feather-node {
+            width: 20px;
+            height: 20px;
+            background: #fff;
+            border: 3px solid var(--brand-accent-purple);
+            border-radius: 50% 0 50% 50%;
+            transform: rotate(-45deg);
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            box-shadow: 0 0 10px rgba(123, 44, 191, 0.2);
+        }
+
+        .alkhammah-stats-scope .stat-card-item:hover .feather-node {
+            transform: rotate(0deg) scale(1.3);
+            background: var(--brand-accent-purple);
+            border-color: #d8b4fe;
+            box-shadow: 0 0 15px rgba(123, 44, 191, 0.4);
+        }
+
+        .alkhammah-stats-scope .stat-label {
+            color: var(--brand-text-muted);
+            font-weight: 700;
+            font-size: 0.95rem;
+            line-height: 1.4;
+            max-width: 150px;
+            transition: color 0.3s ease;
+        }
+        .alkhammah-stats-scope .stat-card-item:hover .stat-label {
+            color: var(--brand-accent-purple);
+        }
+
+        /* بوكس الـ 4 سنوات */
+        .alkhammah-stats-scope .years-badge-wrapper {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 6px;
+        }
+
+        .alkhammah-stats-scope .years-badge {
+            background: rgba(123, 44, 191, 0.08);
+            color: var(--brand-dark-purple);
+            border: 1.5px solid rgba(123, 44, 191, 0.25);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            box-shadow: 0 6px 16px rgba(43, 14, 77, 0.06);
+            border-radius: 16px;
+            padding: 4px 24px;
+            transition: all 0.3s ease;
+            font-size: 1.75rem;
+            font-weight: 900;
+        }
+        .alkhammah-stats-scope .years-badge-wrapper:hover .years-badge {
+            background: rgba(123, 44, 191, 0.14);
+            border-color: var(--brand-accent-purple);
+            transform: translateY(-2px);
+        }
+
+        /* التمرير والحركات */
+        .alkhammah-stats-scope .reveal-element {
+            opacity: 0;
+            transform: translateY(25px);
+            transition: opacity 0.8s ease-out, transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .alkhammah-stats-scope .reveal-element.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .alkhammah-stats-scope .bg-feather-pattern {
+            position: absolute;
+            pointer-events: none;
+            opacity: 0.04;
+            color: var(--brand-dark-purple);
+        }
     </style>
 </head>
 
@@ -2891,10 +3129,11 @@
             <ul class="nav-links" id="navMenu">
                 <li><a href="#" aria-current="page">الرئيسية </a></li>
                 <li><a href="#about"> قصتي </a></li>
-                <li><a href="#new-services">خدماتي </a></li>
-                <li><a href="#services"> مشاريعي </a></li>
-                <li><a href="#contact-map">آراء العملاء </a></li>
+                <li><a href="#haram-services">خدماتي </a></li>
+                <li><a href="#projects"> مشاريعي </a></li>
+                <li><a href="#feedback">آراء العملاء </a></li>
                 <li><a href="#contact-map">محطة الهبوط</a></li>
+                <li><a href="#free-ebook"> كتيب مجاني </a></li>
                 <li><a href="dataform.html" class="nav-cta-btn"> احجز استشارتك الآن </a></li>
             </ul>
 
@@ -3309,7 +3548,7 @@
         </div>
     </section>
 
-   <section class="projects-section" id="projects">
+    <section class="projects-section" id="projects">
         <!-- عنوان السكشن بألوان الرمادي والبنفسجي والأخضر -->
         <div class="section-header">
             <span class="sub-title"><i class="fa-solid fa-dove"></i> محطات الطيران والحصاد الزاجل</span>
@@ -3377,7 +3616,8 @@
                 <div class="wing-card-body">
                     <span class="category">استراتيجية محتوى</span>
                     <h3>حملة "رسائل من أرض الحرم"</h3>
-                    <p>إدارة واستراتيجية محتوى لبراند في السعودية أثناء موسم الحج لزيادة المبيعات والارتباط الوجداني.</p>
+                    <p>إدارة واستراتيجية محتوى لبراند في السعودية أثناء موسم الحج لزيادة المبيعات والارتباط الوجداني.
+                    </p>
 
                     <div class="mini-stats">
                         <span><strong>+2.5M</strong> وصول</span>
@@ -3392,6 +3632,93 @@
                 </div>
             </div>
 
+        </div>
+    </section>
+
+ 
+    <!-- قسم الإحصائيات (معزول تماماً وبتوزيع أفقـي ثابت) -->
+    <section id="alkhammahStatsSection" class="alkhammah-stats-scope">
+        
+     
+        <!-- الكارت الرئيسي بحواف وأجناب ريشية متناسقة مع الهوية -->
+        <div class="main-stats-card">
+            
+            <!-- الجانب الريشي الأيمن للحاوية الخارجية -->
+            <svg class="feather-wing-right" viewBox="0 0 50 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0 20 C35 40, 50 70, 30 100 C15 120, 40 150, 20 180 C10 160, 5 130, 15 100 C25 70, 10 40, 0 20 Z" fill="var(--wing-color-1)" />
+                <path d="M10 50 C40 70, 45 100, 25 130 C10 150, 30 170, 15 190 C5 170, 0 140, 10 120 C20 100, 15 70, 10 50 Z" fill="var(--wing-color-2)" />
+            </svg>
+
+            <!-- الجانب الريشي الأيسر للحاوية الخارجية -->
+            <svg class="feather-wing-left" viewBox="0 0 50 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0 20 C35 40, 50 70, 30 100 C15 120, 40 150, 20 180 C10 160, 5 130, 15 100 C25 70, 10 40, 0 20 Z" fill="var(--wing-color-1)" />
+                <path d="M10 50 C40 70, 45 100, 25 130 C10 150, 30 170, 15 190 C5 170, 0 140, 10 120 C20 100, 15 70, 10 50 Z" fill="var(--wing-color-2)" />
+            </svg>
+
+            <!-- الهيدر والعنوان الرئيسي -->
+            <div class="stats-header reveal-element">
+                <div class="stats-title-wrapper">
+                    <h2 class="stats-main-title">
+                        <span>خبرة ممتدة تصل إلى</span>
+                        
+                        <!-- بوكس الـ 4 سنوات الزجاجي الشفاف -->
+                        <div class="years-badge-wrapper">
+                            <div class="years-badge">
+                                <span class="counter-single" data-target="4">0</span>
+                            </div>
+                        </div>
+                        
+                        <span>سنوات</span>
+                    </h2>
+                </div>
+            </div>
+
+            <!-- التايم لاين والأرقام -->
+            <div class="stats-timeline-container">
+                
+                <!-- الخط الأفقي الرابط -->
+                <div class="timeline-track"></div>
+
+                <!-- محطات البيانات الـ 5 (مرتبة لتوافق اللغة العربية) -->
+                <div class="stats-items-flex">
+                    
+                    <!-- 1. محتوى مطبوعات -->
+                    <div class="stat-card-item reveal-element" style="transition-delay: 100ms;">
+                        <div class="stat-number">+<span class="counter" data-target="50">0</span></div>
+                        <div class="node-wrapper"><div class="feather-node"></div></div>
+                        <p class="stat-label">محتوى مطبوعات</p>
+                    </div>
+
+                    <!-- 2. قطعة محتوى مرئي ( سكريبت ) -->
+                    <div class="stat-card-item reveal-element" style="transition-delay: 200ms;">
+                        <div class="stat-number">+<span class="counter" data-target="500">0</span></div>
+                        <div class="node-wrapper"><div class="feather-node"></div></div>
+                        <p class="stat-label">قطعة محتوى مرئي ( سكريبت )</p>
+                    </div>
+
+                    <!-- 3. قطعة محتوى مكتوب -->
+                    <div class="stat-card-item reveal-element" style="transition-delay: 300ms;">
+                        <div class="stat-number">+<span class="counter" data-target="500">0</span></div>
+                        <div class="node-wrapper"><div class="feather-node"></div></div>
+                        <p class="stat-label">قطعة محتوى مكتوب</p>
+                    </div>
+
+                    <!-- 4. استراتيجية تسويقية بالمحتوى -->
+                    <div class="stat-card-item reveal-element" style="transition-delay: 400ms;">
+                        <div class="stat-number">+<span class="counter" data-target="30">0</span></div>
+                        <div class="node-wrapper"><div class="feather-node"></div></div>
+                        <p class="stat-label">استراتيجية تسويقية بالمحتوى</p>
+                    </div>
+
+                    <!-- 5. عميل -->
+                    <div class="stat-card-item reveal-element" style="transition-delay: 500ms;">
+                        <div class="stat-number">+<span class="counter" data-target="100">0</span></div>
+                        <div class="node-wrapper"><div class="feather-node"></div></div>
+                        <p class="stat-label">عميل</p>
+                    </div>
+
+                </div>
+            </div>
         </div>
     </section>
 
@@ -3924,6 +4251,54 @@
             // تحديد مكان الحمامة عند تحميل الصفحة
             requestUpdate();
 
+        });
+
+
+          document.addEventListener('DOMContentLoaded', () => {
+            const scope = document.getElementById('alkhammahStatsSection');
+            if (!scope) return;
+
+            const counters = scope.querySelectorAll('.counter, .counter-single');
+            const revealElements = scope.querySelectorAll('.reveal-element');
+            const animationDuration = 1800;
+
+            const animateCounter = (counter) => {
+                const target = +counter.getAttribute('data-target');
+                const startTime = performance.now();
+
+                const updateNumber = (currentTime) => {
+                    const elapsedTime = currentTime - startTime;
+                    const progress = Math.min(elapsedTime / animationDuration, 1);
+                    
+                    const easeOutQuad = progress * (2 - progress);
+                    const currentCount = Math.floor(easeOutQuad * target);
+
+                    counter.innerText = currentCount;
+
+                    if (progress < 1) {
+                        requestAnimationFrame(updateNumber);
+                    } else {
+                        counter.innerText = target;
+                    }
+                };
+
+                requestAnimationFrame(updateNumber);
+            };
+
+            let animated = false;
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting && !animated) {
+                        revealElements.forEach(el => el.classList.add('active'));
+                        counters.forEach(counter => animateCounter(counter));
+                        animated = true;
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.2 });
+
+            observer.observe(scope);
         });
 
 
